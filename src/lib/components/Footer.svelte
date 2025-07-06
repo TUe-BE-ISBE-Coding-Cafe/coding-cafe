@@ -1,22 +1,27 @@
 <script>
-	const githubUrl = 'https://github.com/YOUR_USERNAME/YOUR_REPO'; // ← Replace this
+	const githubUrl = 'https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/';
 	const zenodoUrl = 'https://zenodo.org/communities/tue_be_isbe_codingcafe';
 	const email = 'o.balaban@tue.nl';
 </script>
 
 <footer class="mt-auto w-full bg-[#C8102E] py-6 text-white">
-	<div
-		class="mx-auto flex max-w-7xl flex-col items-center space-y-4 px-4 sm:flex-row sm:justify-between sm:space-y-2"
-	>
-		<!-- Centered Text -->
-		<div class="text-center text-sm font-medium sm:text-left">
-			<a href="https://isbe.bwk.tue.nl" class="block sm:inline"
-				>Information Systems in the Built Environment</a
-			>
+	<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row">
+		<!-- Left: TU/e logo -->
+		<div class="shrink-0 bg-[#FFFFFF]">
+			<a href="https://www.tue.nl" target="_blank" aria-label="TU/e homepage">
+				<img src="/images/tuelogo.svg" alt="TU/e Logo" class="h-10 sm:h-12" />
+			</a>
 		</div>
 
-		<!-- Icons and Contact -->
-		<div class="flex items-center space-x-4">
+		<!-- Center: ISBE text -->
+		<div class="text-center text-xl font-medium">
+			<a href="https://isbe.bwk.tue.nl" class="block hover:underline">
+				Information Systems in the Built Environment (ISBE)
+			</a>
+		</div>
+
+		<!-- Right: Icons and Email -->
+		<div class="flex items-center space-x-4 text-sm">
 			<a href={githubUrl} target="_blank" aria-label="GitHub">
 				<svg class="h-5 w-5 fill-white hover:fill-gray-300" viewBox="0 0 24 24">
 					<path
@@ -25,11 +30,9 @@
 				</svg>
 			</a>
 			<a href={zenodoUrl} target="_blank" aria-label="Zenodo Community">
-				<img src="/images/zenodo-icon.svg" alt="Zenodo" class="h-5" />
+				<img src="/images/zenodo-icon-blue.svg" alt="Zenodo" class="h-5" />
 			</a>
-			<a href={'mailto:' + email} class="text-sm underline hover:text-gray-300">
-				{email}
-			</a>
+			<a href={'mailto:' + email} class="underline hover:text-gray-300"> Contact </a>
 		</div>
 	</div>
 </footer>

@@ -4,5 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	base: '/coding-cafe/',
+	assetsInclude: ['**/*.md'],
 	plugins: [tailwindcss(), sveltekit(), devtoolsJson()]
 });

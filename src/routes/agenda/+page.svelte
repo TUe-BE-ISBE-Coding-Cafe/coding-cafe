@@ -11,7 +11,7 @@
 	};
 </script>
 
-<section class="mx-auto max-w-5xl px-6 py-10">
+<section class="mx-auto max-w-screen-xl px-8 py-16">
 	<h1 class="text-tue-red mb-8 text-3xl font-bold">Past Events</h1>
 
 	<div class="space-y-6">
@@ -35,10 +35,22 @@
 					<!-- Links -->
 					<div class="flex flex-wrap gap-3 pt-1 text-sm">
 						{#if event.repo}
-							<a href={event.repo} target="_blank" class="text-blue-600 underline">💻 GitHub</a>
+							<a href={event.repo} target="_blank" class="text-blue-600 underline">
+								💻 Exercises on GitHub
+							</a>
 						{/if}
 						{#if event.zenodo}
-							<a href={event.zenodo} target="_blank" class="text-blue-600 underline"> 📘 Zenodo </a>
+							Slides on Zenodo --> <a
+								href={`${event.zenodo}`}
+								target="_blank"
+								class="inline-flex items-center gap-2"
+							>
+								<img
+									src={`https://zenodo.org/badge/DOI/${event.zenodo}.svg`}
+									alt="DOI badge"
+									class="h-5"
+								/>
+							</a>
 						{/if}
 					</div>
 				</div>

@@ -1,15 +1,21 @@
-import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
+import { mdsvex } from 'mdsvex';
+import fs from 'fs';
 
-/** @type {import('@sveltejs/kit').Config} */
+const eventSlugs = fs
+	.readdirSync('src/lib/events')
+	.filter((f) => f.endsWith('.md'))
+	.map((f) => `/events/${f.replace('.md', '')}`);
+
 const config = {
-	kit: { adapter: adapter() },
-	preprocess: [
-		mdsvex({
-			extensions: ['.md', '.svx']
-		})
-	],
-	extensions: ['.svelte', '.svx', '.md']
+	extensions: ['.svelte', '.svx', '.md'],
+	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
+	kit: {
+		adapter: adapter(),
+		prerender: {
+			entries: ['*', ...eventSlugs] // 👈 Required for dynamic slugs
+		}
+	}
 };
 
 export default config;

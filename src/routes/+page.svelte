@@ -1,11 +1,4 @@
-<script>
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-</script>
-
-<Navbar />
-
-<main class="mx-auto max-w-4xl scroll-smooth px-4 py-10">
+<main class="mx-auto max-w-screen-xl scroll-smooth px-8 py-16">
 	<!-- Welcome Section -->
 	<section class="mb-12">
 		<h1 class="mb-4 text-3xl font-bold">Welcome to the Coding Café @TU/e BE ISBE</h1>
@@ -49,5 +42,3 @@
 		</p>
 	</section>
 </main>
-
-<Footer />

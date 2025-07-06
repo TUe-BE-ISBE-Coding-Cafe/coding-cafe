@@ -1,17 +1,11 @@
-<script>
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-</script>
-
-<Navbar />
-
-<section class="mx-auto max-w-3xl px-4 py-12">
+<section class="mx-auto max-w-screen-xl px-8 py-16">
 	<h1 class="text-tue-red mb-6 text-3xl font-bold">About TU/e BE ISBE Coding Café</h1>
 
 	<p class="mb-4">
-		The <strong>TU/e Coding Café</strong> is an informal, hands-on meetup for anyone at the Eindhoven
-		University of Technology (TU/e) interested in writing and sharing code used in research. Whether
-		you're a beginner or an experienced developer, you're welcome to join!
+		The <strong>TU/e BE ISBE Coding Café</strong> is an informal, hands-on meetup for anyone at the Department
+		of Built Environment at Eindhoven University of Technology (TU/e) (or even outside BE) interested
+		in writing and sharing code used in research. Whether you're a beginner or an experienced developer,
+		you're welcome to join!
 	</p>
 
 	<p class="mb-4">Each session includes:</p>
@@ -24,7 +18,7 @@
 
 	<p class="mb-4">
 		The goal is to create a space where researchers from all fields can share knowledge, learn
-		together, and improve how we write and use software in science.
+		together, and improve how we write and use software in research.
 	</p>
 	<h2 class="mb-6 text-3xl font-bold">Topics</h2>
 	<p class="mb-4">
@@ -34,7 +28,7 @@
 	</p>
 	<p class="mb-4">
 		We’re always looking for enthusiastic contributors! If you’d like to give a presentation at an
-		upcoming session, please email Ozgun Balaban to suggest a topic.
+		upcoming session, please email Özgün Balaban to suggest a topic.
 	</p>
 
 	<h2 class="mb-6 text-3xl font-bold">Who can join?</h2>
@@ -53,7 +47,7 @@
 					Got a favorite topic you’d like us to explore, or an idea for a presentation at an
 					upcoming Coding Café? Please let us know via a
 					<a
-						href="https://github.com/YOUR_USERNAME/YOUR_REPO/issues"
+						href="https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/issues"
 						class="text-blue-600 underline hover:text-blue-800"
 						target="_blank">GitHub Issue</a
 					>
@@ -68,5 +62,3 @@
 		in collaboration with other enthusiastic coders in the research community.
 	</p>
 </section>
-
-<Footer />
