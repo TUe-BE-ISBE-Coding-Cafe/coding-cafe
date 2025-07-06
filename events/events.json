@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Docker & Reproducibility",
+    "date": "2025-07-02T00:00:00.000Z",
+    "location": "Vertigo Room 2.11",
+    "speaker": "Özgün Balaban",
+    "slides": "/events/2024-docker/2024-docker-slides.pdf",
+    "repo": "github",
+    "slug": "2025-07-02_docker-and-reproducibility",
+    "path": "/events/2025-07-02_docker-and-reproducibility/2025-07-02_docker-and-reproducibility.md"
+  }
+]
