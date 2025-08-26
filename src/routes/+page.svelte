@@ -13,7 +13,7 @@
 	<section class="mb-12 rounded-md border-l-4 border-yellow-500 bg-yellow-100 p-6 text-yellow-900">
 		<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 			<div>
-				<p class="mb-1 text-lg font-bold">🗓️ Next Coding Café: July 30, 2024 - 12:00 (tentative)</p>
+				<p class="mb-1 text-lg font-bold">🗓️ Next Coding Café: September 24, 2024 - 12:00 </p>
 				<p class="text-sm">
 					📍 Location: Vertigo 9.06, TU/e<br />
 					🎤 Topic: Will be announced shortly<br />
