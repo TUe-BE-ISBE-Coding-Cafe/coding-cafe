@@ -23,7 +23,7 @@
 				<!-- Event Info -->
 				<div class="space-y-2">
 					<h2 class="text-xl font-semibold text-gray-800">
-						<a href={event.path} class="hover:text-[#C8102E]">{event.title}</a>
+						<p class="hover:text-[#C8102E]">{event.title}</p>
 					</h2>
 					{#if event.subtitle}
 						<h3 class="text-lg text-gray-600">{event.subtitle}</h3>
