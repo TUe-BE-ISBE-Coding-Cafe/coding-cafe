@@ -1,7 +1,7 @@
 <main class="mx-auto max-w-screen-xl scroll-smooth px-8 py-16">
 	<!-- Welcome Section -->
 	<section class="mb-12">
-		<h1 class="mb-4 text-3xl font-bold">Welcome to the Coding Café @TU/e BE ISBE</h1>
+		<h1 class="mb-4 text-3xl font-bold">Welcome to the Coding Café @TU/e BE</h1>
 		<p class="text-lg">
 			The Coding Café is a monthly community event organized by the Information Systems group in the
 			Built Environment department at TU/e. It's open to everyone interested in writing, sharing,
@@ -16,7 +16,7 @@
 				<p class="mb-1 text-lg font-bold">🗓️ Next Coding Café: September 24, 2024 - 12:00 </p>
 				<p class="text-sm">
 					📍 Location: Vertigo 9.06, TU/e<br />
-					🎤 Topic: Will be announced shortly<br />
+					🎤 Topic: Cloud in a Coffee Break: Getting Started with SURF Research Cloud Demo<br />
 					🍕 Bring your own food, but there might be some small snacks!!
 				</p>
 			</div>

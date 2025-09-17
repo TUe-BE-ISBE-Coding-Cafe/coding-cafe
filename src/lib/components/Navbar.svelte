@@ -16,7 +16,7 @@
 
 		<!-- Center: Title -->
 		<div class="flex-grow text-center">
-			<h1 class="text-3xl font-semibold text-white">TU/e BE ISBE Coding Café</h1>
+			<h1 class="text-3xl font-semibold text-white">TU/e BE Coding Café</h1>
 		</div>
 
 		<!-- Right: Navigation Links -->
