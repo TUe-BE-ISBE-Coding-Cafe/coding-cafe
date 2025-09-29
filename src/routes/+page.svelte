@@ -4,8 +4,10 @@
 		<h1 class="mb-4 text-3xl font-bold">Welcome to the Coding Café @TU/e BE</h1>
 		<p class="text-lg">
 			The Coding Café is a monthly community event organized by the Information Systems group in the
-			Built Environment department at TU/e. It's open to everyone interested in writing, sharing,
+			Department of the Built Environment at TU/e. It's open to everyone interested in writing, sharing,
 			and learning about code in a relaxed and inclusive environment.
+			
+			
 		</p>
 	</section>
 
@@ -13,7 +15,7 @@
 	<section class="mb-12 rounded-md border-l-4 border-yellow-500 bg-yellow-100 p-6 text-yellow-900">
 		<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
 			<div>
-				<p class="mb-1 text-lg font-bold">🗓️ Next Coding Café: <s>September 24, 2024 - 12:00 </s> postponed new date will be announced shortly!</p>
+				<p class="mb-1 text-lg font-bold">🗓️ Next Coding Café: <s>September 24, 2025 - 12:00 </s> postponed to October 8, 2025 - 15:00</p>
 				<p class="text-sm">
 					📍 Location: Vertigo 9.06, TU/e<br />
 					🎤 Topic: Cloud in a Coffee Break: Getting Started with SURF Research Cloud Demo<br />

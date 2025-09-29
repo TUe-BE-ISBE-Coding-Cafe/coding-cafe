@@ -1,8 +1,8 @@
 <section class="mx-auto max-w-screen-xl px-8 py-16">
-	<h1 class="text-tue-red mb-6 text-3xl font-bold">About TU/e BE ISBE Coding Café</h1>
+	<h1 class="text-tue-red mb-6 text-3xl font-bold">About TU/e BE Coding Café</h1>
 
 	<p class="mb-4">
-		The <strong>TU/e BE ISBE Coding Café</strong> is an informal, hands-on meetup for anyone at the Department
+		The <strong>TU/e BE Coding Café</strong> is an informal, hands-on meetup for anyone at the Department
 		of Built Environment at Eindhoven University of Technology (TU/e) (or even outside BE) interested
 		in writing and sharing code used in research. Whether you're a beginner or an experienced developer,
 		you're welcome to join!
@@ -58,7 +58,7 @@
 	</div>
 
 	<p>
-		Organized by the <strong>Information Systems in the Built Environment (ISBE)</strong> chair at TU/e,
+		Organized by the <strong>Information Systems (ISBE) group in the Built Environment Department </strong> at TU/e,
 		in collaboration with other enthusiastic coders in the research community.
 	</p>
 </section>
