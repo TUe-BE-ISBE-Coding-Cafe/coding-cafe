@@ -4,7 +4,7 @@
 	const email = 'o.balaban@tue.nl';
 </script>
 
-<footer class="mt-auto w-full bg-[#C8102E] py-6 text-white">
+<footer class="mt-auto w-full bg-[#C81919] py-1 text-white">
 	<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row">
 		<!-- Left: TU/e logo -->
 		<div class="shrink-0 bg-[#FFFFFF]">
@@ -14,7 +14,7 @@
 		</div>
 
 		<!-- Center: ISBE text -->
-		<div class="text-center text-xl font-medium">
+		<div class="text-center text-xl font-light">
 			<a href="https://isbe.bwk.tue.nl" class="block hover:underline">
 				Information Systems in the Built Environment (ISBE)
 			</a>
@@ -22,6 +22,13 @@
 
 		<!-- Right: Icons and Email -->
 		<div class="flex items-center space-x-4 text-sm">
+			<a
+				href="https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64"
+				target="_blank"
+				aria-label="BE Coding Cafe Teams"
+			>
+				<img src="/images/teams_logo.svg" alt="BE Coding Cafe Teams" class="h-5" />
+			</a>
 			<a href={githubUrl} target="_blank" aria-label="GitHub">
 				<svg class="h-5 w-5 fill-white hover:fill-gray-300" viewBox="0 0 24 24">
 					<path
