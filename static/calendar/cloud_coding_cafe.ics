@@ -1,0 +1,85 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:tzone://Microsoft/Utc
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN="Balaban, Özgün":mailto:o.balaban@tue.nl
+DESCRIPTION:Dear all\,\nYou are warmly invited to the Coding Café @ Built 
+ Environment!\nThis is our informal\, hands-on monthly meetup where we expl
+ ore coding tools\, share tips\, and learn together over coffee.\n Next ses
+ sion\nTitle: Cloud in a Coffee Break: Getting Started with SURF Research C
+ loud Demo\nDate & Time: Wednesday\, 8 October\, 15:00 – 16:30\nLocation:
+  Vertigo 9.06\nBring your snacks – we might provide some small refreshme
+ nts😉\nWhat’s on the menu this time?\n\n  *   What is cloud computing?
+  How can it help in my research projects?\n  *   How to estimate resources
+  for your projects\n  *   How to log in\, transfer files\, and work online
+ \n  *   Live demo with SURF Research Cloud\n\nThis is our second Coding Ca
+ fé!🎉 Before the summer we kicked off with a session on Docker basics\,
+  and you can already find the slides and materials on our website: becodin
+ gcafe.com<https://becodingcafe.com/> (all past slides are archived on Zeno
+ do).\nMark your calendars – Coding Café takes place every last Wednesda
+ y of the month. Upcoming dates:\n\n  *   29 October — topic:RDF/OWL — 
+ tentative\n  *   26 November - topic:Databases\, with demo — tentative.\
+ n\nCommunity-driven effort\nCoding Café is by and for the BE community. I
+ f you’d like to get involved\, you can suggest future topics or even lea
+ d a session yourself.\nFor questions\, ideas\, or to propose a session: o.
+ balaban@tue.nl<mailto:o.balaban@tue.nl>\nWe also have a public Teams team 
+ for those who want to continue in the discussion. To join: General | BE Co
+ ding Cafe | Microsoft Teams<https://teams.microsoft.com/l/team/19%3ATfehyu
+ NclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupI
+ d=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-70
+ 4cf60efc64>\n\nWhy join?\nCoding Café is open to everyone at Built Enviro
+ nment (students\, researchers\, staff). Whether you’re new to coding or 
+ experienced\, it’s a place to learn by doing\, exchange knowledge\, and 
+ build a supportive community.\nMore info and materials: becodingcafe.com<h
+ ttps://becodingcafe.com/>\nWe look forward to seeing you there!\n—\nThe 
+ Coding Café Team\n\n
+UID:040000008200E00074C5B7101A82E00800000000E63E7ABF9E2BDC01000000000000000
+ 0100000006FAEE6984F59094A8514A9F31338BBCD
+SUMMARY:BE Coding Cafe - Cloud in a Coffee Break: Getting Started with SURF
+  Research Cloud Demo
+DTSTART:20251008T130000Z
+DTEND:20251008T143000Z
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20250930T134357Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:2
+LOCATION;ALTREP=VRT9.06@tue.nl:Vertigo 9.06 (meeting room\, 16p)
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGEXTERNALLINK:
+X-MICROSOFT-ONLINEMEETINGCONFLINK:
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-LOCATIONDISPLAYNAME:Vertigo 9.06 (meeting room\, 16p)
+X-MICROSOFT-LOCATIONSOURCE:Resource
+X-MICROSOFT-LOCATIONURI:VRT9.06@tue.nl
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Vertigo 9.06 (meeting room\, 16p)"\,
+ "LocationAnnotation":""\,"LocationSource":5\,"LocationUri":"VRT9.06@tue.nl
+ "\,"LocationStreet":""\,"LocationCity":""\,"LocationState":""\,"LocationCo
+ untry":""\,"LocationPostalCode":""\,"LocationFullAddress":""}]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

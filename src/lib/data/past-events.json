@@ -5,6 +5,8 @@
 		"date": "2025-07-02",
 		"location": "Vertigo 9.06",
 		"speaker": "Özgün Balaban",
+				"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "/events/2025-docker/2024-docker-slides.pdf",
 		"poster": "/events/2025-07-02_docker-and-reproducibility/poster.png",
 		"repo": "https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/tree/main/events/2025-07-02_docker-and-reproducibility/",

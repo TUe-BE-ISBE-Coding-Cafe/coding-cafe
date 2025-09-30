@@ -6,7 +6,7 @@
 	];
 </script>
 
-<nav class="w-full bg-[#C8102E] text-white shadow-md">
+<nav class="w-full bg-[#C81919] text-white shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
 		<!-- Left: Logo + Tagline -->
 		<div class="flex flex-col items-start space-y-1">

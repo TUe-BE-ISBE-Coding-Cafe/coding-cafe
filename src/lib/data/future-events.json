@@ -1,26 +1,40 @@
 [
 	{
-		"title": "Cloud in a Coffee Break: Getting Started with SURF Research Cloud",
+		"title": "Cloud in a Coffee Break:",
+		"subtitle": "Getting Started with SURF Research Cloud",
 		"date": "2025-10-08",
+		"time": "15:00 - 16:30",
 		"location": "Vertigo 9.06",
 		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slug": "2025-09-24",
-		"path": "/events/2025-09-24"
+		"image": "/images/cloud.jpeg",
+		"path": "/events/2025-09-24",
+		"tags": ["cloud-computing", "infrastructure", "SURF"],
+		"description": "An introductory session on SURF Research Cloud, covering its features, benefits, and how to get started with cloud computing for research projects.",
+		"calendar": "/calendar/cloud_coding_cafe.ics"
 	},
 		{
 		"title": "RDF/OWL + Large Language Models",
 		"date": "2025-10-29",
+		"time": "12:00 - 13:30",
 		"location": "Vertigo 9.06",
 		"speaker": "Alex Donkers",
+		"description": "Coming soon",
 		"slug": "2025-10-29",
-		"path": "/events/2025-10-29"
+		"path": "/events/2025-10-29",
+		"calendar": "/calendar/october_coding_cafe.ics"
 	},
 		{
 		"title": "To Be Announced",
 		"date": "2025-11-24",
+				"description": "Coming soon",
 		"location": "Vertigo 9.06",
+		"time": "12:00 - 13:30",
 		"speaker": "To Be Announced",
 		"slug": "2025-11-24",
-		"path": "/events/2025-11-24"
+		"path": "/events/2025-11-24",
+		"calendar": "/calendar/november_coding_cafe.ics"
 	}
 ]
