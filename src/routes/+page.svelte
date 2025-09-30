@@ -128,12 +128,10 @@
 		<a
 			href={event.path}
 			aria-label={`Open ${event.title}. Click to see the materials.`}
-			class="group my-2 grid min-h-[150px] grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr] items-stretch overflow-hidden rounded-2xl bg-gray-200 sm:grid-cols-2"
+			class="group my-2 grid min-h-[150px] grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr] items-stretch overflow-hidden rounded-2xl bg-gray-200"
 		>
 			<!-- DATE BLOCK LEFT-->
-			<div
-				class="flex h-full flex-col border-r-4 border-[#C81919] p-2 text-right text-[#C81919] sm:col-span-2 sm:text-center"
-			>
+			<div class="flex h-full flex-col border-r-4 border-[#C81919] p-2 text-right text-[#C81919]">
 				<p class="text-2xl font-bold">
 					{formatDate(event.date)}
 				</p>
@@ -146,7 +144,7 @@
 				{/if}
 			</div>
 			<!-- TITLE + SUBTITLE MIDDLE-->
-			<div class="flex h-full flex-col pl-2 sm:col-span-2">
+			<div class="flex h-full flex-col pl-2">
 				<h2 class="text-2xl text-gray-800">
 					{event.title}
 				</h2>
@@ -165,12 +163,12 @@
 				{#if event.description}
 					<h3 class="text-sm text-gray-600">{event.description}</h3>
 				{/if}
-				<div class="flex flex-wrap gap-3 pt-1 text-sm">
+				<div class="flex flex-wrap gap-3 pt-4 text-sm">
 					{#if event.repo}
 						<button
 							type="button"
 							on:click={() => window.open(event.repo, '_blank')}
-							class="text-blue-600 underline">💻 Exercises</button
+							class="text-blue-600 underline">Github</button
 						>
 					{/if}
 					{#if event.zenodo}
@@ -188,7 +186,7 @@
 					{/if}
 				</div>
 			</div>
-			<div class="flex h-full flex-col p-2 sm:col-span-1">
+			<div class="flex h-full flex-col p-2">
 				<!-- Speaker image -->
 				<div class="flex flex-col items-center">
 					<p></p>
@@ -216,7 +214,7 @@
 				</div>
 			</div>
 			<!-- CALENDAR BUTTON RIGHT-->
-			<div class="flex h-full flex-col items-center justify-center p-2 pr-4 sm:col-span-1">
+			<div class="flex h-full flex-col items-center justify-center p-2 pr-4">
 				<!-- Calendar link -->
 				<!-- RIGHT: arrow (diagonal ↗) -->
 				<div class="col-start-3 row-span-2 flex items-center justify-center px-3 text-gray-400">

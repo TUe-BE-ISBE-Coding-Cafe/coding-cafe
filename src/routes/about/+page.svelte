@@ -28,7 +28,7 @@
 	</p>
 	<p class="mb-4">
 		We’re always looking for enthusiastic contributors! If you’d like to give a presentation at an
-		upcoming session, please email Özgün Balaban to suggest a topic.
+		upcoming session, please reach us.
 	</p>
 
 	<h2 class="mb-6 text-3xl font-bold">Who can join?</h2>
@@ -58,7 +58,8 @@
 	</div>
 
 	<p>
-		Organized by the <strong>Information Systems (ISBE) group in the Built Environment Department </strong> at TU/e,
-		in collaboration with other enthusiastic coders in the research community.
+		Organized by the <strong
+			>Information Systems (ISBE) group in the Built Environment Department
+		</strong> at TU/e, in collaboration with other enthusiastic coders in the research community.
 	</p>
 </section>
