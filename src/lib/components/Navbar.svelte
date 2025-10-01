@@ -15,14 +15,17 @@
 
 		<!-- Center: Title -->
 		<div class=" pl-2 text-center">
-			<h1 class="text-left text-xl font-extralight text-white">TU/e BE <br /> Coding Café</h1>
+			<h1 class="sm:text-l text-left font-extralight text-white md:text-xl">
+				TU/e BE <br /> Coding Café
+			</h1>
 		</div>
 
 		<!-- Right: Navigation Links -->
-		<div class="flex items-center space-x-10 pl-24">
+		<div class="flex items-center space-x-4 sm:pl-12 md:pl-24">
 			{#each navItems as item}
-				<a href={item.href} class="text-xl font-extralight text-white hover:text-gray-200"
-					>{item.name}</a
+				<a
+					href={item.href}
+					class="sm:text-l font-extralight text-white hover:text-gray-200 md:text-xl">{item.name}</a
 				>
 			{/each}
 		</div>

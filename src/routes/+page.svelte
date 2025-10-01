@@ -42,19 +42,21 @@
 
 	{#each future as event}
 		<div
-			class="group my-2 grid min-h-[150px] grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr] items-stretch overflow-hidden rounded-2xl bg-gray-200"
+			class="group my-2 grid min-h-[150px] items-stretch overflow-hidden rounded-2xl bg-gray-200 sm:grid-cols-2 md:grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr]"
 		>
 			<!-- DATE BLOCK LEFT-->
-			<div class="flex h-full flex-col border-r-4 border-[#C81919] p-2 text-right text-[#C81919]">
+			<div
+				class="flex h-full flex-col p-2 text-[#C81919] sm:text-center md:border-r-4 md:border-[#C81919] md:text-right"
+			>
 				<p class="text-2xl font-bold">
 					{formatDate(event.date)}
 				</p>
 				<p class="text-xl">Wednesday</p>
 				{#if event.time}
-					<p class=" text-right text-lg font-semibold">{event.time}</p>
+					<p class="  text-lg font-semibold">{event.time}</p>
 				{/if}
 				{#if event.location}
-					<p class="text-right text-lg font-medium">{event.location}</p>
+					<p class="text-lg font-medium">{event.location}</p>
 				{/if}
 			</div>
 			<!-- TITLE + SUBTITLE MIDDLE-->
@@ -128,19 +130,21 @@
 		<a
 			href={event.path}
 			aria-label={`Open ${event.title}. Click to see the materials.`}
-			class="group my-2 grid min-h-[150px] grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr] items-stretch overflow-hidden rounded-2xl bg-gray-200"
+			class="group my-2 grid min-h-[150px] items-stretch overflow-hidden rounded-2xl bg-gray-200 sm:grid-cols-2 md:grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr]"
 		>
 			<!-- DATE BLOCK LEFT-->
-			<div class="flex h-full flex-col border-r-4 border-[#C81919] p-2 text-right text-[#C81919]">
+			<div
+				class="flex h-full flex-col p-2 text-[#C81919] md:border-r-4 md:border-[#C81919] md:text-right"
+			>
 				<p class="text-2xl font-bold">
 					{formatDate(event.date)}
 				</p>
 				<p class="text-xl">Wednesday</p>
 				{#if event.time}
-					<p class=" text-right text-lg font-semibold">{event.time}</p>
+					<p class=" text-lg font-semibold">{event.time}</p>
 				{/if}
 				{#if event.location}
-					<p class="text-right text-lg font-medium">{event.location}</p>
+					<p class=" text-lg font-medium">{event.location}</p>
 				{/if}
 			</div>
 			<!-- TITLE + SUBTITLE MIDDLE-->
