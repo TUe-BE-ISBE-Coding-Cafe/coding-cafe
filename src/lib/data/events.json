@@ -1,0 +1,59 @@
+[
+    	{
+		"title": "Build Once, Run Anywhere:",
+		"subtitle": "Making Your Research Reproducible with Docker",
+		"date": "2025-07-02",
+		"location": "Vertigo 9.06",
+		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slides": "/events/2025-docker/2024-docker-slides.pdf",
+		"poster": "/events/2025-07-02_docker-and-reproducibility/poster.png",
+		"repo": "https://github.com/ISBE-TUe/coding-cafe/tree/main/static/events/2025-07-02_docker-and-reproducibility",
+		"slug": "2025-07-02_docker-and-reproducibility",
+		"path": "/events/2025-07-02_docker-and-reproducibility",
+		"zenodo": "10.5281/zenodo.15802618",
+		"tags": ["docker", "reproducibility", "containers"]
+	},
+	{
+		"title": "Cloud in a Coffee Break:",
+		"subtitle": "Getting Started with SURF Research Cloud",
+		"date": "2025-10-08",
+		"time": "15:00 - 16:30",
+		"location": "Vertigo 9.06",
+		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slug": "2025-09-24",
+		"image": "/images/cloud.jpeg",
+		"path": "/events/2025-09-24",
+		"tags": ["cloud-computing", "infrastructure", "SURF"],
+		"description": "An introductory session on SURF Research Cloud, covering its features, benefits, and how to get started with cloud computing for research projects.",
+		"calendar": "/calendar/cloud_coding_cafe.ics"
+	},
+	{
+		"title": "RDF/OWL + Large Language Models",
+		"date": "2025-10-29",
+		"time": "12:00 - 13:30",
+		"location": "Vertigo 9.06",
+		"speaker": "Alex Donkers",
+		"speaker_link": "https://www.tue.nl/en/research/researchers/alex-donkers",
+		"speakerImage": "https://assets.w3.tue.nl/w/fileadmin/_processed_/6/0/csm_f2b4618cba898d40dbb04b06161a89e1_f0776d2824.jpg",
+		"description": "Coming soon",
+		"slug": "2025-10-29",
+		"path": "/events/2025-10-29",
+		"calendar": "/calendar/october_coding_cafe.ics"
+		
+	},
+	{
+		"title": "To Be Announced",
+		"date": "2025-11-24",
+		"description": "Coming soon",
+		"location": "Vertigo 9.06",
+		"time": "12:00 - 13:30",
+		"speaker": "To Be Announced",
+		"slug": "2025-11-24",
+		"path": "/events/2025-11-24",
+		"calendar": "/calendar/november_coding_cafe.ics"
+	}
+]

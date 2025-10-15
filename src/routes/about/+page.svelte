@@ -20,6 +20,27 @@
 		The goal is to create a space where researchers from all fields can share knowledge, learn
 		together, and improve how we write and use software in research.
 	</p>
+
+	<div class="my-8 rounded-md border-l-4 border-blue-600 bg-blue-300 p-6">
+		<div class="flex items-start gap-3">
+			<div class="text-2xl">📣</div>
+			<div>
+				<p class="text-lg font-semibold">Join the Community via Teams</p>
+				<p class="mt-1">
+					We created a public Teams Channel for announcements, discussions, and sharing resources.
+					Please join us there! <br />
+					<a
+						href="https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64"
+						class="text-blue-600 underline hover:text-blue-800"
+						target="_blank">BE Coding Cafe Teams</a
+					> <br />
+					If you have any questions or suggestions, feel free to email us at
+					<a href="mailto:o.balaban@tue.nl" class="underline">o.balaban@tue.nl</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+
 	<h2 class="mb-6 text-3xl font-bold">Topics</h2>
 	<p class="mb-4">
 		Each Coding Café session features a short presentation or demonstration, lasting up to 30
@@ -43,11 +64,11 @@
 			<div class="text-2xl">📣</div>
 			<div>
 				<p class="text-lg font-semibold">Want to get involved?</p>
-				<p class="mt-1 text-sm">
+				<p class="mt-1">
 					Got a favorite topic you’d like us to explore, or an idea for a presentation at an
-					upcoming Coding Café? Please let us know via a
+					upcoming Coding Café? Please let us know in the Teams Channel, via a
 					<a
-						href="https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/issues"
+						href="https://github.com/ISBE-TUe/coding-cafe/issues"
 						class="text-blue-600 underline hover:text-blue-800"
 						target="_blank">GitHub Issue</a
 					>

@@ -1,5 +1,5 @@
 <script>
-	const githubUrl = 'https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/';
+	const githubUrl = 'https://github.com/ISBE-TUe/coding-cafe';
 	const zenodoUrl = 'https://zenodo.org/communities/tue_be_isbe_codingcafe';
 	const email = 'o.balaban@tue.nl';
 </script>
