@@ -85,7 +85,7 @@
 {:else}
 	<!-- PAST CARD -->
 	<a
-		href={event.path}
+		href={'events/' + event.slug}
 		aria-label={`Open ${event.title}. Click to see the materials.`}
 		class="group my-2 grid min-h-[150px] items-stretch overflow-hidden rounded-2xl bg-gray-200 sm:grid-cols-2 md:grid-cols-[1.8fr_4.2fr_1.2fr_0.8fr]"
 	>

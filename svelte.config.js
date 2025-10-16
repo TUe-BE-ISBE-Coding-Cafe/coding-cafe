@@ -2,10 +2,8 @@ import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import fs from 'fs';
 
-const eventSlugs = fs
-	.readdirSync('src/lib/events')
-	.filter((f) => f.endsWith('.md'))
-	.map((f) => `/events/${f.replace('.md', '')}`);
+const eventsJson = JSON.parse(fs.readFileSync('src/lib/data/events.json', 'utf-8'));
+const eventSlugs = eventsJson.map((event) => `/events/${event.slug}`);
 
 const config = {
 	extensions: ['.svelte', '.svx', '.md'],

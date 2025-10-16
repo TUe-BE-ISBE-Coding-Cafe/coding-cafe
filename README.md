@@ -27,3 +27,10 @@ Visit our Coding Café website for:
 - The full session agenda
 - Upcoming event dates
 - Resources and past materials
+
+## Documentation
+
+### Creating a new session entry on the agenda
+
+The agenda items are created automatically from the events.json under lib/data folder.
+If you want to organize a new session, please create a new entry in the json file and edit the fields. Some are optional, meaning without them it will still run, but some are necessary so if you leave them empty then the site might not work! If you see any weird error, please put it in the issues so that we can fix it.
