@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	const { event, content, attachments } = data;
+	const { event, content } = data;
 
 	const formatDate = (isoString) => {
 		if (!isoString) return 'No date provided';
@@ -80,23 +80,17 @@
 		</div>
 	{/if}
 
-	{#if attachments.length}
-		<div class="mt-10">
-			<h2 class="mb-2 text-xl font-semibold">Downloads</h2>
-			<ul class="space-y-2">
-				{#each attachments as file}
-					<li>
-						<a
-							class="text-blue-600 underline hover:text-blue-800"
-							target="_blank"
-							rel="noreferrer"
-							href={file.href}
-						>
-							{file.name}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
-	{/if}
-</div>
+		{#if event.repo}
+			<div class="mt-10">
+				<h2 class="mb-2 text-xl font-semibold">Exercises & materials</h2>
+				<a
+					class="inline-block rounded bg-[#C81919] px-4 py-2 text-white shadow hover:bg-[#a60d25]"
+					href={event.repo}
+					target="_blank"
+					rel="noreferrer"
+				>
+					View on GitHub
+				</a>
+			</div>
+		{/if}
+	</div>

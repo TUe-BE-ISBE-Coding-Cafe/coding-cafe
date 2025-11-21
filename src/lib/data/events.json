@@ -48,6 +48,28 @@
 		"description": "Coming soon",
 		"location": "Vertigo 9.06",
 		"time": "12:00 - 13:30",
+		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slug": "2025-11-24",
+		"calendar": "/calendar/november_coding_cafe.ics"
+	},
+		{
+		"title": "To Be Announced",
+		"date": "2026-01-24",
+		"description": "Coming soon",
+		"location": "Vertigo 9.06",
+		"time": "12:00 - 13:30",
+		"speaker": "To Be Announced",
+		"slug": "2025-11-24",
+		"calendar": "/calendar/november_coding_cafe.ics"
+	},
+		{
+		"title": "To Be Announced",
+		"date": "2025-11-24",
+		"description": "Coming soon",
+		"location": "Vertigo 9.06",
+		"time": "12:00 - 13:30",
 		"speaker": "To Be Announced",
 		"slug": "2025-11-24",
 		"calendar": "/calendar/november_coding_cafe.ics"

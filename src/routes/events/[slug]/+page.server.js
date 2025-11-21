@@ -1,6 +1,6 @@
 import path from 'path';
 import { error } from '@sveltejs/kit';
-import { readFile, readdir, stat } from 'fs/promises';
+import { readFile, stat } from 'fs/promises';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import events from '$lib/data/events.json';
@@ -26,27 +26,6 @@ const normaliseStaticPath = (slug, value) => {
 	if (value.startsWith('/')) return value;
 	const trimmed = value.replace(/^\.\//, '');
 	return `/events/${slug}/${trimmed}`;
-};
-
-const collectFiles = async (directory, baseHref, exclude = new Set()) => {
-	const results = [];
-	try {
-		const entries = await readdir(directory, { withFileTypes: true });
-		for (const entry of entries) {
-			if (entry.name.startsWith('.')) continue;
-			const fullPath = path.join(directory, entry.name);
-			const href = `${baseHref}/${entry.name}`;
-			if (exclude.has(entry.name)) continue;
-			if (entry.isDirectory()) {
-				results.push(...(await collectFiles(fullPath, href, exclude)));
-			} else {
-				results.push({ name: entry.name, href });
-			}
-		}
-	} catch (err) {
-		if (err.code !== 'ENOENT') throw err;
-	}
-	return results;
 };
 
 export async function load({ params }) {
@@ -87,17 +66,8 @@ export async function load({ params }) {
 		}
 	}
 
-	const excludeFiles = new Set(['info.md']);
-	if (merged.poster) {
-		const posterName = merged.poster.split('/').pop();
-		if (posterName) excludeFiles.add(posterName);
-	}
-
-	const attachments = await collectFiles(eventDir, `/events/${slug}`, excludeFiles);
-
 	return {
 		event: merged,
-		content: htmlContent,
-		attachments
+		content: htmlContent
 	};
 }
