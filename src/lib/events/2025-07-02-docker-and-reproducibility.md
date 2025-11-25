@@ -3,8 +3,8 @@ title: 'Docker & Reproducibility'
 date: '2025-07-02'
 location: 'Vertigo 9.06'
 speaker: 'Özgün Balaban'
-slides: '/events/2025-07-02_docker-and-reproducibility/slides/2025-07-02_docker-and-reproducibility.pdf'
-poster: '/events/2025-07-02_docker-and-reproducibility/poster.png'
+slides: '/events/2025-07-02-docker-and-reproducibility/slides/2025-07-02-docker-and-reproducibility.pdf'
+poster: '/events/2025-07-02-docker-and-reproducibility/poster.png'
 ---
 
 This Coding Café session focused on how Docker helps researchers create reproducible environments for notebooks, scripts, and data workflows.

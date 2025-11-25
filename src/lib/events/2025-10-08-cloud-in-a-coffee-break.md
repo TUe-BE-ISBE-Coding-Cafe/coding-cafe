@@ -3,7 +3,7 @@ title: 'Cloud in a Coffee Break'
 date: '2025-10-08'
 location: 'Vertigo 9.06'
 speaker: 'Özgün Balaban'
-slides: '/events/2025-07-02_docker-and-reproducibility/slides/2025-07-02_docker-and-reproducibility.pdf'
+slides: '/events/2025-07-02-docker-and-reproducibility/slides/2025-07-02-docker-and-reproducibility.pdf'
 poster: './poster.png'
 ---
 
