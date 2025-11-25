@@ -6,10 +6,10 @@ time: '15:00 - 16:30'
 location: 'Vertigo 9.06'
 speaker: 'Özgün Balaban'
 speaker_link: 'https://research.tue.nl/nl/persons/özgün-balaban'
-slides: './slides/2025-07-02_docker-and-reproducibility.pdf'
+slides: './slides/2025-07-02-docker-and-reproducibility.pdf'
 poster: './poster.png'
 zenodo: '10.5281/zenodo.15802618'
-repo: 'https://github.com/ISBE-TUe/coding-cafe/tree/main/static/events/2025-07-02_docker-and-reproducibility'
+repo: 'https://github.com/ISBE-TUe/coding-cafe/tree/main/static/events/2025-07-02-docker-and-reproducibility'
 tags:
   - docker
   - reproducibility
