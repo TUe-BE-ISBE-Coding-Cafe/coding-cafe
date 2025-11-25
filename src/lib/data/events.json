@@ -23,6 +23,7 @@
 		"speaker": "Özgün Balaban",
 		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slides": "/events/2025-docker/2024-docker-slides.pdf",
 		"slug": "2025-10-08-cloud-in-a-coffee-break",
 		"image": "/images/cloud.jpeg",
 		"tags": ["cloud-computing", "infrastructure", "SURF"],
@@ -37,41 +38,44 @@
 		"speaker": "Alex Donkers",
 		"speaker_link": "https://www.tue.nl/en/research/researchers/alex-donkers",
 		"speakerImage": "https://assets.w3.tue.nl/w/fileadmin/_processed_/6/0/csm_f2b4618cba898d40dbb04b06161a89e1_f0776d2824.jpg",
-		"description": "Coming soon",
+		"description": "In this Coding Cafe, we will explore the intersection of RDF/OWL and Large Language Models (LLMs). We will discuss how semantic web technologies can enhance the capabilities of LLMs and vice versa. Topics include:\n\n- Overview of RDF and OWL\n- Introduction to Large Language Models\n- How LLMs can leverage semantic data\n- Practical applications and case studies\n\nJoin us for an engaging session that bridges the gap between semantic web technologies and cutting-edge AI models.",
 		"slug": "2025-10-29",
+		"tags": ["RDF", "OWL", "Large Language Models", "Semantic Web"],
 		"calendar": "/calendar/october_coding_cafe.ics"
 		
 	},
 	{
-		"title": "To Be Announced",
+		"title": "Working with Data" ,
+		"subtitle" : "From database concepts to a mini-SQL demo",
 		"date": "2025-11-24",
-		"description": "Coming soon",
+		"description": "In this Coding Cafe, we will explore fundamental database concepts and demonstrate how to work with SQL through a mini-demo. Topics covered will include:\n\n- Overview of database types (relational vs. NoSQL)\n- Key concepts: tables, relationships, queries\n- Hands-on mini-SQL demo: creating tables, inserting data, and querying\n\nThis session is designed for researchers and students who want to enhance their data management skills and understand how to effectively use databases in their projects.",
 		"location": "Vertigo 9.06",
 		"time": "12:00 - 13:30",
 		"speaker": "Özgün Balaban",
 		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slug": "2025-11-24",
+		"tags": ["databases", "SQL", "NoSQL", "data management"],
 		"calendar": "/calendar/november_coding_cafe.ics"
 	},
 		{
+		"title": "From Markdown to Manuscript",
+		"date": "2026-01-28",
+		"description": "Coming soon",
+		"location": "Vertigo 9.06",
+		"time": "12:00 - 13:30",
+		"speaker": "To Be Announced",
+		"slug": "2026-01-28",
+		"calendar": "/calendar/2026_01_codingcafe.ics"
+	},
+		{
 		"title": "To Be Announced",
-		"date": "2026-01-24",
+		"date": "2026-02-25",
 		"description": "Coming soon",
 		"location": "Vertigo 9.06",
 		"time": "12:00 - 13:30",
 		"speaker": "To Be Announced",
 		"slug": "2025-11-24",
-		"calendar": "/calendar/november_coding_cafe.ics"
-	},
-		{
-		"title": "To Be Announced",
-		"date": "2025-11-24",
-		"description": "Coming soon",
-		"location": "Vertigo 9.06",
-		"time": "12:00 - 13:30",
-		"speaker": "To Be Announced",
-		"slug": "2025-11-24",
-		"calendar": "/calendar/november_coding_cafe.ics"
+		"calendar": "/calendar/2026_02_codingcafe.ics"
 	}
 ]
