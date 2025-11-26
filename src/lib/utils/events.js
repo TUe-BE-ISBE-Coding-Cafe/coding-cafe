@@ -2,7 +2,7 @@ export function groupEvents(events) {
 	const today = new Date();
 	today.setHours(0, 0, 0, 0);
 	const tomorrow = new Date(today);
-	tomorrow.setDate(today.getDate() - 1);
+	tomorrow.setDate(today.getDate() - 2);
 
 	const upcoming = [];
 	const past = [];
