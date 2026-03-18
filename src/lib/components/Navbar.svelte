@@ -1,6 +1,7 @@
 <script>
 	let navItems = [
 		{ name: 'Home', href: '/' },
+		{ name: 'Agenda', href: '/agenda' },
 		{ name: 'About', href: '/about' }
 	];
 </script>
