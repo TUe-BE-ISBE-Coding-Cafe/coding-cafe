@@ -76,22 +76,20 @@
 		"calendar": "/calendar/november_coding_cafe.ics"
 	},
 	{
-		"title": "Cancelled",
-		"date": "2026-01-28",
+		"title": "Version Control: Getting Started with Git",
+		"date": "2026-03-25",
 		"description": "Coming soon",
 		"location": "Vertigo 9.06",
 		"time": "12:00 - 13:30",
-		"speaker": "To Be Announced",
-		"slug": "2026-01-28"
-	},
-	{
-		"title": "To Be Announced",
-		"date": "2026-02-25",
-		"description": "Coming soon",
-		"location": "Vertigo 9.06",
-		"time": "12:00 - 13:30",
-		"speaker": "To Be Announced",
-		"slug": "2025-11-24",
-		"calendar": "/calendar/2026_02_codingcafe.ics"
+		"speaker": "Özgün Balaban",
+		"slug": "2026-03-25",
+		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"tags": [
+			"version control",
+			"Git",
+			"Github",
+			"Gitlab"
+		]
 	}
 ]
