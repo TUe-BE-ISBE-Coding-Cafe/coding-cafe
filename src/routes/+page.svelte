@@ -1,55 +1,345 @@
-<section class="bg-[radial-gradient(circle_at_top_left,#ffe1cf_0%,transparent_42%),linear-gradient(180deg,#fff7f2_0%,#ffffff_75%)]">
-	<div class="mx-auto max-w-screen-xl px-8 py-18">
-		<div class="grid gap-10 lg:grid-cols-[1.25fr_0.95fr] lg:items-center">
-			<div class="space-y-6">
-				<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[#C81919]">TU/e BE Coding Cafe</p>
-				<h1 class="max-w-3xl text-5xl font-black tracking-tight text-zinc-900 md:text-6xl">
-					Code, connect, and share practical research workflows.
-				</h1>
-				<p class="max-w-2xl text-lg leading-8 text-zinc-600">
-					The Coding Cafe is a monthly community event for researchers and students who want to
-					exchange tools, workflows, and reproducible coding practices in a relaxed setting.
-				</p>
+<script>
+	import { onMount } from 'svelte';
 
-				<div class="flex flex-wrap gap-4">
-					<a
-						href="/agenda"
-						class="rounded-full bg-[#C81919] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-[0_18px_36px_-18px_rgba(200,25,25,0.55)] transition hover:-translate-y-0.5 hover:bg-[#aa1616]"
-					>
-						View agenda
-					</a>
-					<a
-						href="/about"
-						class="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-800 transition hover:border-zinc-500"
-					>
-						About the cafe
-					</a>
-				</div>
-			</div>
+	const teamsUrl =
+		'https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64';
+	const githubUrl = 'https://github.com/ISBE-TUe/coding-cafe';
 
-			<div class="rounded-[2rem] border border-zinc-200 bg-white/80 p-8 shadow-[0_28px_80px_-36px_rgba(24,24,27,0.32)] backdrop-blur">
-				<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#C81919]">What you will find</p>
-				<div class="mt-6 space-y-5">
-					<div class="rounded-2xl bg-zinc-50 p-5">
-						<h2 class="text-xl font-bold tracking-tight text-zinc-900">Upcoming sessions</h2>
-						<p class="mt-2 text-sm leading-6 text-zinc-600">
-							Check the next talks, rooms, timings, and calendar downloads in one place.
+	const sessionParts = [
+		{
+			label: 'PART 1 · 15 MIN',
+			title: 'Short introduction',
+			body: 'A 15-minute talk introducing a tool, concept, or workflow relevant to research coding.'
+		},
+		{
+			label: 'PART 2 · 60 MIN',
+			title: 'Coding session',
+			body: 'Work on your own code, try things out, or help others with their problems.'
+		}
+	];
+
+	const checkItems = [
+		"You don't need to be an expert",
+		'You can bring your own problem',
+		'You can just come and observe',
+		'You can leave anytime'
+	];
+
+	const communityPoints = ['Learn from others', 'Share your work', 'Ask questions freely'];
+
+	const resourceCards = [
+		{
+			kicker: '📖 Guides',
+			body: 'Step-by-step walkthroughs for common tasks'
+		},
+		{
+			kicker: '🛠️ Tools',
+			body: 'Curated tools for researchers who code'
+		},
+		{
+			kicker: '🎓 Tutorials',
+			body: 'Self-paced learning for all levels'
+		},
+		{
+			kicker: '✅ Best Practices',
+			body: 'Clean, reproducible, shareable code'
+		}
+	];
+
+	const screens = [
+		{ id: 'identity', label: 'Identity' },
+		{ id: 'structure', label: 'How it works' },
+		{ id: 'not-a-course', label: "Let's be clear" },
+		{ id: 'events', label: 'Upcoming' },
+		{ id: 'community', label: 'Community' },
+		{ id: 'resources', label: 'Go deeper' }
+	];
+
+	let activeScreen = 0;
+	let identityEl;
+	let structureEl;
+	let clarityEl;
+	let eventsEl;
+	let communityEl;
+	let resourcesEl;
+
+	function scrollToScreen(index) {
+		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl, resourcesEl];
+		screenEls[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+
+	onMount(() => {
+		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl, resourcesEl];
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					const index = Number(entry.target.getAttribute('data-screen-index'));
+					if (!Number.isNaN(index)) activeScreen = index;
+				}
+			},
+			{
+				threshold: 0.6
+			}
+		);
+
+		for (const section of screenEls) {
+			if (section) observer.observe(section);
+		}
+
+		return () => observer.disconnect();
+	});
+</script>
+
+<svelte:head>
+	<title>BE Coding Cafe</title>
+</svelte:head>
+
+<div class="hero-shell">
+	<div class="hero-viewport">
+		<div class="hero-progress">
+			<div class="hero-progress__rail">
+				{#each screens as screen, index}
+					<button
+						type="button"
+						class:hero-progress__dot--active={index === activeScreen}
+						class="hero-progress__dot"
+						aria-label={`Go to ${screen.label}`}
+						on:click={() => scrollToScreen(index)}
+					></button>
+				{/each}
+			</div>
+			<p class="hero-progress__count">{String(activeScreen + 1).padStart(2, '0')} / 06</p>
+		</div>
+
+		<div class="hero-scroll">
+			<section
+				bind:this={identityEl}
+				data-screen-index="0"
+				id="identity"
+				class="hero-screen hero-screen--identity"
+			>
+				<div class:hero-content--active={activeScreen === 0} class="hero-content">
+					<div class="hero-copy">
+						<p class="hero-eyebrow">BE Coding Cafe</p>
+						<h1 class="hero-title">BE Coding Caf&#233;</h1>
+						<p class="hero-body">
+							A place where researchers learn, experiment, and solve coding problems together.
 						</p>
+						<p class="hero-tagline">SHORT TALKS · HANDS-ON CODING · PEER SUPPORT</p>
+
+						<div class="hero-actions">
+							<button type="button" class="hero-btn hero-btn--primary" on:click={() => scrollToScreen(3)}>
+								Explore sessions ↓
+							</button>
+							<button type="button" class="hero-btn hero-btn--secondary" on:click={() => scrollToScreen(1)}>
+								How it works
+							</button>
+						</div>
 					</div>
-					<div class="rounded-2xl bg-zinc-50 p-5">
-						<h2 class="text-xl font-bold tracking-tight text-zinc-900">Past materials</h2>
-						<p class="mt-2 text-sm leading-6 text-zinc-600">
-							Open archived event pages for slides, GitHub exercises, and follow-up material.
-						</p>
-					</div>
-					<div class="rounded-2xl bg-zinc-50 p-5">
-						<h2 class="text-xl font-bold tracking-tight text-zinc-900">Flexible browsing</h2>
-						<p class="mt-2 text-sm leading-6 text-zinc-600">
-							Use the agenda page in list view for detail or grid view for faster scanning.
-						</p>
+
+					<div class="hero-card hero-card--identity">
+						<div class="hero-card__header">
+							<p class="hero-card__label">Identity</p>
+							<p class="hero-card__meta">Scroll ↓</p>
+						</div>
+
+						<div class="hero-mini-grid">
+							<div class="hero-mini-card">
+								<p class="hero-mini-card__eyebrow">What it is</p>
+								<p class="hero-mini-card__text">An open, practical space for research coding.</p>
+							</div>
+							<div class="hero-mini-card">
+								<p class="hero-mini-card__eyebrow">How it feels</p>
+								<p class="hero-mini-card__text">Relaxed enough to ask, focused enough to build.</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+
+			<section
+				bind:this={structureEl}
+				data-screen-index="1"
+				id="structure"
+				class="hero-screen hero-screen--structure"
+			>
+				<div class:hero-content--active={activeScreen === 1} class="hero-content hero-content--stack">
+					<div class="hero-copy hero-copy--wide">
+						<p class="hero-eyebrow">How it works</p>
+						<h2 class="hero-title hero-title--section">What happens at a session?</h2>
+					</div>
+
+					<div class="hero-grid hero-grid--split">
+						{#each sessionParts as part}
+							<article class="hero-card hero-card--soft">
+								<p class="hero-card__label">{part.label}</p>
+								<h3 class="hero-card__title">{part.title}</h3>
+								<p class="hero-card__body">{part.body}</p>
+							</article>
+						{/each}
+					</div>
+
+					<div class="hero-banner">
+						<p>☕ Bring your laptop. Work on real problems.</p>
+						<button type="button" class="hero-link" on:click={() => scrollToScreen(2)}>
+							Next ↓
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section
+				bind:this={clarityEl}
+				data-screen-index="2"
+				id="not-a-course"
+				class="hero-screen hero-screen--clarity"
+			>
+				<div class:hero-content--active={activeScreen === 2} class="hero-content">
+					<div class="hero-copy">
+						<p class="hero-eyebrow">Let's be clear</p>
+						<h2 class="hero-title hero-title--section">This is not a course.</h2>
+						<p class="hero-body">
+							The format is intentionally lightweight, flexible, and welcoming to different levels
+							of experience.
+						</p>
+					</div>
+
+					<div class="hero-card">
+						<div class="hero-grid hero-grid--checks">
+							{#each checkItems as item}
+								<div class="hero-check">
+									<span class="hero-check__mark">✓</span>
+									<p>{item}</p>
+								</div>
+							{/each}
+						</div>
+						<p class="hero-footer-line">Everyone is welcome. Every level.</p>
+					</div>
+				</div>
+			</section>
+
+			<section
+				bind:this={eventsEl}
+				data-screen-index="3"
+				id="events"
+				class="hero-screen hero-screen--events"
+			>
+				<div class:hero-content--active={activeScreen === 3} class="hero-content">
+					<div class="hero-copy">
+						<p class="hero-eyebrow">Upcoming</p>
+						<h2 class="hero-title hero-title--section">Next Coding Caf&#233;</h2>
+						<p class="hero-body">Join even if the topic is new to you</p>
+					</div>
+
+					<div class="hero-card hero-card--event">
+						<div class="hero-event-top">
+							<p class="hero-badge">APRIL 2025</p>
+							<p class="hero-supporting">Monthly session</p>
+						</div>
+
+						<div class="hero-event-main">
+							<div>
+								<p class="hero-info-label">Date</p>
+								<p class="hero-date">18 April</p>
+							</div>
+							<div>
+								<p class="hero-info-label">Topic</p>
+								<h3 class="hero-card__title">AI tools for research coding</h3>
+							</div>
+						</div>
+
+						<div class="hero-grid hero-grid--meta">
+							<div class="hero-mini-card">
+								<p class="hero-mini-card__eyebrow">Location</p>
+								<p class="hero-mini-card__text">Atlas Building</p>
+							</div>
+							<div class="hero-mini-card">
+								<p class="hero-mini-card__eyebrow">Time</p>
+								<p class="hero-mini-card__text">16:00 – 17:30</p>
+							</div>
+						</div>
+
+						<div class="hero-actions">
+							<a href="/agenda" class="hero-btn hero-btn--primary">Join the next session</a>
+							<a href="/agenda" class="hero-btn hero-btn--secondary">See all events</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section
+				bind:this={communityEl}
+				data-screen-index="4"
+				id="community"
+				class="hero-screen hero-screen--community"
+			>
+				<div class:hero-content--active={activeScreen === 4} class="hero-content">
+					<div class="hero-copy">
+						<p class="hero-eyebrow">Community</p>
+						<h2 class="hero-title hero-title--section">A growing community of researchers</h2>
+					</div>
+
+					<div class="hero-card">
+						<div class="hero-list">
+							{#each communityPoints as point}
+								<div class="hero-list__item">
+									<span class="hero-list__dot"></span>
+									<p>{point}</p>
+								</div>
+							{/each}
+						</div>
+
+						<div class="hero-community-footer">
+							<div>
+								<a href={teamsUrl} target="_blank" rel="noreferrer" class="hero-link hero-link--large">
+									Join the community ↗
+								</a>
+								<p class="hero-sub-label">via Microsoft Teams</p>
+							</div>
+							<button type="button" class="hero-link" on:click={() => scrollToScreen(5)}>
+								Resources ↓
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section
+				bind:this={resourcesEl}
+				data-screen-index="5"
+				id="resources"
+				class="hero-screen hero-screen--resources"
+			>
+				<div class:hero-content--active={activeScreen === 5} class="hero-content">
+					<div class="hero-copy">
+						<p class="hero-eyebrow">Go deeper</p>
+						<h2 class="hero-title hero-title--section">Resources for research coding</h2>
+						<p class="hero-body">Everything you need to keep learning between sessions.</p>
+					</div>
+
+					<div class="hero-card">
+						<div class="hero-grid hero-grid--resources">
+							{#each resourceCards as card}
+								<article class="hero-mini-card">
+									<p class="hero-mini-card__text hero-mini-card__text--strong">{card.kicker}</p>
+									<p class="hero-card__body">{card.body}</p>
+								</article>
+							{/each}
+						</div>
+
+						<div class="hero-actions">
+							<a href={githubUrl} target="_blank" rel="noreferrer" class="hero-btn hero-btn--primary">
+								Explore resources →
+							</a>
+							<button type="button" class="hero-btn hero-btn--secondary" on:click={() => scrollToScreen(0)}>
+								Back to top ↑
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
-</section>
+</div>
