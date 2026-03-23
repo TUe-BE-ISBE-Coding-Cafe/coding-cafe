@@ -386,6 +386,26 @@ body {
 	color: #18181b;
 }
 
+.hero-date-stack {
+	margin-top: 0.6rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	line-height: 1;
+}
+
+.hero-date-stack .hero-date {
+	margin-top: 0;
+}
+
+.hero-date--month {
+	margin-top: 0.35rem;
+	font-size: clamp(2rem, 3vw, 2.8rem);
+	font-weight: 900;
+	letter-spacing: -0.04em;
+	color: #18181b;
+}
+
 .hero-badge {
 	display: inline-flex;
 	border-radius: 9999px;
@@ -401,6 +421,39 @@ body {
 .hero-list {
 	display: grid;
 	gap: 1rem;
+}
+
+.hero-speaker-card {
+	margin-top: 1rem;
+	border-radius: 1.5rem;
+	background: #fafafa;
+	padding: 1.25rem;
+}
+
+.hero-speaker-card__inner {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.hero-speaker-card__image {
+	height: 4.5rem;
+	width: 4.5rem;
+	flex: none;
+	border-radius: 1.1rem;
+	object-fit: cover;
+	box-shadow: 0 14px 24px -18px rgba(24, 24, 27, 0.35);
+}
+
+.hero-speaker-card__link {
+	margin-top: 0.6rem;
+	display: inline-flex;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #c81919;
 }
 
 .hero-list__item {
@@ -558,6 +611,10 @@ body {
 	.hero-community-footer,
 	.hero-banner {
 		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.hero-speaker-card__inner {
 		align-items: flex-start;
 	}
 
