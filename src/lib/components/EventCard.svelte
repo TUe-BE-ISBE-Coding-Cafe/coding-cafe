@@ -1,4 +1,6 @@
 <script>
+	import { formatEventTime } from '$lib/utils/events.js';
+
 	export let event;
 	export let variant = 'upcoming'; // or 'past'
 
@@ -10,6 +12,8 @@
 			year: 'numeric'
 		}).format(date);
 	};
+
+	$: eventTime = formatEventTime(event);
 </script>
 
 {#if variant === 'upcoming'}
@@ -23,7 +27,7 @@
 		>
 			<p class="text-2xl font-bold">{formatDate(event.date)}</p>
 			<p class="text-xl">Wednesday</p>
-			{#if event.time}<p class="text-lg font-semibold">{event.time}</p>{/if}
+			{#if eventTime}<p class="text-lg font-semibold">{eventTime}</p>{/if}
 			{#if event.location}<p class="text-lg font-medium">{event.location}</p>{/if}
 		</div>
 
@@ -94,7 +98,7 @@
 		>
 			<p class="text-2xl font-bold">{formatDate(event.date)}</p>
 			<p class="text-xl">Wednesday</p>
-			{#if event.time}<p class="text-lg font-semibold">{event.time}</p>{/if}
+			{#if eventTime}<p class="text-lg font-semibold">{eventTime}</p>{/if}
 			{#if event.location}<p class="text-lg font-medium">{event.location}</p>{/if}
 		</div>
 

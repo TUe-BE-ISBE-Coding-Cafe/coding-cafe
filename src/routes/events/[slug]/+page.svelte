@@ -1,6 +1,9 @@
 <script>
+	import { formatEventTime } from '$lib/utils/events.js';
+
 	export let data;
 	const { event, content } = data;
+	const eventTime = formatEventTime(event);
 
 	const formatDate = (isoString) => {
 		if (!isoString) return 'No date provided';
@@ -24,8 +27,8 @@
 				{#if event.date}
 					<p>📅 {formatDate(event.date)}</p>
 				{/if}
-				{#if event.time}
-					<p>🕒 {event.time}</p>
+				{#if eventTime}
+					<p>🕒 {eventTime}</p>
 				{/if}
 				{#if event.location}
 					<p>📍 {event.location}</p>

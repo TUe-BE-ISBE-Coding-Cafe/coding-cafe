@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import events from '$lib/data/events.json';
-	import { groupEvents } from '$lib/utils/events.js';
+	import { formatEventTime, groupEvents } from '$lib/utils/events.js';
 
 	const teamsUrl =
 		'https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64';
@@ -29,39 +29,22 @@
 
 	const communityPoints = ['Learn from others', 'Share your work', 'Ask questions freely'];
 
-	const resourceCards = [
-		{
-			kicker: '📖 Guides',
-			body: 'Step-by-step walkthroughs for common tasks'
-		},
-		{
-			kicker: '🛠️ Tools',
-			body: 'Curated tools for researchers who code'
-		},
-		{
-			kicker: '🎓 Tutorials',
-			body: 'Self-paced learning for all levels'
-		},
-		{
-			kicker: '✅ Best Practices',
-			body: 'Clean, reproducible, shareable code'
-		}
-	];
-
 	const screens = [
 		{ id: 'identity', label: 'Identity' },
 		{ id: 'structure', label: 'How it works' },
 		{ id: 'not-a-course', label: "Let's be clear" },
 		{ id: 'events', label: 'Upcoming' },
-		{ id: 'community', label: 'Community' },
-		{ id: 'resources', label: 'Go deeper' }
+		{ id: 'community', label: 'Community' }
 	];
 
 	const { upcoming } = groupEvents(events);
 	const nextEvent = upcoming[0] ?? null;
+	const nextEventTime = nextEvent ? formatEventTime(nextEvent) : '';
 
 	function formatMonthYear(dateString) {
-		return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(dateString));
+		return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(
+			new Date(dateString)
+		);
 	}
 
 	function formatDay(dateString) {
@@ -78,15 +61,14 @@
 	let clarityEl;
 	let eventsEl;
 	let communityEl;
-	let resourcesEl;
 
 	function scrollToScreen(index) {
-		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl, resourcesEl];
+		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl];
 		screenEls[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 
 	onMount(() => {
-		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl, resourcesEl];
+		const screenEls = [identityEl, structureEl, clarityEl, eventsEl, communityEl];
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -127,7 +109,7 @@
 					></button>
 				{/each}
 			</div>
-			<p class="hero-progress__count">{String(activeScreen + 1).padStart(2, '0')} / 06</p>
+			<p class="hero-progress__count">{String(activeScreen + 1).padStart(2, '0')} / 05</p>
 		</div>
 
 		<div class="hero-scroll">
@@ -147,20 +129,18 @@
 						<p class="hero-tagline">SHORT TALKS · HANDS-ON CODING · PEER SUPPORT</p>
 
 						<div class="hero-actions">
-							<button type="button" class="hero-btn hero-btn--primary" on:click={() => scrollToScreen(3)}>
-								Explore sessions ↓
-							</button>
-							<button type="button" class="hero-btn hero-btn--secondary" on:click={() => scrollToScreen(1)}>
-								How it works
+							<button
+								type="button"
+								class="hero-btn hero-btn--primary"
+								on:click={() => scrollToScreen(3)}
+							>
+								Explore future and past sessions
 							</button>
 						</div>
 					</div>
 
 					<div class="hero-card hero-card--identity">
-						<div class="hero-card__header">
-							<p class="hero-card__label">Identity</p>
-							<p class="hero-card__meta">Scroll ↓</p>
-						</div>
+						<div class="hero-card__header"></div>
 
 						<div class="hero-mini-grid">
 							<div class="hero-mini-card">
@@ -174,6 +154,13 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
+					<span class="hero-scroll-indicator__text">Scroll</span>
+					<span class="hero-scroll-indicator__track">
+						<span class="hero-scroll-indicator__segment"></span>
+					</span>
+				</div>
 			</section>
 
 			<section
@@ -182,7 +169,10 @@
 				id="structure"
 				class="hero-screen hero-screen--structure"
 			>
-				<div class:hero-content--active={activeScreen === 1} class="hero-content hero-content--stack">
+				<div
+					class:hero-content--active={activeScreen === 1}
+					class="hero-content hero-content--stack"
+				>
 					<div class="hero-copy hero-copy--wide">
 						<p class="hero-eyebrow">How it works</p>
 						<h2 class="hero-title hero-title--section">What happens at a session?</h2>
@@ -205,6 +195,13 @@
 						</button>
 					</div>
 				</div>
+
+				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
+					<span class="hero-scroll-indicator__text">Scroll</span>
+					<span class="hero-scroll-indicator__track">
+						<span class="hero-scroll-indicator__segment"></span>
+					</span>
+				</div>
 			</section>
 
 			<section
@@ -216,7 +213,9 @@
 				<div class:hero-content--active={activeScreen === 2} class="hero-content">
 					<div class="hero-copy">
 						<p class="hero-eyebrow">Let's be clear</p>
-						<h2 class="hero-title hero-title--section">This is not a course / workshop / training.</h2>
+						<h2 class="hero-title hero-title--section">
+							This is not a course / workshop / training.
+						</h2>
 						<p class="hero-body">
 							The format is intentionally lightweight, flexible, and welcoming to different levels
 							of experience.
@@ -234,6 +233,13 @@
 						</div>
 						<p class="hero-footer-line">Everyone is welcome. Every level.</p>
 					</div>
+				</div>
+
+				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
+					<span class="hero-scroll-indicator__text">Scroll</span>
+					<span class="hero-scroll-indicator__track">
+						<span class="hero-scroll-indicator__segment"></span>
+					</span>
 				</div>
 			</section>
 
@@ -280,7 +286,7 @@
 								</div>
 								<div class="hero-mini-card">
 									<p class="hero-mini-card__eyebrow">Time</p>
-									<p class="hero-mini-card__text">{nextEvent.time ?? 'Time to be announced'}</p>
+									<p class="hero-mini-card__text">{nextEventTime || 'Time to be announced'}</p>
 								</div>
 							</div>
 
@@ -331,7 +337,9 @@
 								</div>
 								<div>
 									<p class="hero-info-label">Update</p>
-									<h3 class="hero-card__title">The next Coding Café will appear here once published.</h3>
+									<h3 class="hero-card__title">
+										The next Coding Café will appear here once published.
+									</h3>
 								</div>
 							</div>
 
@@ -340,6 +348,13 @@
 							</div>
 						</div>
 					{/if}
+				</div>
+
+				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
+					<span class="hero-scroll-indicator__text">Scroll</span>
+					<span class="hero-scroll-indicator__track">
+						<span class="hero-scroll-indicator__segment"></span>
+					</span>
 				</div>
 			</section>
 
@@ -367,49 +382,17 @@
 
 						<div class="hero-community-footer">
 							<div>
-								<a href={teamsUrl} target="_blank" rel="noreferrer" class="hero-link hero-link--large">
+								<a
+									href={teamsUrl}
+									target="_blank"
+									rel="noreferrer"
+									class="hero-link hero-link--large"
+								>
 									Join the community ↗
 								</a>
 								<p class="hero-sub-label">via Microsoft Teams</p>
 							</div>
-							<button type="button" class="hero-link" on:click={() => scrollToScreen(5)}>
-								Resources ↓
-							</button>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section
-				bind:this={resourcesEl}
-				data-screen-index="5"
-				id="resources"
-				class="hero-screen hero-screen--resources"
-			>
-				<div class:hero-content--active={activeScreen === 5} class="hero-content">
-					<div class="hero-copy">
-						<p class="hero-eyebrow">Go deeper</p>
-						<h2 class="hero-title hero-title--section">Resources for research coding</h2>
-						<p class="hero-body">Everything you need to keep learning between sessions.</p>
-					</div>
-
-					<div class="hero-card">
-						<div class="hero-grid hero-grid--resources">
-							{#each resourceCards as card}
-								<article class="hero-mini-card">
-									<p class="hero-mini-card__text hero-mini-card__text--strong">{card.kicker}</p>
-									<p class="hero-card__body">{card.body}</p>
-								</article>
-							{/each}
-						</div>
-
-						<div class="hero-actions">
-							<a href={githubUrl} target="_blank" rel="noreferrer" class="hero-btn hero-btn--primary">
-								Explore resources →
-							</a>
-							<button type="button" class="hero-btn hero-btn--secondary" on:click={() => scrollToScreen(0)}>
-								Back to top ↑
-							</button>
+							<a href="/resources" class="hero-link">Resources ↗</a>
 						</div>
 					</div>
 				</div>

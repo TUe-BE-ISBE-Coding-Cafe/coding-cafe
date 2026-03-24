@@ -1,0 +1,520 @@
+[
+	{
+		"id": "getting-started",
+		"title": "Getting Started with Research Software",
+		"eyebrow": "Foundations",
+		"cta": "Starter path",
+		"items": [
+			{
+				"id": "intro-research-programming",
+				"title": "Introduction to Research Programming",
+				"description": "Core coding habits for clean, reusable scripts in research projects.",
+				"level": "Beginner",
+				"format": "Tutorial",
+				"tags": ["Python", "Beginner", "Research"],
+				"duration": "35 min",
+				"visual": "aurora",
+				"meta": "Hands-on"
+			},
+			{
+				"id": "command-line-basics",
+				"title": "Command Line Basics",
+				"description": "Learn shell commands that make data work faster and more reproducible.",
+				"level": "Beginner",
+				"format": "Slides",
+				"tags": ["Shell", "CLI", "Beginner"],
+				"duration": "20 min",
+				"visual": "terminal",
+				"meta": "Quick start"
+			},
+			{
+				"id": "setup-environment",
+				"title": "Setting Up Your Environment",
+				"description": "A setup guide for editors, package managers, and virtual environments.",
+				"level": "Beginner",
+				"format": "Guide",
+				"tags": ["IDE", "Setup", "Conda"],
+				"duration": "25 min",
+				"visual": "mesh",
+				"meta": "Checklist"
+			},
+			{
+				"id": "r-for-research-teams",
+				"title": "R for Research Teams",
+				"description": "An approachable introduction to scripting, plotting, and package workflows in R.",
+				"level": "Beginner",
+				"format": "Tutorial",
+				"tags": ["R", "Data", "Beginner"],
+				"duration": "40 min",
+				"visual": "panel",
+				"meta": "Walkthrough"
+			},
+			{
+				"id": "notebook-hygiene",
+				"title": "Notebook Hygiene",
+				"description": "Make exploratory notebooks easier to share, rerun, and publish.",
+				"level": "Intermediate",
+				"format": "Video",
+				"tags": ["Jupyter", "Notebooks", "Practice"],
+				"duration": "18 min",
+				"visual": "orbit",
+				"meta": "Recorded"
+			},
+			{
+				"id": "documentation-small-teams",
+				"title": "Documentation in Small Teams",
+				"description": "Simple templates for README files, handover notes, and project orientation.",
+				"level": "Beginner",
+				"format": "Slides",
+				"tags": ["Docs", "Teams", "Workflow"],
+				"duration": "15 min",
+				"visual": "grid",
+				"meta": "Template pack"
+			}
+		]
+	},
+	{
+		"id": "version-control",
+		"title": "Version Control & Git",
+		"eyebrow": "Collaboration",
+		"cta": "View all",
+		"items": [
+			{
+				"id": "mastering-git-branches",
+				"title": "Mastering Git Branches",
+				"description": "Branching strategies, conflict resolution, and review-friendly commits.",
+				"level": "Intermediate",
+				"format": "Tutorial",
+				"tags": ["Git", "Workflow", "Essential"],
+				"duration": "30 min",
+				"visual": "terminal",
+				"meta": "Team-ready"
+			},
+			{
+				"id": "remote-collaboration-github",
+				"title": "Remote Collaboration on GitHub",
+				"description": "Use pull requests, issues, and boards to coordinate research software work.",
+				"level": "Intermediate",
+				"format": "Guide",
+				"tags": ["GitHub", "Review", "Open Science"],
+				"duration": "28 min",
+				"visual": "shield",
+				"meta": "Guide"
+			},
+			{
+				"id": "pro-git-book",
+				"title": "Pro Git Book",
+				"description": "The reference guide for Git, from basics to internals and advanced workflows.",
+				"level": "Intermediate",
+				"format": "Book",
+				"tags": ["Git", "Reference", "Free"],
+				"duration": "Self-paced",
+				"visual": "panel",
+				"meta": "Open book"
+			},
+			{
+				"id": "release-tags-changelogs",
+				"title": "Release Tags & Changelogs",
+				"description": "A compact workflow for publishing versions that others can cite and reuse.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["Release", "Citation", "Versioning"],
+				"duration": "16 min",
+				"visual": "aurora",
+				"meta": "Session notes"
+			},
+			{
+				"id": "git-for-supervisors",
+				"title": "Git for Supervisors",
+				"description": "A non-technical overview for reviewing progress and keeping work auditable.",
+				"level": "Beginner",
+				"format": "Video",
+				"tags": ["Git", "Management", "Beginner"],
+				"duration": "12 min",
+				"visual": "grid",
+				"meta": "Overview"
+			},
+			{
+				"id": "recovering-git-mistakes",
+				"title": "Recovering from Git Mistakes",
+				"description": "A decision guide for undoing resets, merges, and accidental deletions safely.",
+				"level": "Advanced",
+				"format": "Guide",
+				"tags": ["Git", "Troubleshooting", "Advanced"],
+				"duration": "22 min",
+				"visual": "mesh",
+				"meta": "Recovery"
+			}
+		]
+	},
+	{
+		"id": "fair-reproducibility",
+		"title": "Reproducibility & FAIR Principles",
+		"eyebrow": "Research quality",
+		"cta": "Featured guides",
+		"items": [
+			{
+				"id": "fair-checklist",
+				"title": "FAIR Data Management Checklist",
+				"description": "A practical checklist for making software and data easier to find and reuse.",
+				"level": "Beginner",
+				"format": "Guide",
+				"tags": ["FAIR", "Checklist", "Featured"],
+				"duration": "10 min",
+				"visual": "spotlight",
+				"meta": "Featured"
+			},
+			{
+				"id": "turing-way",
+				"title": "The Turing Way",
+				"description": "A handbook for reproducible, ethical, and collaborative data science practice.",
+				"level": "Intermediate",
+				"format": "Guide",
+				"tags": ["Open Science", "Reproducibility", "FAIR"],
+				"duration": "Self-paced",
+				"visual": "orbit",
+				"meta": "Reference"
+			},
+			{
+				"id": "fair-software-route",
+				"title": "Fair Software Route",
+				"description": "A step-by-step route to stronger, more reusable research software.",
+				"level": "Beginner",
+				"format": "Tutorial",
+				"tags": ["FAIR", "Open Science", "Roadmap"],
+				"duration": "25 min",
+				"visual": "mesh",
+				"meta": "Interactive"
+			},
+			{
+				"id": "software-management-plans",
+				"title": "Software Management Plans",
+				"description": "Guidance for writing software management plans in grant and project work.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["Management", "Policy", "FAIR"],
+				"duration": "18 min",
+				"visual": "panel",
+				"meta": "Policy"
+			},
+			{
+				"id": "containerization-research",
+				"title": "Containerization for Research",
+				"description": "Ensure code runs consistently across machines, teams, and publications.",
+				"level": "Intermediate",
+				"format": "Code",
+				"tags": ["Docker", "Reproducibility", "Intermediate"],
+				"duration": "45 min",
+				"visual": "shield",
+				"meta": "Hands-on"
+			},
+			{
+				"id": "local-script-to-tool",
+				"title": "From Local Script to Reusable Tool",
+				"description": "Transform one-off analysis code into a documented and testable package.",
+				"level": "Advanced",
+				"format": "Video",
+				"tags": ["Packaging", "Reuse", "Advanced"],
+				"duration": "32 min",
+				"visual": "aurora",
+				"meta": "Talk"
+			}
+		]
+	},
+	{
+		"id": "data-visualization",
+		"title": "Data Handling & Visualization",
+		"eyebrow": "Analysis",
+		"cta": "See data resources",
+		"items": [
+			{
+				"id": "tabular-data-checks",
+				"title": "Tabular Data Sanity Checks",
+				"description": "Validate structure, missing values, and assumptions before analysis begins.",
+				"level": "Beginner",
+				"format": "Tutorial",
+				"tags": ["Data", "Validation", "Python"],
+				"duration": "24 min",
+				"visual": "grid",
+				"meta": "Applied"
+			},
+			{
+				"id": "visual-storytelling-plots",
+				"title": "Visual Storytelling with Plots",
+				"description": "Choose chart forms that clarify evidence instead of decorating it.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["Visualization", "Communication", "R"],
+				"duration": "20 min",
+				"visual": "mesh",
+				"meta": "Design notes"
+			},
+			{
+				"id": "data-pipelines-pandas",
+				"title": "Data Pipelines with Pandas",
+				"description": "Build data-cleaning steps that are readable, testable, and easy to rerun.",
+				"level": "Intermediate",
+				"format": "Code",
+				"tags": ["Python", "Pandas", "Workflow"],
+				"duration": "50 min",
+				"visual": "terminal",
+				"meta": "Notebook"
+			},
+			{
+				"id": "research-dashboards",
+				"title": "Research Dashboards",
+				"description": "When to use dashboards, what to show, and how to avoid confusing users.",
+				"level": "Intermediate",
+				"format": "Video",
+				"tags": ["Dashboards", "UX", "Data"],
+				"duration": "22 min",
+				"visual": "panel",
+				"meta": "Recorded"
+			},
+			{
+				"id": "color-accessibility-figures",
+				"title": "Color & Accessibility in Figures",
+				"description": "Make plots legible in print, on screens, and for different readers.",
+				"level": "Beginner",
+				"format": "Guide",
+				"tags": ["Accessibility", "Visualization", "Design"],
+				"duration": "14 min",
+				"visual": "spotlight",
+				"meta": "Guide"
+			},
+			{
+				"id": "spatial-data-workflows",
+				"title": "Spatial Data Workflows",
+				"description": "Organize geospatial analysis work so it can be repeated and reviewed later.",
+				"level": "Advanced",
+				"format": "Tutorial",
+				"tags": ["GIS", "Data", "Advanced"],
+				"duration": "55 min",
+				"visual": "orbit",
+				"meta": "Lab notes"
+			}
+		]
+	},
+	{
+		"id": "automation",
+		"title": "Workflows & Automation (CI/CD)",
+		"eyebrow": "Delivery",
+		"cta": "Automation path",
+		"items": [
+			{
+				"id": "continuous-testing-research-code",
+				"title": "Continuous Testing for Research Code",
+				"description": "A lightweight CI setup that catches breakage without slowing researchers down.",
+				"level": "Intermediate",
+				"format": "Code",
+				"tags": ["CI", "Testing", "GitHub"],
+				"duration": "40 min",
+				"visual": "shield",
+				"meta": "Starter kit"
+			},
+			{
+				"id": "workflow-automation-make",
+				"title": "Workflow Automation with Make",
+				"description": "Use task runners to turn repetitive analysis steps into repeatable commands.",
+				"level": "Intermediate",
+				"format": "Tutorial",
+				"tags": ["Automation", "Make", "CLI"],
+				"duration": "26 min",
+				"visual": "terminal",
+				"meta": "Practical"
+			},
+			{
+				"id": "scheduled-data-refreshes",
+				"title": "Scheduled Data Refreshes",
+				"description": "A pattern for refreshing datasets and reports on a reliable cadence.",
+				"level": "Advanced",
+				"format": "Guide",
+				"tags": ["Pipelines", "Scheduling", "Advanced"],
+				"duration": "18 min",
+				"visual": "grid",
+				"meta": "Ops"
+			},
+			{
+				"id": "quality-gates-small-teams",
+				"title": "Quality Gates for Small Teams",
+				"description": "The minimum viable checks that improve trust without adding process overhead.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["QA", "CI", "Teams"],
+				"duration": "15 min",
+				"visual": "aurora",
+				"meta": "Checklist"
+			},
+			{
+				"id": "reusable-workflow-templates",
+				"title": "Reusable Workflow Templates",
+				"description": "Boilerplates for linting, tests, docs, and package releases.",
+				"level": "Advanced",
+				"format": "Code",
+				"tags": ["Templates", "CI/CD", "Advanced"],
+				"duration": "35 min",
+				"visual": "panel",
+				"meta": "Template pack"
+			},
+			{
+				"id": "automating-reports",
+				"title": "Automating Reports",
+				"description": "Generate recurring summaries from notebooks, scripts, and source data.",
+				"level": "Intermediate",
+				"format": "Tutorial",
+				"tags": ["Reports", "Automation", "Workflow"],
+				"duration": "28 min",
+				"visual": "mesh",
+				"meta": "Workflow"
+			}
+		]
+	},
+	{
+		"id": "coding-cafe-materials",
+		"title": "Coding Café Materials",
+		"eyebrow": "Session archive",
+		"cta": "Recent sessions",
+		"items": [
+			{
+				"id": "automated-unit-testing-r",
+				"title": "Automated Unit Testing in R",
+				"description": "Session material for building confidence in data analysis scripts.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["R", "Testing", "Session"],
+				"duration": "Nov 2024",
+				"visual": "spotlight",
+				"meta": "Slides"
+			},
+			{
+				"id": "interactive-visualization-plotly",
+				"title": "Interactive Visualization with Plotly",
+				"description": "Practical demos for rich, explorable figures in research communication.",
+				"level": "Intermediate",
+				"format": "Video",
+				"tags": ["Plotly", "Visualization", "Session"],
+				"duration": "Oct 2024",
+				"visual": "mesh",
+				"meta": "Recording"
+			},
+			{
+				"id": "intro-ml-pipelines",
+				"title": "Introduction to ML Pipelines",
+				"description": "A primer on reproducible model workflows for small research teams.",
+				"level": "Beginner",
+				"format": "Slides",
+				"tags": ["ML", "Pipelines", "Session"],
+				"duration": "Sep 2024",
+				"visual": "grid",
+				"meta": "Session notes"
+			},
+			{
+				"id": "docker-reproducibility",
+				"title": "Docker & Reproducibility",
+				"description": "Material focused on consistent environments and runnable examples.",
+				"level": "Intermediate",
+				"format": "Code",
+				"tags": ["Docker", "Reproducibility", "Session"],
+				"duration": "Jul 2025",
+				"visual": "shield",
+				"meta": "Exercises"
+			},
+			{
+				"id": "cloud-in-coffee-break",
+				"title": "Cloud in a Coffee Break",
+				"description": "A short-format session on practical cloud workflows for research groups.",
+				"level": "Beginner",
+				"format": "Video",
+				"tags": ["Cloud", "Infrastructure", "Session"],
+				"duration": "Oct 2025",
+				"visual": "aurora",
+				"meta": "Talk"
+			},
+			{
+				"id": "command-line-researchers",
+				"title": "Command Line for Researchers",
+				"description": "An introductory pack for terminal navigation and scripting.",
+				"level": "Beginner",
+				"format": "Tutorial",
+				"tags": ["CLI", "Beginner", "Session"],
+				"duration": "Archive",
+				"visual": "terminal",
+				"meta": "Starter"
+			}
+		]
+	},
+	{
+		"id": "workshops-training",
+		"title": "Workshops & Training Modules",
+		"eyebrow": "Programs",
+		"cta": "Module library",
+		"items": [
+			{
+				"id": "reproducible-research-bootcamp",
+				"title": "Reproducible Research Bootcamp",
+				"description": "A compact learning path spanning version control, notebooks, and packaging.",
+				"level": "Intermediate",
+				"format": "Tutorial",
+				"tags": ["Bootcamp", "Reproducibility", "Path"],
+				"duration": "3 modules",
+				"visual": "panel",
+				"meta": "Series"
+			},
+			{
+				"id": "software-carpentry-essentials",
+				"title": "Software Carpentry Essentials",
+				"description": "A module set covering shell, Git, and Python for researchers.",
+				"level": "Beginner",
+				"format": "Video",
+				"tags": ["Training", "Beginner", "Shell"],
+				"duration": "5 modules",
+				"visual": "terminal",
+				"meta": "Curriculum"
+			},
+			{
+				"id": "publishing-reusable-packages",
+				"title": "Publishing Reusable Packages",
+				"description": "An advanced track on packaging, documentation, and distribution.",
+				"level": "Advanced",
+				"format": "Code",
+				"tags": ["Packaging", "Advanced", "Python"],
+				"duration": "2 workshops",
+				"visual": "aurora",
+				"meta": "Workshop"
+			},
+			{
+				"id": "fair-by-design",
+				"title": "FAIR by Design",
+				"description": "A module for integrating FAIR thinking from project kickoff onward.",
+				"level": "Intermediate",
+				"format": "Slides",
+				"tags": ["FAIR", "Design", "Training"],
+				"duration": "90 min",
+				"visual": "spotlight",
+				"meta": "Module"
+			},
+			{
+				"id": "research-ops-clinic",
+				"title": "Research Ops Clinic",
+				"description": "Templates and practical exercises for small-team engineering operations.",
+				"level": "Advanced",
+				"format": "Guide",
+				"tags": ["Ops", "Templates", "Advanced"],
+				"duration": "4 modules",
+				"visual": "shield",
+				"meta": "Clinic"
+			},
+			{
+				"id": "visualization-critique-lab",
+				"title": "Visualization Critique Lab",
+				"description": "A guided review format for improving figures, dashboards, and visual narratives.",
+				"level": "Intermediate",
+				"format": "Tutorial",
+				"tags": ["Visualization", "Review", "Workshop"],
+				"duration": "75 min",
+				"visual": "orbit",
+				"meta": "Lab"
+			}
+		]
+	}
+]
