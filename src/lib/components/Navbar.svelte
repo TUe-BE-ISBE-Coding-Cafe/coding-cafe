@@ -4,7 +4,6 @@
 	const navItems = [
 		{ name: 'Home', href: '/', isActive: (url) => url.pathname === '/' && !url.hash },
 		{ name: 'Agenda', href: '/agenda', isActive: (url) => url.pathname === '/agenda' },
-		{ name: 'About', href: '/about', isActive: (url) => url.pathname === '/about' },
 		{ name: 'Resources', href: '/resources', isActive: (url) => url.pathname === '/resources' },
 		{ name: 'Training', href: '/training', isActive: (url) => url.pathname === '/training' },
 		{ name: 'Calendar', href: '/calendar', isActive: (url) => url.pathname === '/calendar' }

@@ -1,31 +1,77 @@
 <script>
-	import resourceRows from '$lib/data/resources.json';
+	import resources from '$lib/data/resources.json';
 
-	const allItems = resourceRows.flatMap((row) => row.items);
-
-	const levelFilters = [...new Set(allItems.map((item) => item.level))];
-	const formatFilters = [...new Set(allItems.map((item) => item.format))];
-
-	let searchTerm = '';
-	let activeLevel = 'All';
-	let activeFormat = 'All';
-	let filtersOpen = false;
-	let filteredRows = resourceRows;
-	let totalResources = allItems.length;
+	const visualMap = {
+		guide: 'panel',
+		tool: 'mesh',
+		video: 'orbit',
+		slides: 'grid',
+		code: 'terminal',
+		book: 'aurora'
+	};
 
 	function normalize(value) {
-		return String(value).trim().toLowerCase();
+		return String(value ?? '').trim().toLowerCase();
+	}
+
+	function getVisual(resource) {
+		return visualMap[normalize(resource.type)] ?? 'panel';
+	}
+
+	function groupByTheme(items) {
+		const grouped = new Map();
+
+		for (const resource of items) {
+			const theme = resource.theme || 'Resources';
+			if (!grouped.has(theme)) {
+				grouped.set(theme, []);
+			}
+			grouped.get(theme).push({
+				...resource,
+				visual: getVisual(resource)
+			});
+		}
+
+		return Array.from(grouped, ([title, items], index) => ({
+			id: `theme-${index}`,
+			title,
+			items
+		}));
+	}
+
+	const allItems = resources.map((resource) => ({
+		...resource,
+		visual: getVisual(resource)
+	}));
+
+	const typeFilters = [...new Set(allItems.map((item) => item.type).filter(Boolean))];
+	const sourceFilters = [...new Set(allItems.map((item) => item.source).filter(Boolean))];
+
+	let searchTerm = '';
+	let activeType = 'All';
+	let activeSource = 'All';
+	let filtersOpen = false;
+	let filteredRows = groupByTheme(allItems);
+	let totalResources = allItems.length;
+	let activeResource = null;
+
+	function openResource(resource) {
+		activeResource = resource;
+	}
+
+	function closeResource() {
+		activeResource = null;
 	}
 
 	function matchesResource(resource) {
 		const query = normalize(searchTerm);
 		const haystack = [
 			resource.title,
-			resource.description,
-			resource.level,
-			resource.format,
-			resource.meta,
-			resource.duration,
+			resource.abstract,
+			resource.type,
+			resource.source,
+			resource.access,
+			resource.theme,
 			...resource.tags
 		]
 			.join(' ')
@@ -33,29 +79,24 @@
 
 		return (
 			(!query || haystack.includes(query)) &&
-			(activeLevel === 'All' || normalize(resource.level) === normalize(activeLevel)) &&
-			(activeFormat === 'All' || normalize(resource.format) === normalize(activeFormat))
+			(activeType === 'All' || normalize(resource.type) === normalize(activeType)) &&
+			(activeSource === 'All' || normalize(resource.source) === normalize(activeSource))
 		);
 	}
 
 	function applyFilters() {
-		filteredRows = resourceRows
-			.map((row) => ({
-				...row,
-				items: row.items.filter(matchesResource)
-			}))
-			.filter((row) => row.items.length > 0);
-
-		totalResources = filteredRows.reduce((count, row) => count + row.items.length, 0);
+		const filteredItems = allItems.filter(matchesResource);
+		filteredRows = groupByTheme(filteredItems);
+		totalResources = filteredItems.length;
 	}
 
-	function setLevel(filter) {
-		activeLevel = filter;
+	function setType(filter) {
+		activeType = filter;
 		applyFilters();
 	}
 
-	function setFormat(filter) {
-		activeFormat = filter;
+	function setSource(filter) {
+		activeSource = filter;
 		applyFilters();
 	}
 
@@ -115,22 +156,22 @@
 					{#if filtersOpen}
 						<div class="resources-filter-wrap">
 							<div class="resources-filter-group">
-								<p>Level</p>
+								<p>Type</p>
 								<div class="resources-chip-row">
 									<button
 										type="button"
-										class:resources-chip--active={activeLevel === 'All'}
+										class:resources-chip--active={activeType === 'All'}
 										class="resources-chip"
-										on:click={() => setLevel('All')}
+										on:click={() => setType('All')}
 									>
 										All
 									</button>
-									{#each levelFilters as filter}
+									{#each typeFilters as filter}
 										<button
 											type="button"
-											class:resources-chip--active={activeLevel === filter}
+											class:resources-chip--active={activeType === filter}
 											class="resources-chip"
-											on:click={() => setLevel(filter)}
+											on:click={() => setType(filter)}
 										>
 											{filter}
 										</button>
@@ -139,22 +180,22 @@
 							</div>
 
 							<div class="resources-filter-group">
-								<p>Format</p>
+								<p>Source</p>
 								<div class="resources-chip-row">
 									<button
 										type="button"
-										class:resources-chip--active={activeFormat === 'All'}
+										class:resources-chip--active={activeSource === 'All'}
 										class="resources-chip"
-										on:click={() => setFormat('All')}
+										on:click={() => setSource('All')}
 									>
 										All
 									</button>
-									{#each formatFilters as filter}
+									{#each sourceFilters as filter}
 										<button
 											type="button"
-											class:resources-chip--active={activeFormat === filter}
+											class:resources-chip--active={activeSource === filter}
 											class="resources-chip"
-											on:click={() => setFormat(filter)}
+											on:click={() => setSource(filter)}
 										>
 											{filter}
 										</button>
@@ -168,49 +209,37 @@
 		</section>
 
 		<section class="resources-library">
+			<p class="resources-library__hint">Click any card to open more details.</p>
 			{#if filteredRows.length}
 				{#each filteredRows as row}
 					<section class="resource-row" aria-labelledby={row.id}>
 						<div class="resource-row__header">
 							<h2 id={row.id}>{row.title}</h2>
-							<a href="#library">{row.cta}</a>
 						</div>
 
 						<div class="resource-row__scroller" aria-label={row.title}>
 							<div class="resource-row__track">
 								{#each row.items as resource}
 									<article class="resource-card resource-card--{resource.visual}">
-										<div class="resource-card__tile">
-											<div class="resource-card__media">
-												<div class="resource-card__media-shine"></div>
-												<div class="resource-card__media-meta">
-													<span>{resource.format}</span>
-													<span>{resource.duration}</span>
+										<button
+											type="button"
+											class="resource-card__trigger"
+											on:click={() => openResource(resource)}
+											aria-label={`Open details for ${resource.title}`}
+										>
+											<div class="resource-card__tile">
+												<div class="resource-card__media">
+													<div class="resource-card__media-shine"></div>
+													<div class="resource-card__media-meta">
+														<span>{resource.type}</span>
+														<span>{resource.source}</span>
+													</div>
+												</div>
+												<div class="resource-card__title">
+													<h3>{resource.title}</h3>
 												</div>
 											</div>
-											<div class="resource-card__title">
-												<h3>{resource.title}</h3>
-											</div>
-										</div>
-
-										<div class="resource-card__preview">
-											<div class="resource-card__preview-media">
-												<div class="resource-card__media-shine"></div>
-												<div class="resource-card__media-meta">
-													<span>{resource.format}</span>
-													<span>{resource.duration}</span>
-												</div>
-											</div>
-											<div class="resource-card__overlay">
-												<h3>{resource.title}</h3>
-												<div class="resource-card__chips">
-													<span class="resource-card__chip resource-card__chip--level">{resource.level}</span>
-													<span class="resource-card__chip">{resource.meta}</span>
-												</div>
-												<p>{resource.description}</p>
-												<a href="#library" class="resource-card__button">View Resource</a>
-											</div>
-										</div>
+										</button>
 									</article>
 								{/each}
 							</div>
@@ -226,6 +255,38 @@
 			{/if}
 		</section>
 	</div>
+	{#if activeResource}
+		<div class="resource-dialog-backdrop" on:click={closeResource}></div>
+		<div class="resource-dialog" role="dialog" aria-modal="true" aria-labelledby="resource-dialog-title">
+			<button type="button" class="resource-dialog__close" on:click={closeResource} aria-label="Close resource details">
+				x
+			</button>
+			<div class="resource-dialog__media resource-card--{activeResource.visual}">
+				<div class="resource-card__preview-media">
+					<div class="resource-card__media-shine"></div>
+					<div class="resource-card__media-meta">
+						<span>{activeResource.type}</span>
+						<span>{activeResource.source}</span>
+					</div>
+				</div>
+			</div>
+			<div class="resource-dialog__body">
+				<h3 id="resource-dialog-title">{activeResource.title}</h3>
+				<div class="resource-card__chips">
+					<span class="resource-card__chip resource-card__chip--level">{activeResource.access}</span>
+					<span class="resource-card__chip">{activeResource.type}</span>
+					<span class="resource-card__chip">{activeResource.source}</span>
+				</div>
+				<p>{activeResource.abstract}</p>
+				<div class="resource-dialog__tags">
+					{#each activeResource.tags as tag}
+						<span>{tag}</span>
+					{/each}
+				</div>
+				<a href={activeResource.url} class="resource-card__button" target="_blank" rel="noreferrer" on:click={closeResource}>Open Resource</a>
+			</div>
+		</div>
+	{/if}
 </section>
 
 <style>
@@ -409,15 +470,22 @@
 
 	.resources-library {
 		display: grid;
-		gap: 1.15rem;
-		margin-top: 1rem;
+		gap: 0.45rem;
+		margin-top: 0.65rem;
 		position: relative;
 		overflow: visible;
 	}
 
+	.resources-library__hint {
+		margin: 0 1.25rem 0.1rem;
+		font-size: 0.78rem;
+		line-height: 1.5;
+		color: #64748b;
+	}
+
 	.resource-row {
 		display: grid;
-		gap: 0.55rem;
+		gap: 0.2rem;
 		position: relative;
 		overflow: visible;
 		isolation: isolate;
@@ -432,8 +500,7 @@
 	.resource-row__header {
 		display: flex;
 		align-items: end;
-		justify-content: space-between;
-		gap: 1rem;
+		gap: 0.75rem;
 	}
 
 	.resource-row__header h2 {
@@ -442,15 +509,6 @@
 		font-weight: 800;
 		letter-spacing: -0.03em;
 		color: #111827;
-	}
-
-	.resource-row__header a {
-		font-size: 0.7rem;
-		font-weight: 800;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: #e11d2e;
 	}
 
 	.resource-row__scroller {
@@ -467,7 +525,7 @@
 		display: grid;
 		grid-auto-flow: column;
 		grid-auto-columns: minmax(16rem, 17.5rem);
-		gap: 0.9rem;
+		gap: 0.6rem;
 		position: relative;
 		overflow-y: visible;
 		scroll-snap-type: x proximity;
@@ -484,17 +542,33 @@
 		z-index: 0;
 	}
 
-	.resource-card:hover,
-	.resource-card:focus-within {
-		z-index: 20;
+	.resource-card__trigger {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		text-align: inherit;
+		cursor: pointer;
 	}
 
-	.resource-card__tile,
-	.resource-card__preview {
+	.resource-card__tile {
 		border: 1px solid rgba(31, 41, 55, 0.14);
 		border-radius: 1.1rem;
 		background: #0f172a;
 		box-shadow: 0 18px 32px -28px rgba(15, 23, 42, 0.45);
+		transition:
+			transform 180ms ease,
+			box-shadow 180ms ease,
+			border-color 180ms ease;
+	}
+
+	.resource-card:hover .resource-card__tile,
+	.resource-card__trigger:focus-visible .resource-card__tile {
+		transform: scale(1.03);
+		border-color: rgba(225, 29, 46, 0.22);
+		box-shadow: 0 28px 48px -30px rgba(15, 23, 42, 0.55);
 	}
 
 	.resource-card__tile {
@@ -504,7 +578,8 @@
 	}
 
 	.resource-card__media,
-	.resource-card__preview-media {
+	.resource-card__preview-media,
+	.resource-dialog__media .resource-card__preview-media {
 		position: relative;
 		height: 100%;
 		overflow: hidden;
@@ -514,7 +589,9 @@
 	.resource-card__media::before,
 	.resource-card__media::after,
 	.resource-card__preview-media::before,
-	.resource-card__preview-media::after {
+	.resource-card__preview-media::after,
+	.resource-dialog__media .resource-card__preview-media::before,
+	.resource-dialog__media .resource-card__preview-media::after {
 		position: absolute;
 		inset: 0;
 		content: '';
@@ -666,7 +743,7 @@
 	}
 
 	.resource-card:hover .resource-card__media-shine,
-	.resource-card:focus-within .resource-card__media-shine {
+	.resource-card__trigger:focus-visible .resource-card__media-shine {
 		transform: translateX(100%);
 	}
 
@@ -693,34 +770,6 @@
 		padding: 3.3rem 0.95rem 0.95rem;
 		background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.86) 58%, rgba(15, 23, 42, 0.98) 100%);
 		transition: opacity 160ms ease;
-	}
-
-	.resource-card__preview {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		height: 21.5rem;
-		overflow: hidden;
-		opacity: 0;
-		transform: translateY(0.45rem);
-		transition:
-			opacity 180ms ease,
-			transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
-			box-shadow 220ms ease,
-			border-color 220ms ease;
-		pointer-events: none;
-		border-color: rgba(225, 29, 46, 0.24);
-		box-shadow: 0 42px 90px -34px rgba(15, 23, 42, 0.72);
-		z-index: 60;
-	}
-
-	.resource-card__preview-media {
-		height: 10.25rem;
-	}
-
-	.resource-card__preview .resource-card__media-meta {
-		opacity: 1;
 	}
 
 	.resource-card__chips {
@@ -755,32 +804,87 @@
 		color: white;
 	}
 
-	.resource-card__overlay {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 0.62rem;
-		padding: 0.95rem 0.95rem 1rem;
-		background: linear-gradient(180deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.99) 100%);
+	.resource-dialog-backdrop {
+		position: fixed;
+		inset: 0;
+		background: rgba(15, 23, 42, 0.5);
+		backdrop-filter: blur(6px);
+		z-index: 80;
 	}
 
-	.resource-card:hover .resource-card__preview,
-	.resource-card:focus-within .resource-card__preview {
+	.resource-dialog {
+		position: fixed;
+		inset: 50% auto auto 50%;
+		width: min(92vw, 42rem);
+		transform: translate(-50%, -50%);
+		border: 1px solid rgba(225, 29, 46, 0.18);
+		border-radius: 1.3rem;
+		background: #f8fafc;
+		box-shadow: 0 42px 90px -34px rgba(15, 23, 42, 0.58);
+		overflow: hidden;
+		z-index: 81;
+	}
+
+	.resource-dialog__close {
+		position: absolute;
+		top: 0.9rem;
+		right: 0.9rem;
+		z-index: 2;
+		width: 2.25rem;
+		height: 2.25rem;
+		border: 0;
+		border-radius: 9999px;
+		background: rgba(15, 23, 42, 0.82);
+		color: white;
+		font-size: 1rem;
+		cursor: pointer;
+	}
+
+	.resource-dialog__media {
+		background: #0f172a;
+	}
+
+	.resource-dialog__media .resource-card__preview-media {
+		height: 14rem;
+	}
+
+	.resource-dialog__media .resource-card__media-meta {
 		opacity: 1;
-		transform: translateY(0);
-		pointer-events: auto;
 	}
 
-	.resource-card:hover .resource-card__title,
-	.resource-card:focus-within .resource-card__title {
-		opacity: 0;
+	.resource-dialog__body {
+		display: grid;
+		gap: 0.9rem;
+		padding: 1.2rem 1.2rem 1.3rem;
 	}
 
-	.resource-card__overlay p {
+	.resource-dialog__body h3 {
 		margin: 0;
-		font-size: 0.78rem;
-		line-height: 1.5;
-		color: rgba(226, 232, 240, 0.92);
+		font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+		font-weight: 850;
+		letter-spacing: -0.04em;
+		color: #111827;
+	}
+
+	.resource-dialog__body p {
+		margin: 0;
+		line-height: 1.7;
+		color: #475569;
+	}
+
+	.resource-dialog__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+	}
+
+	.resource-dialog__tags span {
+		border-radius: 9999px;
+		background: #e2e8f0;
+		padding: 0.35rem 0.62rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		color: #475569;
 	}
 
 	.resource-card__button {
@@ -870,36 +974,12 @@
 			grid-auto-columns: 84%;
 		}
 
-		.resource-card:hover,
-		.resource-card:focus-within {
-			z-index: 0;
+		.resource-dialog {
+			width: min(94vw, 34rem);
 		}
 
-		.resource-card__preview {
-			position: static;
-			min-height: auto;
-			height: auto;
-			opacity: 1;
-			transform: none;
-			pointer-events: auto;
-			margin-top: 0.7rem;
-			border-color: rgba(31, 41, 55, 0.14);
-			box-shadow: 0 18px 32px -28px rgba(15, 23, 42, 0.45);
-		}
-
-		.resource-card__overlay {
-			padding: 0.85rem 0.95rem 0.95rem;
-			background: #0f172a;
-		}
-
-		.resource-card__title {
-			position: static;
-			padding: 0.85rem 0.95rem 0;
-			background: #0f172a;
-		}
-
-		.resource-card__preview-media {
-			height: 8.8rem;
+		.resource-dialog__media .resource-card__preview-media {
+			height: 11rem;
 		}
 	}
 
@@ -910,7 +990,7 @@
 
 		.resource-card,
 		.resource-card__media-shine,
-		.resource-card__overlay,
+		.resource-card__tile,
 		.resources-chip {
 			transition: none;
 		}
