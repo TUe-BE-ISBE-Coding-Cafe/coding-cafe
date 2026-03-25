@@ -1,0 +1,48 @@
+[
+
+  {
+    "id": "r2",
+    "title": "Pro Git Book",
+    "abstract": "The authoritative guide to Git, available for free online. Covers everything from basics to internals.",
+    "type": "Guide",
+    "source": "External",
+    "access": "Open Access",
+    "tags": ["Version Control", "Git"],
+	"theme": "Version Control and Git",
+    "url": "https://git-scm.com/book/en/v2"
+  },
+
+  {
+    "id": "r4",
+    "title": "The Turing Way",
+    "abstract": "A handbook for reproducible, ethical and collaborative data science.",
+    "type": "Guide",
+    "source": "External",
+    "access": "Open Access",
+    "tags": ["Open Science", "Reproducibility", "FAIR"],
+	"theme": "FAIR and Open Science",
+    "url": "https://the-turing-way.netlify.app/"
+  },
+  {
+    "id": "r5",
+    "title": "Software Management Plans",
+    "abstract": "A guide for writing a SMP for your grant application.",
+    "type": "Guide",
+    "source": "LUMC",
+    "access": "Open Access",
+    "tags": ["FAIR", "Management"],
+	"theme": "FAIR and Open Science",
+    "url": "https://lumc-dcc.github.io/rs-guidelines/"
+  },
+  {
+    "id": "r6",
+    "title": "Fair Software Route",
+    "abstract": "Step-by-step interactive guide to making your research software FAIR.",
+    "type": "Tool",
+    "source": "External",
+    "access": "Open Access",
+    "tags": ["FAIR", "Open Science"],
+	"theme": "FAIR and Open Science",
+    "url": "https://fair-software.nl"
+  }
+]

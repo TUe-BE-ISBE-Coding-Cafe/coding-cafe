@@ -1,4 +1,6 @@
 <script>
+	import { formatEventTime } from '$lib/utils/events.js';
+
 	export let event;
 	export let variant = 'upcoming';
 	export let view = 'list';
@@ -15,6 +17,7 @@
 
 	const isPast = variant === 'past';
 	const detailHref = `/events/${event.slug}`;
+	const eventTime = formatEventTime(event);
 </script>
 
 {#if view === 'grid'}
@@ -26,8 +29,8 @@
 			<div class="rounded-xl bg-[#f7d7d7] px-3 py-1 text-sm font-semibold text-[#C81919]">
 				{formatDate(event.date)}
 			</div>
-			{#if event.time}
-				<p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{event.time}</p>
+			{#if eventTime}
+				<p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{eventTime}</p>
 			{/if}
 		</div>
 
@@ -138,8 +141,8 @@
 	>
 		<div class="space-y-3 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
 			<p class="text-xl font-bold tracking-tight text-zinc-900">{formatDate(event.date)}</p>
-			{#if event.time}
-				<p class="text-sm font-medium text-zinc-500">{event.time}</p>
+			{#if eventTime}
+				<p class="text-sm font-medium text-zinc-500">{eventTime}</p>
 			{/if}
 			{#if event.location}
 				<p class="text-sm text-zinc-500">{event.location}</p>
@@ -250,8 +253,8 @@
 	>
 		<div class="space-y-3 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
 			<p class="text-xl font-bold tracking-tight text-zinc-900">{formatDate(event.date)}</p>
-			{#if event.time}
-				<p class="text-sm font-medium text-zinc-500">{event.time}</p>
+			{#if eventTime}
+				<p class="text-sm font-medium text-zinc-500">{eventTime}</p>
 			{/if}
 			{#if event.location}
 				<p class="text-sm text-zinc-500">{event.location}</p>

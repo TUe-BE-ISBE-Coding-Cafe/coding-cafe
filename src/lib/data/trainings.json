@@ -1,0 +1,36 @@
+[
+
+	{
+		"id": "t20260422",
+		"title": "Unix shell and version control with Git Workshop",
+		"description": "It will focus on Unix shell and version control using Git based on the Carpentry training material. ",
+		"organizer": "4TU.ResearchData",
+		"level": "Beginner",
+		"audience": ["PhD", "Postdocs"],
+		"duration": "2 days",
+		"format": "In-person",
+		"tags": ["Unix", "Git", "Version Control"],
+		"registrationLink": "https://edu.nl/mxhuj",
+		"sessions": [
+			{
+				"id": "t20260422-1",
+				"title": "Unix shell and version control with Git Workshop - Day 1",
+				"date": "2026-04-22",
+				"startTime": "09:30",
+				"endTime": "16:30",
+				"location": "(to be confirmed)",
+				"description": ""
+			},
+			{
+				"id": "t20260422-2",
+				"title": "Unix shell and version control with Git Workshop - Day 2",
+				"date": "2026-04-23",
+				"startTime": "09:30",
+				"endTime": "16:30",
+				"location": "(to be confirmed)",
+				"description": ""
+			}
+
+		]
+	}
+]

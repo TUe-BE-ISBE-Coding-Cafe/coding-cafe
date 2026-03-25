@@ -20,3 +20,9 @@ export function groupEvents(events) {
 
 	return { upcoming, past };
 }
+
+export function formatEventTime(event) {
+	if (!event?.startTime && !event?.endTime) return event?.time ?? '';
+	if (event?.startTime && event?.endTime) return `${event.startTime} - ${event.endTime}`;
+	return event?.startTime || event?.endTime || '';
+}
