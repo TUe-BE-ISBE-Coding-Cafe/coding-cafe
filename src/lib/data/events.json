@@ -5,7 +5,7 @@
 		"date": "2025-07-02",
 		"location": "Vertigo 9.06",
 		"speaker": "Özgün Balaban",
-		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "/events/2025-07-02-docker-and-reproducibility/slides/2025-07-02-docker-and-reproducibility.pdf",
 		"poster": "/events/2025-07-02-docker-and-reproducibility/poster.png",
@@ -26,7 +26,7 @@
 		"endTime": "16:30",
 		"location": "Vertigo 9.06",
 		"speaker": "Özgün Balaban",
-		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "/events/2025-10-08-cloud-in-a-coffee-break/slides/2025-10-08-cloud-in-a-coffee-break-slides.pdf",
 		"slug": "2025-10-08-cloud-in-a-coffee-break",
@@ -69,7 +69,7 @@
 		"startTime": "12:00",
 		"endTime": "13:30",
 		"speaker": "Özgün Balaban",
-		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "/events/2025-11-24-sql/slides/SQL.pdf",
 		"slug": "2025-11-24-sql",
@@ -90,7 +90,7 @@
 		"endTime": "13:30",
 		"speaker": "Özgün Balaban",
 		"slug": "2026-03-25-version-control",
-		"speaker_link": "https://research.tue.nl/nl/persons/özgün-balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "https://alpinistpanda.github.io/2026_03_working_with_git",
 		"tags": [
@@ -101,20 +101,22 @@
 		]
 	},
 		{
-		"title": "To be decided",
+		"title": "AI assisted coding: A hands-on session with GitHub Copilot - tentative",
 		"date": "2026-04-29",
 		"description": "to be decided",
 		"location": "Vertigo 9.06",
 		"startTime": "12:00",
 		"endTime": "13:30",
-		"speaker": "To be decided",
+		"speaker": "Avinash Ramachandruni",
+		"speaker_link": "https://research.tue.nl/en/persons/avinash-ramachandruni/",
+		"speakerImage": "https://research.tue.nl/files-asset/352319201/Ramachandruni_Avinash_BE_PO_VH_PROM.jpg?w=320&f=webp",
 		"slug": "2026-04-29",
 		"tags": [
 
 		]
 	},
 		{
-		"title": "To be decided",
+		"title": "IoT -- tentative",
 		"date": "2026-05-27",
 		"description": "to be decided",
 		"location": "Vertigo 9.06",

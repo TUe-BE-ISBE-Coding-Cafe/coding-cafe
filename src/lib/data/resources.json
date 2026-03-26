@@ -1,6 +1,18 @@
 [
 
   {
+    "id": "r1",
+    "title": "TUE Research Data Management Guidebook",
+    "abstract": "Research Data Management (RDM) guidebook for TU/e researchers, covering best practices, tools, and resources for managing research data effectively throughout the research lifecycle.",
+    "type": "Guide",
+    "source": "Internal",
+    "access": "Open Access",
+    "tags": ["Research Data Management", "Open Science"],
+	"theme": "Internal Guides",
+    "url": "https://rdm.tue.nl/docs/intro",
+    "image": "/images/resources_cards/rdm_handbook.png"
+  },
+  {
     "id": "r2",
     "title": "Pro Git Book",
     "abstract": "The authoritative guide to Git, available for free online. Covers everything from basics to internals.",

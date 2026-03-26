@@ -28,7 +28,8 @@
 			}
 			grouped.get(theme).push({
 				...resource,
-				visual: getVisual(resource)
+				visual: getVisual(resource),
+				image: resource.image || ''
 			});
 		}
 
@@ -41,7 +42,8 @@
 
 	const allItems = resources.map((resource) => ({
 		...resource,
-		visual: getVisual(resource)
+		visual: getVisual(resource),
+		image: resource.image || ''
 	}));
 
 	const typeFilters = [...new Set(allItems.map((item) => item.type).filter(Boolean))];
@@ -229,6 +231,9 @@
 										>
 											<div class="resource-card__tile">
 												<div class="resource-card__media">
+													{#if resource.image}
+														<img src={resource.image} alt="" class="resource-card__media-image" />
+													{/if}
 													<div class="resource-card__media-shine"></div>
 													<div class="resource-card__media-meta">
 														<span>{resource.type}</span>
@@ -263,6 +268,9 @@
 			</button>
 			<div class="resource-dialog__media resource-card--{activeResource.visual}">
 				<div class="resource-card__preview-media">
+					{#if activeResource.image}
+						<img src={activeResource.image} alt="" class="resource-card__media-image" />
+					{/if}
 					<div class="resource-card__media-shine"></div>
 					<div class="resource-card__media-meta">
 						<span>{activeResource.type}</span>
@@ -573,6 +581,15 @@
 		background-color: #0f172a;
 	}
 
+	.resource-card__media-image {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
 	.resource-card__media::before,
 	.resource-card__media::after,
 	.resource-card__preview-media::before,
@@ -724,6 +741,7 @@
 	.resource-card__media-shine {
 		position: absolute;
 		inset: 0;
+		z-index: 1;
 		background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.16) 50%, transparent 100%);
 		transform: translateX(-100%);
 		transition: transform 420ms ease;
@@ -736,6 +754,7 @@
 
 	.resource-card__media-meta {
 		position: absolute;
+		z-index: 2;
 		left: 0.8rem;
 		right: 0.8rem;
 		top: 0.8rem;
@@ -753,6 +772,7 @@
 
 	.resource-card__title {
 		position: absolute;
+		z-index: 2;
 		inset: auto 0 0;
 		padding: 3.3rem 0.95rem 0.95rem;
 		background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.86) 58%, rgba(15, 23, 42, 0.98) 100%);

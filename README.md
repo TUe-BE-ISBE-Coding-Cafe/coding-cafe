@@ -124,7 +124,8 @@ Example:
   "access": "Open Access",
   "tags": ["Python", "Research Software"],
   "theme": "Research Software Engineering",
-  "url": "https://example.org/resource"
+  "url": "https://example.org/resource",
+  "image": "https://example.org/resource-preview.jpg"
 }
 ```
 
@@ -134,6 +135,8 @@ Field notes:
 - `title` and `abstract` are shown on the resources page
 - `theme` is used to group related resources
 - `url` should point to the external page or downloadable asset
+- `image` is optional; when present it is shown on the resource card and detail dialog
+- if `image` is omitted, the site falls back to the current generated abstract visual
 
 ### Adding a new training
 
