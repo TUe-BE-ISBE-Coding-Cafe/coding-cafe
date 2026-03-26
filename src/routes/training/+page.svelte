@@ -74,8 +74,8 @@
 	<div class="training-shell">
 		<section class="training-hero">
 			<div class="training-hero__copy">
-				<p class="training-hero__eyebrow">Training</p>
-				<h1>Training catalogue for research software practice</h1>
+				<p class="training-hero__eyebrow">Trainings</p>
+				<h1>Upcoming Events and Trainings</h1>
 				<p>
 					Check this page for internal and external training opportunities, from foundational
 					scripting to more advanced reproducible workflows.
@@ -87,7 +87,8 @@
 				<div class="training-links__grid">
 					<a href="https://taxila.nl/events?per_page=50#home" target="_blank" rel="noreferrer">
 						<strong>Taxila</strong>
-						<span>A collection of trainers, events, and teaching materials for research.</span>
+						<span>Taxila is a repository of training opportunities from across the Netherlands.</span>
+						<span>Click to go to Taxila and see what is happening in NL.</span>
 					</a>
 				</div>
 			</div>
@@ -294,23 +295,34 @@
 
 	.training-links__grid a {
 		display: grid;
-		gap: 0.2rem;
+		gap: 0.45rem;
 		min-width: 18rem;
-		padding: 0.95rem 1rem;
+		padding: 1.05rem 1.1rem;
 		border: 1px solid rgba(200, 25, 25, 0.18);
 		border-radius: 1rem;
 		background: linear-gradient(180deg, #ffffff 0%, #fff8f6 100%);
 		text-decoration: none;
 		box-shadow: 0 18px 42px -36px rgba(24, 24, 27, 0.25);
+		transition:
+			transform 180ms ease,
+			border-color 180ms ease,
+			box-shadow 180ms ease,
+			background-color 180ms ease;
+	}
+
+	.training-links__grid a:hover {
+		transform: translateY(-2px);
+		border-color: rgba(200, 25, 25, 0.34);
+		box-shadow: 0 22px 46px -34px rgba(200, 25, 25, 0.22);
 	}
 
 	.training-links__grid strong {
-		font-size: 0.92rem;
+		font-size: 1rem;
 		color: #18181b;
 	}
 
 	.training-links__grid span {
-		font-size: 0.8rem;
+		font-size: 0.86rem;
 		line-height: 1.55;
 		color: #52525b;
 	}
@@ -578,6 +590,12 @@
 	}
 
 	@media (min-width: 960px) {
+		.training-hero {
+			grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.8fr);
+			align-items: end;
+			column-gap: 2rem;
+		}
+
 		.training-layout {
 			grid-template-columns: 18rem minmax(0, 1fr);
 			align-items: start;

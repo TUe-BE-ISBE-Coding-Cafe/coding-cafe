@@ -232,10 +232,10 @@
 		<section class="calendar-head">
 			<div class="calendar-head__copy">
 				<p class="calendar-head__eyebrow">Calendar</p>
-				<h1>Track upcoming Coding Caf&#233; sessions and training dates</h1>
+				<h1>Calendar View</h1>
 				<p>
-					A shared monthly view of Coding Caf&#233; sessions and training activities, designed to
-					make planning easier at a glance.
+					A shared calendar view of Coding Caf&#233; sessions and training activities across month,
+					week, and day layouts.
 				</p>
 			</div>
 

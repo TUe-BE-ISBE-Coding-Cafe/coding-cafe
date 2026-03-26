@@ -307,10 +307,7 @@
 		overflow: hidden;
 		min-height: 15rem;
 		padding: 1.35rem 0 1rem;
-		background:
-			radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.78) 0%, transparent 15%),
-			radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.62) 0%, transparent 18%),
-			linear-gradient(140deg, rgba(255, 255, 255, 0.7) 0%, rgba(242, 246, 250, 0.42) 48%, rgba(229, 236, 244, 0.38) 100%);
+		background: transparent;
 	}
 
 	.resources-hero__main {
@@ -327,17 +324,7 @@
 	}
 
 	.resources-hero::before {
-		position: absolute;
-		inset: -1rem -4rem auto auto;
-		height: 18rem;
-		width: 28rem;
-		content: '';
-		opacity: 0.18;
-		background-image:
-			radial-gradient(circle at 1px 1px, rgba(30, 41, 59, 0.35) 1px, transparent 0);
-		background-size: 1.2rem 1.2rem;
-		transform: perspective(800px) rotateY(-18deg);
-		pointer-events: none;
+		content: none;
 	}
 
 	h1 {

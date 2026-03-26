@@ -13,54 +13,11 @@
 		<div class="max-w-3xl space-y-6">
 			<p class="text-sm font-semibold uppercase tracking-[0.32em] text-[#C81919]">Agenda</p>
 			<h1 class="text-5xl font-black tracking-tight text-zinc-900 md:text-6xl">
-				See what the Coding Cafe is running next.
+				Explore upcoming and past Coding Cafe sessions.
 			</h1>
 			<p class="max-w-2xl text-lg leading-8 text-zinc-600">
 				Upcoming sessions, past materials, and direct links to talks and exercises live here.
-				Switch between a detailed list and a compact grid depending on how you want to browse.
 			</p>
-		</div>
-
-		<div class="mt-10 flex flex-col gap-6 rounded-[2rem] border border-zinc-200 bg-white/85 p-4 shadow-[0_24px_60px_-32px_rgba(24,24,27,0.25)] backdrop-blur md:flex-row md:items-center md:justify-between md:p-5">
-			<div>
-				<p class="text-lg font-bold tracking-tight text-zinc-900">Event browser</p>
-				<p class="text-sm text-zinc-500">
-					{upcoming.length} upcoming session{upcoming.length === 1 ? '' : 's'} and {past.length} archived session{past.length === 1 ? '' : 's'}.
-				</p>
-			</div>
-
-			<div class="inline-flex w-fit rounded-2xl bg-zinc-100 p-1">
-				<button
-					type="button"
-					class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
-						viewMode === 'list'
-							? 'bg-white text-[#C81919] shadow-sm'
-							: 'text-zinc-500 hover:text-zinc-800'
-					}`}
-					on:click={() => (viewMode = 'list')}
-					aria-pressed={viewMode === 'list'}
-				>
-					<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
-						<path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-					</svg>
-					List
-				</button>
-				<button
-					type="button"
-					class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
-						viewMode === 'grid'
-							? 'bg-white text-[#C81919] shadow-sm'
-							: 'text-zinc-500 hover:text-zinc-800'
-					}`}
-					on:click={() => (viewMode = 'grid')}
-					aria-pressed={viewMode === 'grid'}
-				>
-					<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
-						<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-					</svg>
-					Grid
-				</button>
-			</div>
 		</div>
 	</div>
 </section>
@@ -74,6 +31,94 @@
 						Upcoming
 					</p>
 					<h2 class="text-3xl font-bold tracking-tight text-zinc-900">Next sessions</h2>
+				</div>
+
+				<div class="hidden rounded-[1.75rem] border border-zinc-200 bg-white/85 p-4 shadow-[0_24px_60px_-32px_rgba(24,24,27,0.25)] backdrop-blur md:block">
+					<div class="flex items-center gap-6">
+						<div>
+							<p class="text-lg font-bold tracking-tight text-zinc-900">Event browser</p>
+							<p class="text-sm text-zinc-500">
+								{upcoming.length} upcoming session{upcoming.length === 1 ? '' : 's'} and {past.length} archived session{past.length === 1 ? '' : 's'}.
+							</p>
+						</div>
+
+						<div class="inline-flex w-fit rounded-2xl bg-zinc-100 p-1">
+							<button
+								type="button"
+								class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+									viewMode === 'list'
+										? 'bg-white text-[#C81919] shadow-sm'
+										: 'text-zinc-500 hover:text-zinc-800'
+								}`}
+								on:click={() => (viewMode = 'list')}
+								aria-pressed={viewMode === 'list'}
+							>
+								<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+									<path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+								</svg>
+								List
+							</button>
+							<button
+								type="button"
+								class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+									viewMode === 'grid'
+										? 'bg-white text-[#C81919] shadow-sm'
+										: 'text-zinc-500 hover:text-zinc-800'
+								}`}
+								on:click={() => (viewMode = 'grid')}
+								aria-pressed={viewMode === 'grid'}
+							>
+								<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+									<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+								</svg>
+								Grid
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="rounded-[1.75rem] border border-zinc-200 bg-white/85 p-4 shadow-[0_24px_60px_-32px_rgba(24,24,27,0.25)] backdrop-blur md:hidden">
+				<div class="flex flex-col gap-4">
+					<div>
+						<p class="text-lg font-bold tracking-tight text-zinc-900">Event browser</p>
+						<p class="text-sm text-zinc-500">
+							{upcoming.length} upcoming session{upcoming.length === 1 ? '' : 's'} and {past.length} archived session{past.length === 1 ? '' : 's'}.
+						</p>
+					</div>
+
+					<div class="inline-flex w-fit rounded-2xl bg-zinc-100 p-1">
+						<button
+							type="button"
+							class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+								viewMode === 'list'
+									? 'bg-white text-[#C81919] shadow-sm'
+									: 'text-zinc-500 hover:text-zinc-800'
+							}`}
+							on:click={() => (viewMode = 'list')}
+							aria-pressed={viewMode === 'list'}
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+								<path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+							</svg>
+							List
+						</button>
+						<button
+							type="button"
+							class={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+								viewMode === 'grid'
+									? 'bg-white text-[#C81919] shadow-sm'
+									: 'text-zinc-500 hover:text-zinc-800'
+							}`}
+							on:click={() => (viewMode = 'grid')}
+							aria-pressed={viewMode === 'grid'}
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+								<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+							</svg>
+							Grid
+						</button>
+					</div>
 				</div>
 			</div>
 

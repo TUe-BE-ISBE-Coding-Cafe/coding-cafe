@@ -24,15 +24,15 @@
 	<article
 		class="agenda-card agenda-card-grid group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 shadow-sm"
 		style={`--card-delay: ${index * 80}ms;`}
-	>
-		<div class="mb-6 flex items-start justify-between gap-4">
-			<div class="rounded-xl bg-[#f7d7d7] px-3 py-1 text-sm font-semibold text-[#C81919]">
-				{formatDate(event.date)}
+		>
+			<div class="mb-6 flex items-start justify-between gap-4">
+				<div class="rounded-xl bg-[#f7d7d7] px-3 py-1 text-sm font-semibold text-[#C81919]">
+					{formatDate(event.date)}
+				</div>
+				{#if eventTime && !isPast}
+					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{eventTime}</p>
+				{/if}
 			</div>
-			{#if eventTime}
-				<p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{eventTime}</p>
-			{/if}
-		</div>
 
 		<div class="flex-1 space-y-4">
 			<div class="space-y-2">
@@ -59,12 +59,12 @@
 			{/if}
 		</div>
 
-		<div class="mt-8 space-y-4 border-t border-zinc-100 pt-5">
-			<div class="flex items-center gap-3">
-				{#if event.speaker_link}
-					<a
-						href={event.speaker_link}
-						target="_blank"
+			<div class="mt-8 space-y-4 border-t border-zinc-100 pt-5">
+				<div class="flex items-center gap-3">
+					{#if event.speaker_link}
+						<a
+							href={event.speaker_link}
+							target="_blank"
 						rel="noreferrer"
 						class="speaker-chip flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
 						aria-label={`More about ${event.speaker}`}
@@ -107,45 +107,57 @@
 							{#if event.location}
 								<p class="truncate text-xs text-zinc-500">{event.location}</p>
 							{/if}
+							</div>
 						</div>
-					</div>
-				{/if}
+					{/if}
+					{#if !isPast && event.calendar}
+						<a
+							href={event.calendar}
+							target="_blank"
+							rel="noreferrer"
+						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
+						>
+							Calendar
+						</a>
+					{/if}
+				</div>
 
 				{#if isPast}
 					<a
 						href={detailHref}
-						class="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-zinc-500 transition-all group-hover:bg-[#C81919] group-hover:text-white"
-						aria-label={`Open ${event.title}`}
+						class="materials-panel flex w-full items-center justify-between gap-4 rounded-2xl border border-[#eab4b4] bg-[#fff5f5] px-4 py-3"
+						aria-label={`Open the session page for ${event.title}`}
 					>
-						<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
-							<path d="M7 17L17 7M17 7H8M17 7V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</a>
-				{:else if event.calendar}
-					<a
-						href={event.calendar}
-						target="_blank"
-						rel="noreferrer"
-						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
-					>
-						Calendar
+						<div class="min-w-0">
+							<p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C81919]">
+								Session page
+							</p>
+							<p class="text-sm font-semibold text-zinc-800">
+								Click to open the session page and access materials
+							</p>
+						</div>
+						<span class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+								<path d="M7 17L17 7M17 7H8M17 7V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</span>
 					</a>
 				{/if}
 			</div>
-		</div>
-	</article>
+		</article>
 {:else if isPast}
 	<article
 		class="agenda-card agenda-card-list group grid min-h-[180px] overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_2.6fr_1fr]"
 		style={`--card-delay: ${index * 80}ms;`}
 	>
-		<div class="space-y-3 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
+		<div class="space-y-4 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
 			<p class="text-xl font-bold tracking-tight text-zinc-900">{formatDate(event.date)}</p>
-			{#if eventTime}
-				<p class="text-sm font-medium text-zinc-500">{eventTime}</p>
-			{/if}
-			{#if event.location}
-				<p class="text-sm text-zinc-500">{event.location}</p>
+			{#if event.poster}
+				<img
+					src={event.poster}
+					alt={`Poster for ${event.title}`}
+					class="h-36 w-full rounded-2xl border border-zinc-200 object-cover object-center shadow-sm"
+				/>
 			{/if}
 		</div>
 
@@ -220,30 +232,23 @@
 				</div>
 			{/if}
 
-			<div class="flex items-center justify-between">
-				<div class="flex flex-wrap items-center gap-3 text-sm">
-					{#if event.repo}
-						<span class="text-zinc-500">Exercises on GitHub</span>
-					{/if}
-					{#if event.zenodo}
-						<img
-							src={`https://zenodo.org/badge/DOI/${event.zenodo}.svg`}
-							alt="DOI badge"
-							class="h-5"
-						/>
-					{/if}
+			<a
+				href={detailHref}
+				class="materials-panel flex w-full items-center justify-between gap-4 rounded-2xl border border-[#eab4b4] bg-[#fff5f5] px-4 py-3"
+				aria-label={`Open materials for ${event.title}`}
+			>
+				<div class="min-w-0">
+					<p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C81919]">
+						Materials
+					</p>
+					<p class="truncate text-sm font-semibold text-zinc-800">Open session page</p>
 				</div>
-				<a
-					href={detailHref}
-					class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-400 transition-colors hover:text-[#C81919]"
-					aria-label={`Open materials for ${event.title}`}
-				>
-					<span>Materials</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 transition-transform hover:translate-x-1">
+				<span class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500">
+					<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
 						<path d="M7 17L17 7M17 7H8M17 7V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
-				</a>
-			</div>
+				</span>
+			</a>
 		</div>
 	</article>
 {:else}
@@ -382,6 +387,34 @@
 		border-color: rgb(200 25 25 / 0.35);
 		background-color: rgb(254 242 242);
 		box-shadow: 0 12px 24px -18px rgb(200 25 25 / 0.35);
+	}
+
+	.materials-panel {
+		transition:
+			background-color 180ms ease,
+			border-color 180ms ease,
+			box-shadow 180ms ease;
+	}
+
+	.materials-panel__icon {
+		transition:
+			transform 180ms ease,
+			background-color 180ms ease,
+			color 180ms ease,
+			box-shadow 180ms ease;
+	}
+
+	.group:hover .materials-panel {
+		background-color: rgb(254 242 242);
+		border-color: rgb(200 25 25 / 0.35);
+		box-shadow: 0 18px 30px -24px rgb(200 25 25 / 0.4);
+	}
+
+	.group:hover .materials-panel__icon {
+		transform: translateX(4px);
+		background-color: rgb(200 25 25);
+		color: white;
+		box-shadow: 0 12px 24px -16px rgb(200 25 25 / 0.55);
 	}
 
 	@keyframes card-enter {
