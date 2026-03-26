@@ -45,7 +45,13 @@ export async function load({ params }) {
 		const raw = await readFile(infoPath, 'utf-8');
 		const parsed = matter(raw);
 		overrides = parsed.data ?? {};
-		htmlContent = parsed.content ? marked.parse(parsed.content) : '';
+		const sanitizedContent = parsed.content
+			? parsed.content
+					.replace(/^##\s+Slides link\s*$/im, '')
+					.replace(/^\[!\[DOI\]\([^)]+\)\]\([^)]+\)\s*$/im, '')
+					.trim()
+			: '';
+		htmlContent = sanitizedContent ? marked.parse(sanitizedContent) : '';
 	}
 
 	const merged = {
@@ -55,6 +61,9 @@ export async function load({ params }) {
 
 	merged.poster = normaliseStaticPath(slug, merged.poster);
 	merged.slides = normaliseStaticPath(slug, merged.slides);
+	if (merged.zenodo && !String(merged.zenodo).startsWith('http')) {
+		merged.zenodo = `https://doi.org/${String(merged.zenodo).replace(/^https?:\/\/doi\.org\//, '')}`;
+	}
 
 	if (!merged.poster) {
 		for (const candidate of POSTER_CANDIDATES) {

@@ -16,8 +16,8 @@ body {
 
 .hero-viewport {
 	position: relative;
-	height: calc(100vh - 8.5rem);
-	min-height: 40rem;
+	height: calc(100vh - 10.5rem);
+	min-height: 35rem;
 	overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ body {
 	scroll-snap-stop: always;
 	align-items: center;
 	justify-content: center;
-	padding: 2rem 1.5rem;
+	padding: 0.9rem 1.5rem 1.4rem;
 }
 
 .hero-screen::before {
@@ -726,26 +726,21 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 0.8rem;
 	transform: translateY(-50%);
 }
 
 .hero-progress__rail {
 	display: grid;
-	gap: 0.75rem;
-	padding: 0.9rem 0.75rem;
-	border: 1px solid rgba(228, 228, 231, 0.9);
-	border-radius: 9999px;
-	background: rgba(255, 255, 255, 0.7);
-	backdrop-filter: blur(10px);
+	gap: 0.5rem;
 }
 
 .hero-progress__dot {
-	height: 0.7rem;
-	width: 0.7rem;
+	height: 1.7rem;
+	width: 0.42rem;
 	border: 0;
 	border-radius: 9999px;
-	background: rgba(113, 113, 122, 0.28);
+	background: rgba(113, 113, 122, 0.3);
 	cursor: pointer;
 	transition:
 		transform 180ms ease,
@@ -753,18 +748,16 @@ body {
 }
 
 .hero-progress__dot--active {
-	transform: scale(1.35);
+	transform: scaleY(1.08);
 	background: #c81919;
 }
 
 .hero-progress__count {
 	font-size: 0.72rem;
 	font-weight: 700;
-	letter-spacing: 0.22em;
+	letter-spacing: 0.16em;
 	text-transform: uppercase;
 	color: #71717a;
-	writing-mode: vertical-rl;
-	transform: rotate(180deg);
 }
 
 @keyframes hero-rise {
@@ -791,7 +784,7 @@ body {
 
 @media (max-width: 1024px) {
 	.hero-viewport {
-		height: calc(100vh - 7.75rem);
+		height: calc(100vh - 9.35rem);
 	}
 
 	.hero-content {
@@ -819,12 +812,12 @@ body {
 
 @media (max-width: 640px) {
 	.hero-viewport {
-		height: calc(100vh - 7rem);
-		min-height: 34rem;
+		height: calc(100vh - 8.6rem);
+		min-height: 29rem;
 	}
 
 	.hero-screen {
-		padding: 1rem;
+		padding: 0.65rem 1rem 1rem;
 	}
 
 	.hero-card,

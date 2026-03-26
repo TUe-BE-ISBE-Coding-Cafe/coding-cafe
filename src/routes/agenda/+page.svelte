@@ -1,11 +1,12 @@
 <script>
 	import AgendaEventCard from '$lib/components/AgendaEventCard.svelte';
-	import events from '$lib/data/events.json';
 	import { groupEvents } from '$lib/utils/events.js';
+
+	export let data;
 
 	let viewMode = 'list';
 
-	const { upcoming, past } = groupEvents(events);
+	const { upcoming, past } = groupEvents(data.events);
 </script>
 
 <section class="bg-[linear-gradient(180deg,#fff8f4_0%,#ffffff_55%,#fff3f3_100%)]">

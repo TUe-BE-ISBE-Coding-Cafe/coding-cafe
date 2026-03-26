@@ -1,0 +1,1397 @@
+@prefix fro: <http://www.firebim.org/ontologies/fro#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.firebim.org/ontologies/fro#> rdf:type owl:Ontology ;
+                                          owl:versionIRI <http://www.firebim.org/ontologies/fro-16092025#> ;
+                                          <http://purl.org/dc/terms/created> "2025-09-16T00:00:00" ;
+                                          <http://purl.org/dc/terms/creator> fro:AlexDonkers ;
+                                          <http://purl.org/dc/terms/title> "FireBIM Regulation Ontology"@en ;
+                                          <http://purl.org/vocab/vann/preferredNamespacePrefix> "fro" ;
+                                          <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.firebim.org/ontologies/fro#" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+<http://schema.org/affiliation> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+<http://schema.org/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/email
+<http://schema.org/email> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/identifier
+<http://schema.org/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+<http://schema.org/rangeIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.firebim.org/ontologies/fro#hasAnnex
+fro:hasAnnex rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf fro:hasSubdivision ;
+          owl:inverseOf fro:isAnnexOf ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:range fro:Annex ;
+          rdfs:comment "Kobler et dokument til dets bilag."@da ,
+                       "Links a document to its annex."@en ,
+                       "Sujungia dokumentą su jo priedu."@lt ,
+                       "Verbindt een document met zijn bijlage."@nl-be ,
+                       "Vincula um documento ao seu anexo."@pt ;
+          rdfs:label "har bilag"@da ,
+                     "has annex"@en ,
+                     "heeft bijlage"@nl ,
+                     "heeft bijlage"@nl-be ,
+                     "tem anexo"@pt ,
+                     "turi priedą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasAppendix
+fro:hasAppendix rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf fro:hasSubdivision ;
+             owl:inverseOf fro:isAppendixOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:range fro:Appendix ;
+             rdfs:comment "An object property pointing to an appendix."@en ,
+                          "Een 'object property' die verwijst naar een appendix."@nl ,
+                          "Et 'object property' der peger på en appendiks."@da ,
+                          "Objekto savybė, nukreipianti į priedą."@lt ,
+                          "Uma propriedade de objeto que aponta para um apêndice."@pt ;
+             rdfs:label "har bilag"@da ,
+                        "has appendix"@en ,
+                        "heeft appendix"@nl ,
+                        "heeft appendix"@nl-be ,
+                        "tem apêndice"@pt ,
+                        "turi priedą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasArticle
+fro:hasArticle rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fro:hasSubdivision ;
+            owl:inverseOf fro:isArticleOf ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:range fro:Article ;
+            rdfs:comment "An object property pointing to an article."@en ,
+                         "Een 'object property' die verwijst naar een artikel."@nl ,
+                         "Et 'object property' der peger på en artikel."@da ,
+                         "Objekto savybė, nukreipianti į straipsnį."@lt ,
+                         "Uma propriedade de objeto que aponta para um artigo."@pt ;
+            rdfs:label "har artikel"@da ,
+                       "has article"@en ,
+                       "heeft artikel"@nl ,
+                       "heeft artikel"@nl-be ,
+                       "tem artigo"@pt ,
+                       "turi straipsnį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasAuthority
+fro:hasAuthority rdf:type owl:ObjectProperty ;
+              owl:inverseOf fro:isAuthorityOf ;
+              rdfs:domain fro:Jurisdiction ;
+              rdfs:range fro:Authority ;
+              rdfs:comment "Associa uma jurisdição à sua autoridade competente."@pt ,
+                           "Associates a jurisdiction with its governing authority."@en ,
+                           "Knytter en jurisdiktion til dens myndighed."@da ,
+                           "Susieja jurisdikciją su jos institucija."@lt ,
+                           "Verbindt een jurisdictie met de bevoegde autoriteit."@nl-be ;
+              rdfs:label "har myndighed"@da ,
+                         "has authority"@en ,
+                         "heeft autoriteit"@nl ,
+                         "heeft autoriteit"@nl-be ,
+                         "tem autoridade"@pt ,
+                         "turi instituciją"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasChapter
+fro:hasChapter rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fro:hasSubdivision ;
+            owl:inverseOf fro:isChapterOf ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:range fro:Chapter ;
+            rdfs:comment "An object property pointing to a chapter."@en ,
+                         "Een 'object property' die verwijst naar een hoofdstuk."@nl ,
+                         "Et 'object property' der peger på et kapitel."@da ,
+                         "Objekto savybė, nukreipianti į skyrių."@lt ,
+                         "Uma propriedade de objeto que aponta para um capítulo."@pt ;
+            rdfs:label "har kapitel"@da ,
+                       "has chapter"@en ,
+                       "heeft hoofdstuk"@nl ,
+                       "heeft hoofdstuk"@nl-be ,
+                       "tem capítulo"@pt ,
+                       "turi skyrių"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasClause
+fro:hasClause rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf fro:hasSubdivision ;
+           owl:inverseOf fro:isClauseOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:comment "An object property pointing to a clause."@en ,
+                        "Een 'object property' die verwijst naar een lid."@nl ,
+                        "Et 'object property' der peger på en bestemmelse."@da ,
+                        "Objekto savybė, nukreipianti į nuostatą."@lt ,
+                        "Uma propriedade de objeto que aponta para uma cláusula."@pt ;
+           rdfs:label "har bestemmelse"@da ,
+                      "has clause"@en ,
+                      "heeft lid"@nl ,
+                      "heeft lid"@nl-be ,
+                      "tem cláusula"@pt ,
+                      "turi nuostatą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasEquation
+fro:hasEquation rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf fro:hasSubdivision ;
+             owl:inverseOf fro:isEquationOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:range fro:Equation ;
+             rdfs:comment "An object property pointing to an equation."@en ,
+                          "Een 'object property' die verwijst naar een vergelijking."@nl ,
+                          "Et 'object property' der peger på en ligning."@da ,
+                          "Objekto savybė, nukreipianti į lygtį."@lt ,
+                          "Uma propriedade de objeto que aponta para uma equação."@pt ;
+             rdfs:label "har ligning"@da ,
+                        "has equation"@en ,
+                        "heeft vergelijking"@nl ,
+                        "heeft vergelijking"@nl-be ,
+                        "tem equação"@pt ,
+                        "turi lygtį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasFigure
+fro:hasFigure rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf fro:hasSubdivision ;
+           owl:inverseOf fro:isFigureOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:range fro:Figure ;
+           rdfs:comment "An object property pointing to a figure."@en ,
+                        "Een 'object property' die verwijst naar een figuur."@nl ,
+                        "Et 'object property' der peger på en figur."@da ,
+                        "Objekto savybė, nukreipianti į figūrą."@lt ,
+                        "Uma propriedade de objeto que aponta para uma figura."@pt ;
+           rdfs:label "har figur"@da ,
+                      "has figure"@en ,
+                      "heeft figuur"@nl ,
+                      "heeft figuur"@nl-be ,
+                      "tem figura"@pt ,
+                      "turi figūrą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasItem
+fro:hasItem rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf fro:hasSubdivision ;
+         owl:inverseOf fro:isItemOf ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:range fro:Item ;
+         rdfs:comment "Aponta para um subitem contido em uma cláusula."@pt ,
+                      "Henviser til en underbestemmelse i en bestemmelse."@da ,
+                      "Nurodo poskyrį, esančią nuostatoje."@lt ,
+                      "Points to an item contained in a clause."@en ,
+                      "Verwijst naar een onderlid binnen een lid."@nl-be ;
+         rdfs:label "har punkt"@da ,
+                    "has item"@en ,
+                    "heeft onderdeel"@nl ,
+                    "heeft onderdeel"@nl-be ,
+                    "tem item"@pt ,
+                    "turi dalį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasJurisdiction
+fro:hasJurisdiction rdf:type owl:ObjectProperty ;
+                 owl:inverseOf fro:isJurisdictionOF ;
+                 rdfs:domain fro:Document ;
+                 rdfs:range fro:Jurisdiction ;
+                 rdfs:comment "Associa um documento à jurisdição onde é válido."@pt ,
+                              "Associates a document with the jurisdiction where it is valid."@en ,
+                              "Knytter et dokument til den jurisdiktion, hvor det er gyldigt."@da ,
+                              "Susieja dokumentą su jurisdikcija, kurioje jis galioja."@lt ,
+                              "Verbindt een document met de jurisdictie waarin het geldig is."@nl-be ;
+                 rdfs:label "har jurisdiktion"@da ,
+                            "has jurisdiction"@en ,
+                            "heeft jurisdictie"@nl ,
+                            "heeft jurisdictie"@nl-be ,
+                            "tem jurisdição"@pt ,
+                            "turi jurisdikciją"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasOfficialPublication
+fro:hasOfficialPublication rdf:type owl:ObjectProperty ;
+                        rdfs:domain [ rdf:type owl:Class ;
+                                      owl:unionOf ( fro:Document
+                                                    fro:DocumentSubdivision
+                                                  )
+                                    ] ;
+                        rdfs:range fro:Reference ;
+                        rdfs:comment "Aponta para a publicação oficial onde o documento ou sua subdivisão foi publicado."@pt ,
+                                     "Henviser til den officielle publikation, hvor dokumentet eller dets del er offentliggjort."@da ,
+                                     "Nurodo oficialų leidinį, kuriame paskelbtas dokumentas ar jo dalis."@lt ,
+                                     "Points to the official publication where the document or its part is published."@en ,
+                                     "Verwijst naar de officiële publicatie van het document of onderdeel ervan."@nl-be ;
+                        rdfs:label "har officiel publikation"@da ,
+                                   "has official publication"@en ,
+                                   "heeft officiële publicatie"@nl ,
+                                   "heeft officiële publicatie"@nl-be ,
+                                   "tem publicação oficial"@pt ,
+                                   "turi oficialų leidinį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasParagraph
+fro:hasParagraph rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf fro:hasSubdivision ;
+              owl:inverseOf fro:isParagraphOf ;
+              rdf:type owl:TransitiveProperty ;
+              rdfs:range fro:Paragraph ;
+              rdfs:comment "An object property pointing to a paragraph."@en ,
+                           "Een 'object property' die verwijst naar een paragraaf."@nl ,
+                           "Et 'object property' der peger på et afsnit."@da ,
+                           "Objekto savybė, nukreipianti į pastraipą."@lt ,
+                           "Uma propriedade de objeto que aponta para um parágrafo."@pt ;
+              rdfs:label "har afsnit"@da ,
+                         "has paragraph"@en ,
+                         "heeft paragraaf"@nl ,
+                         "heeft paragraaf"@nl-be ,
+                         "tem parágrafo"@pt ,
+                         "turi pastraipą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasSection
+fro:hasSection rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fro:hasSubdivision ;
+            owl:inverseOf fro:isSectionOf ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:range fro:Section ;
+            rdfs:comment "An object property pointing to a section."@en ,
+                         "Een 'object property' die verwijst naar een sectie."@nl ,
+                         "Et 'object property' der peger på en sektion."@da ,
+                         "Objekto savybė, nukreipianti į skiltį."@lt ,
+                         "Uma propriedade de objeto que aponta para uma secção."@pt ;
+            rdfs:label "har sektion"@da ,
+                       "has section"@en ,
+                       "heeft sectie"@nl ,
+                       "heeft sectie"@nl-be ,
+                       "tem secção"@pt ,
+                       "turi skiltį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasSubchapter
+fro:hasSubchapter rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf fro:hasSubdivision ;
+               owl:inverseOf fro:isSubchapterOf ;
+               rdf:type owl:TransitiveProperty ;
+               rdfs:range fro:Subchapter ;
+               rdfs:comment "An object property pointing to a subchapter."@en ,
+                            "Een 'object property' die verwijst naar een deelhoofdstuk."@nl ,
+                            "Et 'object property' der peger på et underkapitel."@da ,
+                            "Objekto savybė, nukreipianti į poskirpį."@lt ,
+                            "Uma propriedade de objeto que aponta para um subcapítulo."@pt ;
+               rdfs:label "har underkapitel"@da ,
+                          "has subchapter"@en ,
+                          "heeft deelhoofdstuk"@nl ,
+                          "heeft deelhoofdstuk"@nl-be ,
+                          "tem subcapítulo"@pt ,
+                          "turi poskirpį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasSubdivision
+fro:hasSubdivision rdf:type owl:ObjectProperty ;
+                owl:inverseOf fro:isSubdivisionOf ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( fro:Document
+                                            fro:DocumentSubdivision
+                                          )
+                            ] ;
+                rdfs:range fro:DocumentSubdivision ;
+                rdfs:comment "An object property pointing to a subdivision of the subject."@en ,
+                             "Een 'object property' die verwijst naar een onderverdeling van iets."@nl ,
+                             "Et 'object property' der peger på en underafdeling."@da ,
+                             "Objekto savybė, nukreipianti į padalinį."@lt ,
+                             "Uma propriedade de objeto que aponta para uma subdivisão."@pt ;
+                rdfs:label "har underafdeling"@da ,
+                           "has subdivision"@en ,
+                           "heeft onderverdeling"@nl ,
+                           "heeft onderverdeling"@nl-be ,
+                           "tem subdivisão"@pt ,
+                           "turi padalinį"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasTable
+fro:hasTable rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf fro:hasSubdivision ;
+          owl:inverseOf fro:isSubdivisionOf ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:range fro:Table ;
+          rdfs:comment "An object property pointing to a table."@en ,
+                       "Een 'object property' die verwijst naar een tabel."@nl ,
+                       "Et 'object property' der peger på en tabel."@da ,
+                       "Objekto savybė, nukreipianti į lentelę."@lt ,
+                       "Uma propriedade de objeto que aponta para uma tabela."@pt ;
+          rdfs:label "har tabel"@da ,
+                     "has table"@en ,
+                     "heeft tabel"@nl ,
+                     "heeft tabel"@nl-be ,
+                     "tem tabela"@pt ,
+                     "turi lentelę"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasTitle
+fro:hasTitle rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf fro:hasSubdivision ;
+          owl:inverseOf fro:isTitleOf ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:range fro:Title ;
+          rdfs:comment "Knytter en underafdeling til dens titel."@da ,
+                       "Links a document subdivision to its title."@en ,
+                       "Sujungia dokumento padalinį su jo pavadinimu."@lt ,
+                       "Verbindt een documentonderdeel met zijn titel."@nl-be ,
+                       "Vincula uma subdivisão do documento ao seu título."@pt ;
+          rdfs:label "har titel"@da ,
+                     "has title"@en ,
+                     "heeft titel"@nl ,
+                     "heeft titel"@nl-be ,
+                     "tem título"@pt ,
+                     "turi pavadinimą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#isAbout
+fro:isAbout rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( fro:Document
+                                     fro:DocumentSubdivision
+                                   )
+                     ] ;
+         rdfs:range fro:Topic ;
+         rdfs:comment "Henvisning til emnet, som dokumentet eller en underafdeling af dokumentet handler om."@da ,
+                      "Nuoroda į temą, kurią nagrinėja dokumentas arba jo poskyris."@lt ,
+                      "Reference to a topic which the document or document subdivision is about."@en ,
+                      "Referência ao tema de que trata o documento ou uma subdivisão do documento."@pt ,
+                      "Verwijzing naar het onderwerp waarover het document of een onderverdeling van het document gaat."@nl ;
+         rdfs:label "apie"@lt ,
+                    "gaat over"@nl ,
+                    "gaat over"@nl-be ,
+                    "handler om"@da ,
+                    "is about"@en ,
+                    "trata de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isAnnexOf
+fro:isAnnexOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf fro:isSubdivisionOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:domain fro:Annex ;
+           rdfs:comment "Angiver, at en underafdeling er en bilag til et dokument."@da ,
+                        "Geeft aan dat een onderverdeling een bijlage van een document is."@nl-be ,
+                        "Indica que uma subdivisão é um anexo de um documento."@pt ,
+                        "Indicates that a subdivision is an annex of a document."@en ,
+                        "Nurodo, kad padalinys yra dokumento priedas."@lt ;
+           rdfs:label "er bilag til"@da ,
+                      "is annex of"@en ,
+                      "is bijlage van"@nl ,
+                      "is bijlage van"@nl-be ,
+                      "yra priedo dalis"@lt ,
+                      "é anexo de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isAppendixOf
+fro:isAppendixOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf fro:isSubdivisionOf ;
+              rdf:type owl:TransitiveProperty ;
+              rdfs:domain fro:Appendix ;
+              rdfs:comment "Angiver, at en underafdeling er et appendiks til et dokument."@da ,
+                           "Geeft aan dat een onderverdeling een appendix van een document is."@nl ,
+                           "Geeft aan dat een onderverdeling een appendix van een document is."@nl-be ,
+                           "Indica que uma subdivisão é um apêndice de um documento."@pt ,
+                           "Indicates that a subdivision is an appendix of a document."@en ,
+                           "Nurodo, kad padalinys yra dokumento priedas."@lt ;
+              rdfs:label "er appendiks til"@da ,
+                         "is appendix of"@en ,
+                         "is appendix van"@nl ,
+                         "is appendix van"@nl-be ,
+                         "yra priedo dalis"@lt ,
+                         "é apêndice de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isApplicableTo
+fro:isApplicableTo rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( fro:Document
+                                            fro:DocumentSubdivision
+                                          )
+                            ] ;
+                rdfs:range fro:Topic ;
+                rdfs:comment "Angiver hvilket emne et dokument eller underafdeling gælder for."@da ,
+                             "Geeft aan op welk onderwerp een document of onderdeel van toepassing is."@nl ,
+                             "Geeft aan op welk onderwerp een document of onderdeel van toepassing is."@nl-be ,
+                             "Indica o tópico ao qual se aplica um documento ou subdivisão."@pt ,
+                             "Indicates the topic to which a document or subdivision applies."@en ,
+                             "Nurodo temą, kuriai taikomas dokumentas ar padalinys."@lt ;
+                rdfs:label "gælder for"@da ,
+                           "is applicable to"@en ,
+                           "is van toepassing op"@nl ,
+                           "is van toepassing op"@nl-be ,
+                           "taikoma"@lt ,
+                           "é aplicável a"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isArticleOf
+fro:isArticleOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf fro:isSubdivisionOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain fro:Article ;
+             rdfs:comment "Angiver, at en underafdeling er en artikel i et dokument."@da ,
+                          "Geeft aan dat een onderverdeling een artikel van een document is."@nl ,
+                          "Geeft aan dat een onderverdeling een artikel van een document is."@nl-be ,
+                          "Indica que uma subdivisão é um artigo de um documento."@pt ,
+                          "Indicates that a subdivision is an article of a document."@en ,
+                          "Nurodo, kad padalinys yra straipsnio dalis."@lt ;
+             rdfs:label "er artikel i"@da ,
+                        "is article of"@en ,
+                        "is artikel van"@nl ,
+                        "is artikel van"@nl-be ,
+                        "yra straipsnio dalis"@lt ,
+                        "é artigo de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isAuthorityOf
+fro:isAuthorityOf rdf:type owl:ObjectProperty ;
+               rdfs:domain fro:Authority ;
+               rdfs:range fro:Jurisdiction ;
+               rdfs:comment "Angiver, at en myndighed har magt over en bestemt jurisdiktion."@da ,
+                            "Geeft aan dat een autoriteit een bepaalde jurisdictie beheert."@nl ,
+                            "Geeft aan dat een autoriteit een bepaalde jurisdictie beheert."@nl-be ,
+                            "Indica que uma autoridade governa uma determinada jurisdição."@pt ,
+                            "Indicates that an authority governs a particular jurisdiction."@en ,
+                            "Nurodo, kad institucija valdo tam tikrą jurisdikciją."@lt ;
+               rdfs:label "er myndighed for"@da ,
+                          "is authority of"@en ,
+                          "is autoriteit van"@nl ,
+                          "is autoriteit van"@nl-be ,
+                          "yra institucija (jurisdikcijai)"@lt ,
+                          "é autoridade de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isChapterOf
+fro:isChapterOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf fro:isSubdivisionOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain fro:Chapter ;
+             rdfs:comment "Angiver, at et kapitel er en del af et dokument."@da ,
+                          "Geeft aan dat een hoofdstuk onderdeel is van een document."@nl ,
+                          "Geeft aan dat een hoofdstuk onderdeel is van een document."@nl-be ,
+                          "Indica que um capítulo faz parte de um documento."@pt ,
+                          "Indicates that a chapter is part of a document."@en ,
+                          "Nurodo, kad skyrius yra dokumento dalis."@lt ;
+             rdfs:label "er kapitel i"@da ,
+                        "is chapter of"@en ,
+                        "is hoofdstuk van"@nl ,
+                        "is hoofdstuk van"@nl-be ,
+                        "yra skyriaus dalis"@lt ,
+                        "é capítulo de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isClauseOf
+fro:isClauseOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fro:isSubdivisionOf ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:comment "Angiver, at en bestemmelse er en del af en dokumentunderafdeling."@da ,
+                         "Geeft aan dat een lid onderdeel is van een documentonderdeel."@nl ,
+                         "Geeft aan dat een lid onderdeel is van een documentonderdeel."@nl-be ,
+                         "Indica que uma cláusula faz parte de uma subdivisão do documento."@pt ,
+                         "Indicates that a clause is part of a document subdivision."@en ,
+                         "Nurodo, kad nuostata yra dokumento padalinio dalis."@lt ;
+            rdfs:label "er bestemmelse i"@da ,
+                       "is clause of"@en ,
+                       "is lid van"@nl ,
+                       "is lid van"@nl-be ,
+                       "yra nuostatos dalis"@lt ,
+                       "é cláusula de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isEquationOf
+fro:isEquationOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf fro:isSubdivisionOf ;
+              rdf:type owl:TransitiveProperty ;
+              rdfs:domain fro:Equation ;
+              rdfs:comment "Angiver, at en ligning tilhører en dokumentunderafdeling."@da ,
+                           "Geeft aan dat een vergelijking onderdeel is van een documentonderdeel."@nl ,
+                           "Geeft aan dat een vergelijking onderdeel is van een documentonderdeel."@nl-be ,
+                           "Indica que uma equação pertence a uma subdivisão do documento."@pt ,
+                           "Indicates that an equation belongs to a document subdivision."@en ,
+                           "Nurodo, kad lygtis priklauso dokumento padaliniui."@lt ;
+              rdfs:label "er ligning i"@da ,
+                         "is equation of"@en ,
+                         "is vergelijking van"@nl ,
+                         "is vergelijking van"@nl-be ,
+                         "yra lygties dalis"@lt ,
+                         "é equação de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isFigureOf
+fro:isFigureOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf fro:isSubdivisionOf ;
+            rdf:type owl:TransitiveProperty ;
+            rdfs:domain fro:Figure ;
+            rdfs:comment "Angiver, at en figur tilhører en dokumentunderafdeling."@da ,
+                         "Geeft aan dat een figuur onderdeel is van een documentonderdeel."@nl ,
+                         "Geeft aan dat een figuur onderdeel is van een documentonderdeel."@nl-be ,
+                         "Indica que uma figura pertence a uma subdivisão do documento."@pt ,
+                         "Indicates that a figure belongs to a document subdivision."@en ,
+                         "Nurodo, kad iliustracija priklauso dokumento padaliniui."@lt ;
+            rdfs:label "er figur i"@da ,
+                       "is figure of"@en ,
+                       "is figuur van"@nl ,
+                       "is figuur van"@nl-be ,
+                       "yra iliustracijos dalis"@lt ,
+                       "é figura de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isIssuedBy
+fro:isIssuedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf fro:issues ;
+            rdfs:domain fro:Document ;
+            rdfs:range fro:Authority ;
+            rdfs:comment "Angiver, hvilken myndighed der har udstedt et dokument."@da ,
+                         "Geeft aan welke autoriteit een document heeft uitgegeven."@nl ,
+                         "Geeft aan welke autoriteit een document heeft uitgegeven."@nl-be ,
+                         "Indica a autoridade que emitiu um documento."@pt ,
+                         "Indicates the authority that issued a document."@en ,
+                         "Nurodo instituciją, kuri išdavė dokumentą."@lt ;
+            rdfs:label "er udstedt af"@da ,
+                       "foi emitido por"@pt ,
+                       "is issued by"@en ,
+                       "is uitgegeven door"@nl ,
+                       "is uitgegeven door"@nl-be ,
+                       "išduota"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#isItemOf
+fro:isItemOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf fro:isSubdivisionOf ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain fro:Item ;
+          rdfs:comment "Angiver, at et punkt tilhører en dokumentunderafdeling."@da ,
+                       "Geeft aan dat een onderdeel deel uitmaakt van een documentonderdeel."@nl ,
+                       "Geeft aan dat een onderdeel deel uitmaakt van een documentonderdeel."@nl-be ,
+                       "Indica que um item faz parte de uma subdivisão do documento."@pt ,
+                       "Indicates that an item belongs to a subdivision of a document."@en ,
+                       "Nurodo, kad dalis priklauso dokumento padaliniui."@lt ;
+          rdfs:label "er punkt i"@da ,
+                     "is item of"@en ,
+                     "is onderdeel van"@nl ,
+                     "is onderdeel van"@nl-be ,
+                     "yra dalies dalis"@lt ,
+                     "é item de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isJurisdictionOF
+fro:isJurisdictionOF rdf:type owl:ObjectProperty ;
+                  rdfs:domain fro:Jurisdiction ;
+                  rdfs:range fro:Document ;
+                  rdfs:comment "Angiver, hvilke dokumenter der er under en bestemt jurisdiktion."@da ,
+                               "Geeft aan welke documenten onder een bepaalde jurisdictie vallen."@nl ,
+                               "Geeft aan welke documenten onder een bepaalde jurisdictie vallen."@nl-be ,
+                               "Indica os documentos sob uma determinada jurisdição."@pt ,
+                               "Indicates the document(s) under a particular jurisdiction."@en ,
+                               "Nurodo dokumentus, kurie priklauso tam tikrai jurisdikcijai."@lt ;
+                  rdfs:label "er jurisdiktion for"@da ,
+                             "is jurisdictie van"@nl ,
+                             "is jurisdictie van"@nl-be ,
+                             "is jurisdiction of"@en ,
+                             "yra jurisdikcijos dalis"@lt ,
+                             "é jurisdição de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isParagraphOf
+fro:isParagraphOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf fro:isSubdivisionOf ;
+               rdf:type owl:TransitiveProperty ;
+               rdfs:domain fro:Paragraph ;
+               rdfs:comment "Angiver, at et afsnit er en del af en dokumentunderafdeling."@da ,
+                            "Geeft aan dat een paragraaf onderdeel is van een documentonderdeel."@nl ,
+                            "Geeft aan dat een paragraaf onderdeel is van een documentonderdeel."@nl-be ,
+                            "Indica que um parágrafo faz parte de uma subdivisão do documento."@pt ,
+                            "Indicates that a paragraph is part of a document subdivision."@en ,
+                            "Nurodo, kad pastraipa priklauso dokumento padaliniui."@lt ;
+               rdfs:label "er afsnit i"@da ,
+                          "is paragraaf van"@nl ,
+                          "is paragraaf van"@nl-be ,
+                          "is paragraph of"@en ,
+                          "yra pastraipos dalis"@lt ,
+                          "é parágrafo de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isReferencedBy
+fro:isReferencedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf fro:references ;
+                rdfs:domain fro:Reference ;
+                rdfs:comment "Angiver, at en reference henviser til dette dokument eller underafdeling."@da ,
+                             "Geeft aan dat een referentie naar dit document of onderdeel verwijst."@nl ,
+                             "Geeft aan dat een referentie naar dit document of onderdeel verwijst."@nl-be ,
+                             "Indica que uma referência aponta para este documento ou subdivisão."@pt ,
+                             "Indicates that a reference points to this document or subdivision."@en ,
+                             "Nurodo, kad nuoroda nurodo šį dokumentą ar padalinį."@lt ;
+                rdfs:label "henvises af"@da ,
+                           "is referenced by"@en ,
+                           "nurodoma"@lt ,
+                           "wordt verwezen door"@nl ,
+                           "wordt verwezen door"@nl-be ,
+                           "é referenciado por"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isReplacedBy
+fro:isReplacedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf fro:replaces ;
+              rdfs:comment "Angiver, hvilket dokument eller underafdeling der erstatter dette."@da ,
+                           "Geeft aan welk document of onderdeel dit vervangt."@nl ,
+                           "Geeft aan welk document of onderdeel dit vervangt."@nl-be ,
+                           "Indica o documento ou subdivisão que substitui este."@pt ,
+                           "Indicates the document or subdivision that replaces this one."@en ,
+                           "Nurodo dokumentą ar padalinį, kuris pakeičia šį."@lt ;
+              rdfs:label "erstattes af"@da ,
+                         "is replaced by"@en ,
+                         "wordt vervangen door"@nl ,
+                         "wordt vervangen door"@nl-be ,
+                         "yra pakeistas"@lt ,
+                         "é substituído por"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isSectionOf
+fro:isSectionOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf fro:isSubdivisionOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain fro:Section ;
+             rdfs:comment "Angiver, at en sektion er en del af en dokumentunderafdeling."@da ,
+                          "Geeft aan dat een sectie onderdeel is van een documentonderdeel."@nl ,
+                          "Geeft aan dat een sectie onderdeel is van een documentonderdeel."@nl-be ,
+                          "Indica que uma secção faz parte de uma subdivisão do documento."@pt ,
+                          "Indicates that a section is part of a document subdivision."@en ,
+                          "Nurodo, kad skiltis priklauso dokumento padaliniui."@lt ;
+             rdfs:label "er sektion i"@da ,
+                        "is sectie van"@nl ,
+                        "is sectie van"@nl-be ,
+                        "is section of"@en ,
+                        "yra skyriaus dalis"@lt ,
+                        "é secção de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isSubchapterOf
+fro:isSubchapterOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf fro:isSubdivisionOf ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:domain fro:Subchapter ;
+                rdfs:comment "Angiver, at et underkapitel er en del af et kapitel."@da ,
+                             "Geeft aan dat een deelhoofdstuk onderdeel is van een hoofdstuk."@nl ,
+                             "Geeft aan dat een deelhoofdstuk onderdeel is van een hoofdstuk."@nl-be ,
+                             "Indica que um subcapítulo faz parte de um capítulo."@pt ,
+                             "Indicates that a subchapter is part of a chapter."@en ,
+                             "Nurodo, kad poskyris priklauso skyriui."@lt ;
+                rdfs:label "er underkapitel i"@da ,
+                           "is deelhoofdstuk van"@nl ,
+                           "is deelhoofdstuk van"@nl-be ,
+                           "is subchapter of"@en ,
+                           "yra poskyriaus dalis"@lt ,
+                           "é subcapítulo de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isSubdivisionOf
+fro:isSubdivisionOf rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 rdfs:domain fro:DocumentSubdivision ;
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( fro:Document
+                                            fro:DocumentSubdivision
+                                          )
+                            ] ;
+                 rdfs:comment "Angiver, at en dokumentunderafdeling er en del af en anden underafdeling eller dokument."@da ,
+                              "Geeft aan dat een documentonderdeel onderdeel is van een andere onderverdeling of document."@nl ,
+                              "Geeft aan dat een documentonderdeel onderdeel is van een andere onderverdeling of document."@nl-be ,
+                              "Indica que uma subdivisão do documento faz parte de outra subdivisão ou documento."@pt ,
+                              "Indicates that a document subdivision is part of another subdivision or document."@en ,
+                              "Nurodo, kad dokumento padalinys priklauso kitam padaliniui arba dokumentui."@lt ;
+                 rdfs:label "er underafdeling af"@da ,
+                            "is onderverdeling van"@nl ,
+                            "is onderverdeling van"@nl-be ,
+                            "is subdivision of"@en ,
+                            "yra padalinys"@lt ,
+                            "é subdivisão de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isTableOf
+fro:isTableOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf fro:isSubdivisionOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:domain fro:Table ;
+           rdfs:comment "Angiver, at en tabel er en del af en dokumentunderafdeling."@da ,
+                        "Geeft aan dat een tabel onderdeel is van een documentonderdeel."@nl ,
+                        "Geeft aan dat een tabel onderdeel is van een documentonderdeel."@nl-be ,
+                        "Indica que uma tabela faz parte de uma subdivisão do documento."@pt ,
+                        "Indicates that a table is part of a document subdivision."@en ,
+                        "Nurodo, kad lentelė priklauso dokumento padaliniui."@lt ;
+           rdfs:label "er tabel i"@da ,
+                      "is tabel van"@nl ,
+                      "is tabel van"@nl-be ,
+                      "is table of"@en ,
+                      "yra lentelės dalis"@lt ,
+                      "é tabela de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#isTitleOf
+fro:isTitleOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf fro:isSubdivisionOf ;
+           rdf:type owl:TransitiveProperty ;
+           rdfs:domain fro:Title ;
+           rdfs:comment "Henvisning til dokumentets titel."@da ,
+                        "Nuoroda į dokumento pavadinimą."@lt ,
+                        "Reference to the title of a document."@en ,
+                        "Referência ao título de um documento."@pt ,
+                        "Verwijzing naar de titel van een document."@nl ,
+                        "Verwijzing naar de titel van een document."@nl-be ;
+           rdfs:label "er titel for"@da ,
+                      "is titel van"@nl ,
+                      "is titel van"@nl-be ,
+                      "is title of"@en ,
+                      "yra pavadinimo dalis"@lt ,
+                      "é título de"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#issues
+fro:issues rdf:type owl:ObjectProperty ;
+        rdfs:domain fro:Authority ;
+        rdfs:range fro:Document ;
+        rdfs:comment "Angiver dokumenter udstedt af en myndighed."@da ,
+                     "Geeft de documenten die door een autoriteit worden uitgegeven."@nl ,
+                     "Geeft de documenten die door een autoriteit worden uitgegeven."@nl-be ,
+                     "Indica os documentos emitidos por uma autoridade."@pt ,
+                     "Indicates the documents issued by an authority."@en ,
+                     "Nurodo dokumentus, kuriuos išduoda institucija."@lt ;
+        rdfs:label "emite"@pt ,
+                   "geeft uit"@nl ,
+                   "geeft uit"@nl-be ,
+                   "issues"@en ,
+                   "išduoda"@lt ,
+                   "steder ud"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#references
+fro:references rdf:type owl:ObjectProperty ;
+            rdfs:range fro:Reference ;
+            rdfs:comment "An object property pointing to a reference of something."@en ,
+                         "Een 'object property' die verwijst naar een referentie van iets."@nl ,
+                         "Et 'object property' der peger på en reference til noget."@da ,
+                         "Objekto savybė, nukreipianti į kažkokį šaltinį."@lt ,
+                         "Uma propriedade de objeto que aponta para uma referência de algo."@pt ;
+            rdfs:label "henviser til"@da ,
+                       "nurodo"@lt ,
+                       "refereert naar"@nl ,
+                       "refereert naar"@nl-be ,
+                       "references"@en ,
+                       "referências"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#replaces
+fro:replaces rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( fro:Document
+                                      fro:DocumentSubdivision
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( fro:Document
+                                     fro:DocumentSubdivision
+                                   )
+                     ] ;
+          rdfs:comment "Angiver, at dette dokument eller underafdeling erstatter et andet."@da ,
+                       "Geeft aan dat dit document of onderverdeling een ander vervangt."@nl ,
+                       "Geeft aan dat dit document of onderverdeling een ander vervangt."@nl-be ,
+                       "Indica que este documento ou subdivisão substitui outro."@pt ,
+                       "Indicates that this document or subdivision replaces another."@en ,
+                       "Nurodo, kad šis dokumentas arba jo poskyris pakeičia kitą."@lt ;
+          rdfs:label "erstatter"@da ,
+                     "pakeičia"@lt ,
+                     "replaces"@en ,
+                     "substitui"@pt ,
+                     "vervangt"@nl ,
+                     "vervangt"@nl-be .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.firebim.org/ontologies/fro#hasID
+fro:hasID rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:comment "A datatype property pointing to an ID of the subject."@en ,
+                    "Duomenų savybė, nukreipianti į subjekto ID."@lt ,
+                    "Een 'datatype property' die verwijst naar een ID van iets."@nl ,
+                    "Een 'datatype property' die verwijst naar een ID van iets."@nl-be ,
+                    "En datatypeegenskab, der peger på et ID for subjektet."@da ,
+                    "Uma propriedade de dados que aponta para um ID do sujeito."@pt ;
+       rdfs:label "har ID"@da ,
+                  "has ID"@en ,
+                  "heeft ID"@nl ,
+                  "heeft ID"@nl-be ,
+                  "tem ID"@pt ,
+                  "turi ID"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasIssueDate
+fro:hasIssueDate rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( fro:Document
+                                          fro:DocumentSubdivision
+                                        )
+                          ] ;
+              rdfs:comment "A datatype property indicating the issue date of a document or subdivision."@en ,
+                           "Duomenų savybė, nurodanti dokumento ar poskyrio išdavimo datą."@lt ,
+                           "Een 'datatype property' die de uitgiftedatum van een document of onderverdeling aangeeft."@nl ,
+                           "Een 'datatype property' die de uitgiftedatum van een document of onderverdeling aangeeft."@nl-be ,
+                           "En datatypeegenskab, der angiver udstedelsesdatoen for et dokument eller en underafdeling."@da ,
+                           "Uma propriedade de dados que indica a data de emissão de um documento ou subdivisão."@pt ;
+              rdfs:label "har udstedelsesdato"@da ,
+                         "has issue date"@en ,
+                         "heeft uitgiftedatum"@nl ,
+                         "heeft uitgiftedatum"@nl-be ,
+                         "tem data de emissão"@pt ,
+                         "turi išdavimo datą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasOriginalText
+fro:hasOriginalText rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( fro:Document
+                                             fro:DocumentSubdivision
+                                           )
+                             ] ;
+                 rdfs:comment "A datatype property pointing to the original text of the document or subdivision."@en ,
+                              "Duomenų savybė, nukreipianti į dokumento ar poskyrio originalų tekstą."@lt ,
+                              "Een 'datatype property' die verwijst naar de originele tekst van een document of onderverdeling."@nl ,
+                              "Een 'datatype property' die verwijst naar de originele tekst van een document of onderverdeling."@nl-be ,
+                              "En datatypeegenskab, der peger på den originale tekst af et dokument eller en underafdeling."@da ,
+                              "Uma propriedade de dados que aponta para o texto original de um documento ou subdivisão."@pt ;
+                 rdfs:label "har originaltekst"@da ,
+                            "has original text"@en ,
+                            "heeft originele tekst"@nl ,
+                            "heeft originele tekst"@nl-be ,
+                            "tem texto original"@pt ,
+                            "turi originalų tekstą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasPublicationDate
+fro:hasPublicationDate rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( fro:Document
+                                                fro:DocumentSubdivision
+                                              )
+                                ] ;
+                    rdfs:comment "A datatype property indicating the publication date of a document or subdivision."@en ,
+                                 "Duomenų savybė, nurodanti dokumento ar poskyrio publikavimo datą."@lt ,
+                                 "Een 'datatype property' die de publicatiedatum van een document of onderverdeling aangeeft."@nl ,
+                                 "Een 'datatype property' die de publicatiedatum van een document of onderverdeling aangeeft."@nl-be ,
+                                 "En datatypeegenskab, der angiver offentliggørelsesdatoen for et dokument eller en underafdeling."@da ,
+                                 "Uma propriedade de dados que indica a data de publicação de um documento ou subdivisão."@pt ;
+                    rdfs:label "har offentliggørelsesdato"@da ,
+                               "has publication date"@en ,
+                               "heeft publicatiedatum"@nl ,
+                               "heeft publicatiedatum"@nl-be ,
+                               "tem data de publicação"@pt ,
+                               "turi publikavimo datą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasValidDate
+fro:hasValidDate rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( fro:Document
+                                          fro:DocumentSubdivision
+                                        )
+                          ] ;
+              rdfs:comment "A datatype property indicating the validity date of a document or subdivision."@en ,
+                           "Duomenų savybė, nurodanti dokumento ar poskyrio galiojimo datą."@lt ,
+                           "Een 'datatype property' die de geldigheidsdatum van een document of onderverdeling aangeeft."@nl ,
+                           "Een 'datatype property' die de geldigheidsdatum van een document of onderverdeling aangeeft."@nl-be ,
+                           "En datatypeegenskab, der angiver gyldighedsdatoen for et dokument eller en underafdeling."@da ,
+                           "Uma propriedade de dados que indica a data de validade de um documento ou subdivisão."@pt ;
+              rdfs:label "har gyldighedsdato"@da ,
+                         "has valid date"@en ,
+                         "heeft geldigheidsdatum"@nl ,
+                         "heeft geldigheidsdatum"@nl-be ,
+                         "tem data de validade"@pt ,
+                         "turi galiojimo datą"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#hasVersion
+fro:hasVersion rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( fro:Document
+                                        fro:DocumentSubdivision
+                                      )
+                        ] ;
+            rdfs:comment "A datatype property indicating the version of a document or subdivision."@en ,
+                         "Duomenų savybė, nurodanti dokumento ar poskyrio versiją."@lt ,
+                         "Een 'datatype property' die de versie van een document of onderverdeling aangeeft."@nl ,
+                         "Een 'datatype property' die de versie van een document of onderverdeling aangeeft."@nl-be ,
+                         "En datatypeegenskab, der angiver versionen af et dokument eller en underafdeling."@da ,
+                         "Uma propriedade de dados que indica a versão de um documento ou subdivisão."@pt ;
+            rdfs:label "har version"@da ,
+                       "has version"@en ,
+                       "heeft versie"@nl ,
+                       "heeft versie"@nl-be ,
+                       "tem versão"@pt ,
+                       "turi versiją"@lt .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class .
+
+
+###  http://www.firebim.org/ontologies/fro#Annex
+fro:Annex rdf:type owl:Class ;
+       rdfs:subClassOf fro:DocumentSubdivision ;
+       rdfs:comment "A principal, integral component of a document containing normative content."@en ,
+                    "Een belangrijk, integraal onderdeel van een document dat normatieve inhoud bevat."@nl ,
+                    "Een belangrijk, integraal onderdeel van een document dat normatieve inhoud bevat."@nl-be ,
+                    "Et centralt, integreret dokumentafsnit, der indeholder normativt indhold."@da ,
+                    "Pagrindinė, integralinė dokumento dalis, turinti normatyvinį turinį."@lt ,
+                    "Um componente principal e integrante de um documento que contém conteúdo normativo."@pt ;
+       rdfs:label "Anexo"@pt ,
+                  "Annex"@en ,
+                  "Bijlage"@nl ,
+                  "Bijlage"@nl-be ,
+                  "Bilag"@da ,
+                  "Priedas"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Appendix
+fro:Appendix rdf:type owl:Class ;
+          rdfs:subClassOf fro:DocumentSubdivision ;
+          rdfs:comment "A separate part at the end of a document with extra information."@en ,
+                       "Een apart deel aan het einde van een document met extra informatie."@nl ,
+                       "Et dokument, tekstside el.lign. som vedlægges eller placeres efter hoveddokumentet eller hovedteksten, ofte som supplement eller som formidling af mere detaljerede oplysninger"@da ,
+                       "Uma secção separada no final de um documento que contém informações adicionais."@pt ;
+          rdfs:label "Appendix"@en ,
+                     "Appendix"@nl ,
+                     "Appendix"@nl-be ,
+                     "Apêndice"@pt ,
+                     "Bilag"@da ,
+                     "Priedėlis"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Article
+fro:Article rdf:type owl:Class ;
+         rdfs:subClassOf fro:DocumentSubdivision ;
+         rdfs:comment "A legal rule, constituted by one or more clauses."@en ,
+                      "Een rechtsregel, samengesteld uit meerdere leden."@nl ,
+                      "Een rechtsregel, samengesteld uit meerdere leden."@nl-be ,
+                      "En retsregel, som er en del af en lov."@da ,
+                      "Teisinė nuostata, sudaryta iš vienos ar daugiau nuostatų."@lt ,
+                      "Uma regra jurídica, constituída por um ou mais membros."@pt ;
+         rdfs:label "Article"@en ,
+                    "Artigo"@pt ,
+                    "Artikel"@da ,
+                    "Artikel"@nl ,
+                    "Artikel"@nl-be ,
+                    "Straipsnis"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Authority
+fro:Authority rdf:type owl:Class ;
+           owl:disjointWith fro:Document ,
+                            fro:DocumentSubdivision ;
+           rdfs:comment "A legal body with the power to make laws for a given jurisdiction."@en ,
+                        "Een juridisch orgaan met de bevoegdheid om wetten te maken voor een bepaald rechtsgebied."@nl ,
+                        "Een juridisch orgaan met de bevoegdheid om wetten te maken voor een bepaald rechtsgebied."@nl-be ,
+                        "Samfundsinstitution som forvalter og har magtbeføjelser på et bestemt område."@da ,
+                        "Teisinė institucija, turinti įgaliojimus priimti įstatymus tam tikroje jurisdikcijoje."@lt ,
+                        "Um órgão jurídico com competência para legislar para uma determinada jurisdição."@pt ;
+           rdfs:label "Authority"@en ,
+                      "Autoridade"@pt ,
+                      "Autoriteit"@nl ,
+                      "Autoriteit"@nl-be ,
+                      "Institucija"@lt ,
+                      "Myndighed"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#Chapter
+fro:Chapter rdf:type owl:Class ;
+         rdfs:subClassOf fro:DocumentSubdivision ;
+         rdfs:comment "Del af et dokument, der normalt omtales med et nummer."@da ,
+                      "Dokumento dalis, paprastai nurodoma su numeriu."@lt ,
+                      "Onderdeel van een document, meestal genummerd."@nl ,
+                      "Onderdeel van een document, meestal genummerd."@nl-be ,
+                      "Part of a document, usually referred to with a number."@en ,
+                      "Parte de um documento, normalmente referida com um número."@pt ;
+         rdfs:label "Capítulo"@pt ,
+                    "Chapter"@en ,
+                    "Hoofdstuk"@nl ,
+                    "Hoofdstuk"@nl-be ,
+                    "Kapitel"@da ,
+                    "Skyrius"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Clause
+fro:Clause rdf:type owl:Class ;
+        rdfs:subClassOf fro:DocumentSubdivision ;
+        rdfs:comment "Deel van een artikel. De exacte vorm van het lid is ongedefinieerd en kan bijvoorbeeld een zin, een lijstonderdeel of een combinatie daarvan zijn, afhankelijk van de structuur die het best past bij het specifieke regelgevingsdocument."@nl ,
+                     "Deel van een artikel. De exacte vorm van het lid is ongedefinieerd en kan bijvoorbeeld een zin, een lijstonderdeel of een combinatie daarvan zijn, afhankelijk van de structuur die het best past bij het specifieke regelgevingsdocument."@nl-be ,
+                     "Del af en artikel. Medlemmets nøjagtige form er ret vilkårlig og kan f.eks. være en sætning, et listepunkt eller en kombination af dem, afhængigt af den struktur, der passer bedst til det pågældende reguleringsdokument."@da ,
+                     "Part of an article. The exact form of the clause is rather arbitrary, and can for example be a sentence, a list item, or a combination of them, depending on the structure that best fits the particular regulatory document."@en ,
+                     "Parte de um artigo. A forma exacta do parágrafo é indefinida e pode ser, por exemplo, uma frase, um item de lista ou uma combinação destes, dependendo da estrutura que melhor se adequa ao documento regulamentar específico."@pt ,
+                     "Straipsnio dalis. Tiksli nuostatos forma nėra apibrėžta; gali būti sakinys, sąrašo elementas ar jų derinys, priklausomai nuo struktūros, kuri geriausiai tinka konkrečiam reglamentiniam dokumentui."@lt ;
+        rdfs:label "Clause"@en ,
+                   "Lid"@nl ,
+                   "Lid"@nl-be ,
+                   "Medlem"@da ,
+                   "Membro"@pt ,
+                   "Nuostata"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Document
+fro:Document rdf:type owl:Class ;
+          rdfs:comment "A record of information."@en ,
+                       "Een registratie van informatie."@nl ,
+                       "Een registratie van informatie."@nl-be ,
+                       "En del af et dokument."@da ,
+                       "Informacijos įrašas."@lt ,
+                       "Um registo de informação."@pt ;
+          rdfs:label "Document"@en ,
+                     "Document"@nl ,
+                     "Document"@nl-be ,
+                     "Documento"@pt ,
+                     "Dokument"@da ,
+                     "Dokumentas"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#DocumentSubdivision
+fro:DocumentSubdivision rdf:type owl:Class ;
+                     rdfs:comment "A part or subdivision of a document."@en ,
+                                  "Dokumento dalis ar padalinys."@lt ,
+                                  "Een onderdeel van een document."@nl ,
+                                  "Een onderdeel van een document."@nl-be ,
+                                  "En del af et dokument."@da ,
+                                  "Uma subdivisão de um documento."@pt ;
+                     rdfs:label "Document Subdivision"@en ,
+                                "Documentonderdeel"@nl ,
+                                "Documentonderdeel"@nl-be ,
+                                "Dokumento padalinys"@lt ,
+                                "Inddeling af dokumenter"@da ,
+                                "Subdivisão do documento"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#Equation
+fro:Equation rdf:type owl:Class ;
+          rdfs:subClassOf fro:DocumentSubdivision ;
+          rdfs:comment "A mathematical statement expressing the equality of two mathematical expressions."@en ,
+                       "Een wiskundig statement dat de gelijkheid van twee wiskundige uitdrukkingen uitdrukt."@nl ,
+                       "Een wiskundig statement dat de gelijkheid van twee wiskundige uitdrukkingen uitdrukt."@nl-be ,
+                       "Et matematisk udsagn udtrykt som formel der indeholder to størrelser med et lighedstegn imellem."@da ,
+                       "Matematinė išraiška, išreiškianti dviejų matematikos išraiškų lygybę."@lt ,
+                       "Uma afirmação matemática que expressa a igualdade entre duas expressões."@pt ;
+          rdfs:label "Equation"@en ,
+                     "Equação"@pt ,
+                     "Ligning"@da ,
+                     "Lygtis"@lt ,
+                     "Vergelijking"@nl ,
+                     "Vergelijking"@nl-be .
+
+
+###  http://www.firebim.org/ontologies/fro#Figure
+fro:Figure rdf:type owl:Class ;
+        rdfs:subClassOf fro:DocumentSubdivision ;
+        rdfs:comment "A picture, drawing, or other form of visual information."@en ,
+                     "Een afbeelding, tekening, of andere vorm van visuele informatie."@nl ,
+                     "Een afbeelding, tekening, of andere vorm van visuele informatie."@nl-be ,
+                     "Et billede, en tegning eller en anden form for visuel information."@da ,
+                     "Paveikslas, piešinys ar kita vizualinė informacija."@lt ,
+                     "Uma imagem, desenho ou outra forma de informação visual."@pt ;
+        rdfs:label "Figur"@da ,
+                   "Figura"@pt ,
+                   "Figure"@en ,
+                   "Figuur"@nl ,
+                   "Figuur"@nl-be ,
+                   "Iliustracija"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Item
+fro:Item rdf:type owl:Class ;
+      rdfs:subClassOf fro:DocumentSubdivision ;
+      rdfs:comment "Nuostatos dalis."@lt ,
+                   "Onderdeel van een lid."@nl ,
+                   "Onderdeel van een lid."@nl-be ,
+                   "Part of a clause."@en ,
+                   "Parte de um subitem ou cláusula."@pt ,
+                   "Underbestemmelse"@da ;
+      rdfs:label "Item"@en ,
+                 "Onderdeel"@nl ,
+                 "Onderdeel"@nl-be ,
+                 "Pogalinis punktas"@lt ,
+                 "Subitem"@pt ,
+                 "Underbestemmelse"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#Jurisdiction
+fro:Jurisdiction rdf:type owl:Class ;
+              rdfs:comment "A área geográfica ou política na qual uma determinada autoridade possui poder legal e onde os documentos são válidos."@pt ,
+                           "Det geografiske eller politiske område, hvor en bestemt myndighed har juridisk magt, og hvor dokumenter er gyldige."@da ,
+                           "Geografinė ar politinė sritis, kurioje tam tikra institucija turi teisinę galią, ir kurioje dokumentai yra galiojantys."@lt ,
+                           "Het geografische of politieke gebied waarbinnen een bepaalde autoriteit juridische macht heeft en documenten geldig zijn."@nl ,
+                           "Het geografische of politieke gebied waarbinnen een bepaalde autoriteit juridische macht heeft en documenten geldig zijn."@nl-be ,
+                           "The geographic or political area within which a particular authority has legal power, and within which documents are valid."@en ;
+              rdfs:label "Juridikcija"@lt ,
+                         "Jurisdictie"@nl ,
+                         "Jurisdictie"@nl-be ,
+                         "Jurisdiction"@en ,
+                         "Jurisdiktion"@da ,
+                         "Jurisdição"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#Paragraph
+fro:Paragraph rdf:type owl:Class ;
+           rdfs:subClassOf fro:DocumentSubdivision ;
+           rdfs:comment "A short part of a text, arranged as a separate block of text."@en ,
+                        "Een kort deel van een tekst, gerangschikt als een afzonderlijk tekstblok."@nl ,
+                        "Een kort deel van een tekst, gerangschikt als een afzonderlijk tekstblok."@nl-be ,
+                        "En mindre, afgrænset del af et (hoved)afsnit i en tekst."@da ,
+                        "Trumpa teksto dalis, pateikta kaip atskiras blokas."@lt ,
+                        "Uma parte curta de um texto, disposta como um bloco de texto separado."@pt ;
+           rdfs:label "Paragraaf"@nl ,
+                      "Paragraaf"@nl-be ,
+                      "Paragraph"@en ,
+                      "Parágrafo"@pt ,
+                      "Pastraipa"@lt ,
+                      "Underafsnit"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#Reference
+fro:Reference rdf:type owl:Class ;
+           rdfs:comment "A mention of something showing where particular information was found."@en ,
+                        "Een vermelding van iets die aangeeft waar bepaalde informatie is gevonden."@nl ,
+                        "Een vermelding van iets die aangeeft waar bepaalde informatie is gevonden."@nl-be ,
+                        "En omtale af noget, der viser, hvor bestemte oplysninger blev fundet."@da ,
+                        "Nurodymas, kur buvo rasta tam tikra informacija."@lt ,
+                        "Uma menção a algo que indica onde determinada informação foi encontrada."@pt ;
+           rdfs:label "Henvisning"@da ,
+                      "Nuoroda"@lt ,
+                      "Reference"@en ,
+                      "Referentie"@nl ,
+                      "Referentie"@nl-be ,
+                      "Referência"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#RegulatoryDocument
+fro:RegulatoryDocument rdf:type owl:Class ;
+                    rdfs:subClassOf fro:Document ;
+                    rdfs:comment "A document establishing binding rules or regulations."@en ,
+                                 "Dokumentas, nustatantis privalomas taisykles ar reglamentus."@lt ,
+                                 "Een document dat bindende regels of voorschriften vaststelt."@nl ,
+                                 "Een document dat bindende regels of voorschriften vaststelt."@nl-be ,
+                                 "Et dokument, der fastsætter bindende regler eller forskrifter."@da ,
+                                 "Um documento que estabelece regras ou regulamentos vinculativos."@pt ;
+                    rdfs:label "Documento regulatório"@pt ,
+                               "Regelgevend document"@nl ,
+                               "Regelgevend document"@nl-be ,
+                               "Regulatory document"@en ,
+                               "Regulerende dokument"@da ,
+                               "Reguliuojamasis dokumentas"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Section
+fro:Section rdf:type owl:Class ;
+         rdfs:subClassOf fro:DocumentSubdivision ;
+         rdfs:comment "En mindre, form- og indholdsmæssigt afgrænset del af en tekst, undertiden adskilt fra den foregående og efterfølgende tekst ved indrykning på linjen eller tom linje"@da ,
+                      "Onderdeel van een document."@nl ,
+                      "Onderdeel van een document."@nl-be ,
+                      "Part of a text, sometimes separated by indentation or blank line."@en ,
+                      "Teksto dalis, kartais atskirta įtraukimu arba tuščia eilute."@lt ,
+                      "Um agrupamento de artigos."@pt ;
+         rdfs:label "Afdeling"@nl ,
+                    "Afdeling"@nl-be ,
+                    "Afsnit"@da ,
+                    "Section"@en ,
+                    "Secção"@pt ,
+                    "Skiltis"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Standard
+fro:Standard rdf:type owl:Class ;
+          rdfs:subClassOf fro:Document ;
+          rdfs:comment "A document established by consensus that provides rules, guidelines or characteristics for activities or their results."@en ,
+                       "Dokumentas, sukurtas pagal konsensusą, suteikiantis taisykles, gaires ar charakteristikas veiklai ar jos rezultatams."@lt ,
+                       "Een document dat door consensus is opgesteld en regels, richtlijnen of kenmerken biedt voor activiteiten of hun resultaten."@nl ,
+                       "Een document dat door consensus is opgesteld en regels, richtlijnen of kenmerken biedt voor activiteiten of hun resultaten."@nl-be ,
+                       "Et dokument etableret ved konsensus, som giver regler, retningslinjer eller karakteristika for aktiviteter eller deres resultater."@da ,
+                       "Um documento estabelecido por consenso que fornece regras, diretrizes ou características para atividades ou seus resultados."@pt ;
+          rdfs:label "Norm"@nl ,
+                     "Norm"@nl-be ,
+                     "Norma"@pt ,
+                     "Standard"@da ,
+                     "Standard"@en ,
+                     "Standartas"@lt .
+
+
+###  http://www.firebim.org/ontologies/fro#Subchapter
+fro:Subchapter rdf:type owl:Class ;
+            rdfs:subClassOf fro:DocumentSubdivision ;
+            rdfs:comment "A part of a chapter, usually referred to with a number."@en ,
+                         "Een deel van een hoofdstuk, meestal genummerd."@nl ,
+                         "Een deel van een hoofdstuk, meestal genummerd."@nl-be ,
+                         "En del af et kapitel, som normalt omtales med et tal."@da ,
+                         "Skyriaus dalis, paprastai nurodoma su numeriu."@lt ,
+                         "Uma parte de um capítulo, normalmente referida com um número."@pt ;
+            rdfs:label "Deelhoofdstuk"@nl ,
+                       "Deelhoofdstuk"@nl-be ,
+                       "Poskyris"@lt ,
+                       "Subcapítulo"@pt ,
+                       "Subchapter"@en ,
+                       "Underkapitel"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#Table
+fro:Table rdf:type owl:Class ;
+       rdfs:subClassOf fro:DocumentSubdivision ;
+       rdfs:comment "An arrangement of data in rows and columns."@en ,
+                    "Duomenų išdėstymas eilutėmis ir stulpeliais."@lt ,
+                    "Een ordening van gegevens in rijen en kolommen."@nl ,
+                    "Een ordening van gegevens in rijen en kolommen."@nl-be ,
+                    "Et arrangement af data i rækker og kolonner."@da ,
+                    "Uma organização de dados em linhas e colunas."@pt ;
+       rdfs:label "Lentelė"@lt ,
+                  "Tabel"@da ,
+                  "Tabel"@nl ,
+                  "Tabel"@nl-be ,
+                  "Tabela"@pt ,
+                  "Table"@en .
+
+
+###  http://www.firebim.org/ontologies/fro#TechnicalGuideline
+fro:TechnicalGuideline rdf:type owl:Class ;
+                    rdfs:subClassOf fro:Document ;
+                    rdfs:comment "A document providing recommendations, instructions or best practices for technical processes."@en ,
+                                 "Dokumentas, pateikiantis rekomendacijas, instrukcijas ar geriausias praktikas techniniams procesams."@lt ,
+                                 "Een document dat aanbevelingen, instructies of best practices biedt voor technische processen."@nl ,
+                                 "Een document dat aanbevelingen, instructies of best practices biedt voor technische processen."@nl-be ,
+                                 "Et dokument, der giver anbefalinger, instruktioner eller bedste praksis for tekniske processer."@da ,
+                                 "Um documento que fornece recomendações, instruções ou melhores práticas para processos técnicos."@pt ;
+                    rdfs:label "Diretriz técnica"@pt ,
+                               "Technical guideline"@en ,
+                               "Techninis gaires"@lt ,
+                               "Technische richtlijn"@nl ,
+                               "Technische richtlijn"@nl-be ,
+                               "Teknisk vejledning"@da .
+
+
+###  http://www.firebim.org/ontologies/fro#Title
+fro:Title rdf:type owl:Class ;
+       rdfs:subClassOf fro:DocumentSubdivision ;
+       rdfs:comment "A division that groups related chapters under a common theme."@en ,
+                    "Een indeling waarbij verwante hoofdstukken onder een gemeenschappelijk thema worden gegroepeerd."@nl ,
+                    "Een indeling waarbij verwante hoofdstukken onder een gemeenschappelijk thema worden gegroepeerd."@nl-be ,
+                    "En inddeling der relaterede kapitler under et fælles tema."@da ,
+                    "Padalijimas, kuris grupuoja susijusius skyrius pagal bendrą temą."@lt ,
+                    "Uma divisão que agrupa capítulos relacionados entre si sob um tema comum."@pt ;
+       rdfs:label "Pavadinimas"@lt ,
+                  "Titel"@da ,
+                  "Titel"@nl ,
+                  "Titel"@nl-be ,
+                  "Title"@en ,
+                  "Título"@pt .
+
+
+###  http://www.firebim.org/ontologies/fro#Topic
+fro:Topic rdf:type owl:Class ;
+       rdfs:comment "A subject, issue or theme that a document or subdivision of a document addresses."@en ,
+                    "Een onderwerp of thema dat een document of een onderdeel van een document behandelt."@nl ,
+                    "Een onderwerp of thema dat een document of een onderdeel van een document behandelt."@nl-be ,
+                    "Et emne eller tema, som et dokument eller en underafdeling af dokumentet omhandler."@da ,
+                    "Tema, klausimas ar sritis, kurią nagrinėja dokumentas ar jo padalinys."@lt ,
+                    "Um assunto, questão ou tema que um documento ou subdivisão de um documento aborda."@pt ;
+       rdfs:label "Emne"@da ,
+                  "Onderwerp"@nl ,
+                  "Onderwerp"@nl-be ,
+                  "Tema"@lt ,
+                  "Topic"@en ,
+                  "Tópico"@pt .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.firebim.org/ontologies/fro#AlexDonkers
+fro:AlexDonkers rdf:type owl:NamedIndividual ,
+                      <http://schema.org/Person> ;
+             <http://schema.org/affiliation> <http://www.tue.nl> ;
+             <http://schema.org/email> "a.j.a.donkers@tue.nl" ;
+             <http://schema.org/name> "Alex Donkers" ;
+             <http://schema.org/url> <https://research.tue.nl/nl/persons/alex-ja-donkers/> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+

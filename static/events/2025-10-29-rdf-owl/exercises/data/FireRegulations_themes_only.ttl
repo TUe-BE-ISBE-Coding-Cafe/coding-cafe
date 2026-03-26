@@ -1,0 +1,64 @@
+@prefix fro: <http://www.firebim.org/ontologies/fro#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fbo: <http://www.firebim.org/ontologies/fbo#> .
+
+<http://www.firebim.org/regulations/nl#Clause_3.139> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_3.46> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.9 .
+
+<http://www.firebim.org/regulations/nl#Clause_3.56> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_3.57> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.9 .
+
+<http://www.firebim.org/regulations/nl#Clause_3.60> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_3.62> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.218a> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.237> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.26a> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.9 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.29> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.67> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.75> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.9 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.79> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.86> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.91> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_4.95> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.85 .
+
+<http://www.firebim.org/regulations/nl#Clause_5.13> fro:isAbout fbo:FireCompartment ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_5.24> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.9 .
+
+<http://www.firebim.org/regulations/nl#Clause_6.13> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.8 .
+
+<http://www.firebim.org/regulations/nl#Clause_6.23a> fro:isAbout fbo:EvacuationRoute ;
+    fro:confidence 0.9 .
+

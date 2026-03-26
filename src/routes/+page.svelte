@@ -124,7 +124,9 @@
 						<p class="hero-eyebrow">BE Coding Cafe</p>
 						<h1 class="hero-title">BE Coding Caf&#233;</h1>
 						<p class="hero-body">
-							A place where researchers learn, experiment, and solve coding problems together.
+							BE Coding Cafe is an informal meetup where researchers learn together,
+							experiment with tools and workflows, and solve coding problems through short
+							introductions and open coding sessions.
 						</p>
 						<p class="hero-tagline">SHORT TALKS · HANDS-ON CODING · PEER SUPPORT</p>
 
@@ -189,11 +191,9 @@
 					</div>
 
 					<div class="hero-banner">
-						<p>☕ Bring your laptop. Work on real problems.</p>
-						<button type="button" class="hero-link" on:click={() => scrollToScreen(2)}>
-							Next ↓
-						</button>
+						<p>Bring your laptop. Work on real problems.</p>
 					</div>
+
 				</div>
 
 				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
