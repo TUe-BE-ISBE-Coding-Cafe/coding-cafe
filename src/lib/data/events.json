@@ -101,9 +101,9 @@
 		]
 	},
 		{
-		"title": "AI assisted coding: A hands-on session with GitHub Copilot - tentative",
+		"title": "AI assisted coding: A hands-on session with GitHub Copilot",
 		"date": "2026-04-29",
-		"description": "to be decided",
+		"description": "The session will cover the following: \n - Understanding AI-Assisted vs AI-Driven (Vibe) Coding \n - Linking an AI tool (GitHub Copilot) to development environment in Visual Studio \n - Importance of prompt engineering in AI based coding \n - Developing, Debugging and Explaining Code \n - 5 essential prompts in AI-assisted coding",
 		"location": "Vertigo 9.06",
 		"startTime": "12:00",
 		"endTime": "13:30",
@@ -111,9 +111,7 @@
 		"speaker_link": "https://research.tue.nl/en/persons/avinash-ramachandruni/",
 		"speakerImage": "https://research.tue.nl/files-asset/352319201/Ramachandruni_Avinash_BE_PO_VH_PROM.jpg?w=320&f=webp",
 		"slug": "2026-04-29",
-		"tags": [
-
-		]
+		"tags": ["Vibe coding", "AI-assisted coding", "GitHub Copilot"]
 	},
 		{
 		"title": "IoT -- tentative",
