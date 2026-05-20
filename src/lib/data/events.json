@@ -114,29 +114,19 @@
 		"tags": ["Vibe coding", "AI-assisted coding", "GitHub Copilot"]
 	},
 		{
-		"title": "IoT -- tentative",
+		"title": "From Zero to IoT ",
+		"subtitle":"Building Smart Projects with Rasperry Pi",
 		"date": "2026-05-27",
-		"description": "to be decided",
+		"description": "During this session, participants will get a practical introduction to Raspberry Pi and learn how it can be used to create real-world IoT applications. The talk is designed for beginners and enthusiasts who are interested in embedded systems, automation, and connected devices.",
 		"location": "Vertigo 9.06",
 		"startTime": "12:00",
 		"endTime": "13:30",
-		"speaker": "to be decided",
+		"speaker": "Ravi Sharma",
+		"speaker_link": "https://research.tue.nl/en/persons/ravi-sharma/",
+		"speakerImage": "https://research.tue.nl/files-asset/352416389/Sharma_Ravi_BE_PO_VH_PD.jpg?w=160&f=webp",
 		"slug": "2026-05-27",
-		"tags": [
+		"tags": ["IoT", "Raspberry Pi"
 
-		]
-	},
-		{
-		"title": "Tentative",
-		"date": "2026-06-24",
-		"description": "to be decided",
-		"location": "Vertigo 9.06",
-		"startTime": "12:00",
-		"endTime": "13:30",
-		"speaker": "to be decided",
-		"slug": "2026-06-24",
-		"tags": [
-	
 		]
 	}
 ]
