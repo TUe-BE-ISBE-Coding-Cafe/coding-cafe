@@ -115,9 +115,9 @@
 	},
 		{
 		"title": "From Zero to IoT ",
-		"subtitle":"Building Smart Projects with Rasperry Pi",
+		"subtitle":"Building Smart Projects with Raspberry Pi",
 		"date": "2026-05-27",
-		"description": "During this session, participants will get a practical introduction to Raspberry Pi and learn how it can be used to create real-world IoT applications. The talk is designed for beginners and enthusiasts who are interested in embedded systems, automation, and connected devices.",
+		"description": "During this session, participants will get a practical introduction to Raspberry Pi and learn how it can be used to create real-world IoT applications.",
 		"location": "Vertigo 9.06",
 		"startTime": "12:00",
 		"endTime": "13:30",
