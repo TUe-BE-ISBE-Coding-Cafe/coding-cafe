@@ -1,6 +1,7 @@
 <script>
 	import AgendaEventCard from '$lib/components/AgendaEventCard.svelte';
 	import { groupEvents } from '$lib/utils/events.js';
+	import { currentTheme } from '$lib/site.js';
 
 	export let data;
 
@@ -27,6 +28,18 @@
 			<p class="max-w-2xl text-lg leading-8 text-zinc-600">
 				Upcoming sessions, past materials, and direct links to talks and exercises live here.
 			</p>
+
+			<div
+				class="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-[#C81919]/20 bg-[#fff1f1] px-4 py-3"
+			>
+				<span
+					class="rounded-full bg-[#C81919] px-2.5 py-1 text-[10px] font-extrabold tracking-[0.18em] text-white uppercase"
+				>
+					{currentTheme.period} theme
+				</span>
+				<span class="text-base font-bold text-zinc-900">{currentTheme.name}</span>
+				<span class="text-sm text-zinc-600">{currentTheme.blurb}</span>
+			</div>
 		</div>
 	</div>
 </section>

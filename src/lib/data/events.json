@@ -103,5 +103,45 @@
 		"speakerImage": "https://research.tue.nl/files-asset/352416389/Sharma_Ravi_BE_PO_VH_PD.jpg?w=160&f=webp",
 		"slug": "2026-05-27",
 		"tags": ["IoT", "Raspberry Pi"]
+	},
+	{
+		"title": "Topic to be announced",
+		"date": "2026-09-23",
+		"startTime": "12:00",
+		"endTime": "13:30",
+		"location": "Vertigo 9.06",
+		"slug": "2026-09-23",
+		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
+		"tags": ["AI"]
+	},
+	{
+		"title": "Topic to be announced",
+		"date": "2026-10-28",
+		"startTime": "12:00",
+		"endTime": "13:30",
+		"location": "Vertigo 9.06",
+		"slug": "2026-10-28",
+		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
+		"tags": ["AI"]
+	},
+	{
+		"title": "Topic to be announced",
+		"date": "2026-11-25",
+		"startTime": "12:00",
+		"endTime": "13:30",
+		"location": "Vertigo 9.06",
+		"slug": "2026-11-25",
+		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
+		"tags": ["AI"]
+	},
+	{
+		"title": "Topic to be announced",
+		"date": "2026-12-16",
+		"startTime": "12:00",
+		"endTime": "13:30",
+		"location": "Vertigo 9.06",
+		"slug": "2026-12-16",
+		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
+		"tags": ["AI"]
 	}
 ]

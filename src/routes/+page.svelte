@@ -4,6 +4,7 @@
 	import { formatEventTime, groupEvents } from '$lib/utils/events.js';
 
 	import { teamsUrl } from '$lib/links.js';
+	import { currentTheme } from '$lib/site.js';
 
 	const sessionParts = [
 		{
@@ -125,6 +126,10 @@
 					<div class="hero-copy">
 						<p class="hero-eyebrow">BE Coding Cafe</p>
 						<h1 class="hero-title">BE Coding Caf&#233;</h1>
+						<p class="hero-theme">
+							<span class="hero-theme__tag">{currentTheme.period} theme</span>
+							<span class="hero-theme__name">{currentTheme.name}</span>
+						</p>
 						<p class="hero-body">
 							BE Coding Cafe is an informal meetup where researchers learn together, experiment with
 							tools and workflows, and solve coding problems through short introductions and open

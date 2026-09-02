@@ -1,5 +1,6 @@
 <script>
 	import resources from '$lib/data/resources.json';
+	import { knowledgeBaseUrl, knowledgeBaseReady } from '$lib/links.js';
 
 	const visualMap = {
 		guide: 'panel',
@@ -220,6 +221,25 @@
 					{/if}
 				</section>
 			</div>
+		</section>
+
+		<section class="kb-callout" aria-labelledby="kb-callout-title">
+			<div class="kb-callout__copy">
+				<p class="kb-callout__eyebrow">Knowledge base</p>
+				<h2 id="kb-callout-title">The Coding Caf&#233; knowledge base</h2>
+				<p>
+					A living MyST notebook collecting what we cover in the sessions — runnable examples,
+					notes, and references you can work through at your own pace.
+				</p>
+			</div>
+
+			{#if knowledgeBaseReady}
+				<a href={knowledgeBaseUrl} target="_blank" rel="noreferrer" class="kb-callout__button">
+					Open the knowledge base ↗
+				</a>
+			{:else}
+				<span class="kb-callout__button kb-callout__button--pending">Coming soon</span>
+			{/if}
 		</section>
 
 		<section class="resources-library">
@@ -490,6 +510,72 @@
 		border-color: #e11d2e;
 		background: #e11d2e;
 		color: white;
+	}
+
+	.kb-callout {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.25rem;
+		margin-top: 1.5rem;
+		border: 1px solid rgba(203, 213, 225, 0.95);
+		border-left: 4px solid #e11d2e;
+		border-radius: 1.25rem;
+		background: rgba(255, 255, 255, 0.75);
+		padding: 1.15rem 1.35rem;
+	}
+
+	.kb-callout__copy {
+		min-width: 0;
+		flex: 1 1 24rem;
+	}
+
+	.kb-callout__eyebrow {
+		margin: 0 0 0.4rem;
+		font-size: 0.64rem;
+		font-weight: 800;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: #e11d2e;
+	}
+
+	.kb-callout h2 {
+		margin: 0;
+		font-size: 1.3rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: #111827;
+	}
+
+	.kb-callout p:last-child {
+		margin: 0.5rem 0 0;
+		max-width: 46rem;
+		font-size: 0.92rem;
+		line-height: 1.65;
+		color: #475569;
+	}
+
+	.kb-callout__button {
+		display: inline-flex;
+		flex: none;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.9rem;
+		background: #111827;
+		padding: 0.8rem 1.1rem;
+		font-size: 0.72rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #fff;
+	}
+
+	.kb-callout__button--pending {
+		background: transparent;
+		border: 1px dashed rgba(148, 163, 184, 0.9);
+		color: #64748b;
 	}
 
 	.resources-library {

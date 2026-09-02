@@ -108,6 +108,7 @@ body {
 
 .hero-content--active .hero-eyebrow,
 .hero-content--active .hero-title,
+.hero-content--active .hero-theme,
 .hero-content--active .hero-body,
 .hero-content--active .hero-tagline,
 .hero-content--active .hero-card,
@@ -117,6 +118,10 @@ body {
 
 .hero-content--active .hero-title {
 	animation-delay: 80ms;
+}
+
+.hero-content--active .hero-theme {
+	animation-delay: 120ms;
 }
 
 .hero-content--active .hero-body,
@@ -158,6 +163,35 @@ body {
 .hero-title--section {
 	max-width: 14ch;
 	font-size: clamp(3rem, 5.2vw, 5rem);
+}
+
+.hero-theme {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-top: 1.35rem;
+	padding: 0.42rem 0.95rem 0.42rem 0.55rem;
+	border: 1px solid rgba(200, 25, 25, 0.22);
+	border-radius: 9999px;
+	background: #fff1f1;
+}
+
+.hero-theme__tag {
+	border-radius: 9999px;
+	background: #c81919;
+	padding: 0.24rem 0.6rem;
+	font-size: 0.62rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.hero-theme__name {
+	font-size: 0.95rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	color: #18181b;
 }
 
 .hero-body {

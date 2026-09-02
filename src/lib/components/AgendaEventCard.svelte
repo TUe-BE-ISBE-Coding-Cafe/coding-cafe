@@ -94,7 +94,7 @@
 							</p>
 						</div>
 					</a>
-				{:else}
+				{:else if event.speaker}
 					<div
 						class="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
 					>
@@ -117,6 +117,19 @@
 							{#if event.location}
 								<p class="truncate text-xs text-zinc-500">{event.location}</p>
 							{/if}
+						</div>
+					</div>
+				{:else}
+					<div
+						class="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50/60 px-3 py-2"
+					>
+						<div
+							class="flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+						>
+							CC
+						</div>
+						<div class="min-w-0 flex-1">
+							<p class="truncate text-sm font-semibold text-zinc-500">Speaker to be announced</p>
 						</div>
 					</div>
 				{/if}
@@ -240,7 +253,7 @@
 						<p class="text-[11px] tracking-[0.14em] text-zinc-500 uppercase">More info</p>
 					</div>
 				</a>
-			{:else}
+			{:else if event.speaker}
 				<div
 					class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
 				>
@@ -260,6 +273,19 @@
 
 					<div class="min-w-0">
 						<p class="truncate text-sm font-semibold text-zinc-900">{event.speaker}</p>
+					</div>
+				</div>
+			{:else}
+				<div
+					class="flex items-center gap-3 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50/60 px-3 py-2"
+				>
+					<div
+						class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+					>
+						CC
+					</div>
+					<div class="min-w-0 flex-1">
+						<p class="truncate text-sm font-semibold text-zinc-500">Speaker to be announced</p>
 					</div>
 				</div>
 			{/if}
@@ -366,7 +392,7 @@
 						<p class="text-[11px] tracking-[0.14em] text-zinc-500 uppercase">More info</p>
 					</div>
 				</a>
-			{:else}
+			{:else if event.speaker}
 				<div
 					class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
 				>
@@ -386,6 +412,19 @@
 
 					<div class="min-w-0">
 						<p class="truncate text-sm font-semibold text-zinc-900">{event.speaker}</p>
+					</div>
+				</div>
+			{:else}
+				<div
+					class="flex items-center gap-3 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50/60 px-3 py-2"
+				>
+					<div
+						class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+					>
+						CC
+					</div>
+					<div class="min-w-0 flex-1">
+						<p class="truncate text-sm font-semibold text-zinc-500">Speaker to be announced</p>
 					</div>
 				</div>
 			{/if}

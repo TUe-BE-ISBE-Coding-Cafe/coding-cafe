@@ -1,5 +1,13 @@
 <script>
-	import { teamsUrl, githubUrl, zenodoUrl, contactEmail as email, creatorUrl } from '$lib/links.js';
+	import {
+		teamsUrl,
+		githubUrl,
+		zenodoUrl,
+		contactEmail as email,
+		creatorUrl,
+		knowledgeBaseUrl,
+		knowledgeBaseReady
+	} from '$lib/links.js';
 </script>
 
 <footer class="mt-auto w-full border-t border-black/10 bg-[#111111] text-white">
@@ -64,6 +72,17 @@
 					</svg>
 					<span>GitHub</span>
 				</a>
+				{#if knowledgeBaseReady}
+					<a
+						href={knowledgeBaseUrl}
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Coding Cafe knowledge base"
+						class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 transition-colors hover:border-[#f87171]/50 hover:bg-white/10 hover:text-white"
+					>
+						<span>Knowledge base</span>
+					</a>
+				{/if}
 				<a
 					href={zenodoUrl}
 					target="_blank"
