@@ -3,6 +3,7 @@
 		"title": "Build Once, Run Anywhere:",
 		"subtitle": "Making Your Research Reproducible with Docker",
 		"date": "2025-07-02",
+		"description": "An introduction to containers for research software: what Docker images are, how they solve dependency problems, and how to write Dockerfiles that make notebooks, scripts, and data workflows reproducible and shareable. Includes worked examples of volumes, networking, and the commands to run and manage containers.",
 		"location": "Vertigo 9.06",
 		"speaker": "Özgün Balaban",
 		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
