@@ -9,7 +9,7 @@
 		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
 		"slides": "/events/2025-07-02-docker-and-reproducibility/slides/2025-07-02-docker-and-reproducibility.pdf",
 		"poster": "/events/2025-07-02-docker-and-reproducibility/poster.jpg",
-		"repo": "https://github.com/ISBE-TUe/coding-cafe/tree/main/static/events/2025-07-02-docker-and-reproducibility",
+		"repo": "https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/tree/main/static/events/2025-07-02-docker-and-reproducibility",
 		"slug": "2025-07-02-docker-and-reproducibility",
 		"zenodo": "10.5281/zenodo.15802618",
 		"tags": ["docker", "reproducibility", "containers"]
@@ -41,7 +41,7 @@
 		"speaker_link": "https://www.tue.nl/en/research/researchers/alex-donkers",
 		"speakerImage": "/images/speakers/alex-donkers.jpg",
 		"description": "In this Coding Cafe, we will explore the intersection of RDF/OWL and Large Language Models (LLMs). We will discuss how semantic web technologies can enhance the capabilities of LLMs and vice versa. ",
-		"repo": "https://github.com/ISBE-TUe/coding-cafe/tree/main/static/events/2025-10-29-rdf-owl",
+		"repo": "https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/tree/main/static/events/2025-10-29-rdf-owl",
 		"slides": "/events/2025-10-29-rdf-owl/slides/Presentation.pdf",
 		"slug": "2025-10-29-rdf-owl",
 		"tags": ["RDF", "OWL", "Large Language Models", "Semantic Web"],

@@ -76,7 +76,7 @@
 					Got a favorite topic you’d like us to explore, or an idea for a presentation at an
 					upcoming Coding Café? Please let us know in the Teams Channel, via a
 					<a
-						href="https://github.com/ISBE-TUe/coding-cafe/issues"
+						href="https://github.com/TUe-BE-ISBE-Coding-Cafe/coding-cafe/issues"
 						class="text-blue-600 underline hover:text-blue-800"
 						target="_blank">GitHub Issue</a
 					>
