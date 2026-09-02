@@ -108,7 +108,6 @@ body {
 
 .hero-content--active .hero-eyebrow,
 .hero-content--active .hero-title,
-.hero-content--active .hero-theme,
 .hero-content--active .hero-body,
 .hero-content--active .hero-tagline,
 .hero-content--active .hero-card,
@@ -120,11 +119,7 @@ body {
 	animation-delay: 80ms;
 }
 
-.hero-content--active .hero-theme {
-	animation-delay: 120ms;
-}
-
-.hero-content--active .hero-body,
+.hero-content--active .hero-content--active .hero-body,
 .hero-content--active .hero-tagline,
 .hero-content--active .hero-banner {
 	animation-delay: 150ms;
@@ -163,35 +158,6 @@ body {
 .hero-title--section {
 	max-width: 14ch;
 	font-size: clamp(3rem, 5.2vw, 5rem);
-}
-
-.hero-theme {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.6rem;
-	margin-top: 1.35rem;
-	padding: 0.42rem 0.95rem 0.42rem 0.55rem;
-	border: 1px solid rgba(200, 25, 25, 0.22);
-	border-radius: 9999px;
-	background: #fff1f1;
-}
-
-.hero-theme__tag {
-	border-radius: 9999px;
-	background: #c81919;
-	padding: 0.24rem 0.6rem;
-	font-size: 0.62rem;
-	font-weight: 800;
-	letter-spacing: 0.18em;
-	text-transform: uppercase;
-	color: #fff;
-}
-
-.hero-theme__name {
-	font-size: 0.95rem;
-	font-weight: 800;
-	letter-spacing: -0.01em;
-	color: #18181b;
 }
 
 .hero-body {
@@ -376,6 +342,46 @@ body {
 
 .hero-mini-card__text--strong {
 	margin-top: 0;
+}
+
+.hero-announce {
+	border-radius: 1.5rem;
+	background: linear-gradient(135deg, #c81919 0%, #8f1230 100%);
+	padding: 1.6rem 1.5rem 1.7rem;
+	color: #fff;
+	box-shadow: 0 22px 48px -26px rgba(200, 25, 25, 0.65);
+}
+
+.hero-announce__tag {
+	display: inline-flex;
+	border-radius: 9999px;
+	background: rgba(255, 255, 255, 0.18);
+	padding: 0.32rem 0.72rem;
+	font-size: 0.66rem;
+	font-weight: 800;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.hero-announce__title {
+	margin-top: 0.9rem;
+	font-size: clamp(1.9rem, 2.7vw, 2.6rem);
+	font-weight: 900;
+	line-height: 1.02;
+	letter-spacing: -0.035em;
+	color: #fff;
+}
+
+.hero-announce__body {
+	margin-top: 0.75rem;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-card--identity .hero-mini-grid {
+	margin-top: 1.5rem;
 }
 
 .hero-resource-library {

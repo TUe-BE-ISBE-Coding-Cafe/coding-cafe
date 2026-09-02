@@ -5,7 +5,10 @@
 export const currentTheme = {
 	period: '2026/27',
 	name: 'AI',
+	headline: 'AI for research',
 	label: '2026/27 theme · AI',
 	blurb:
-		'This year every Coding Café session centres on AI — the tools, the workflows, and the practical questions of using it in research.'
+		'This year every Coding Café session centres on AI — the tools, the workflows, and the practical questions of using it in research.',
+	announcement:
+		'Every session this year is centred on using AI for research — the tools, the workflows, and what actually works.'
 };

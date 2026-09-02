@@ -126,10 +126,6 @@
 					<div class="hero-copy">
 						<p class="hero-eyebrow">BE Coding Cafe</p>
 						<h1 class="hero-title">BE Coding Caf&#233;</h1>
-						<p class="hero-theme">
-							<span class="hero-theme__tag">{currentTheme.period} theme</span>
-							<span class="hero-theme__name">{currentTheme.name}</span>
-						</p>
 						<p class="hero-body">
 							BE Coding Cafe is an informal meetup where researchers learn together, experiment with
 							tools and workflows, and solve coding problems through short introductions and open
@@ -149,7 +145,11 @@
 					</div>
 
 					<div class="hero-card hero-card--identity">
-						<div class="hero-card__header"></div>
+						<div class="hero-announce">
+							<p class="hero-announce__tag">{currentTheme.period} theme</p>
+							<p class="hero-announce__title">{currentTheme.headline}</p>
+							<p class="hero-announce__body">{currentTheme.announcement}</p>
+						</div>
 
 						<div class="hero-mini-grid">
 							<div class="hero-mini-card">
