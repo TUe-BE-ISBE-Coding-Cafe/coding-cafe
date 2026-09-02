@@ -6,7 +6,8 @@
 		{ name: 'Agenda', href: '/agenda', isActive: (url) => url.pathname === '/agenda' },
 		{ name: 'Resources', href: '/resources', isActive: (url) => url.pathname === '/resources' },
 		{ name: 'Training', href: '/training', isActive: (url) => url.pathname === '/training' },
-		{ name: 'Calendar', href: '/calendar', isActive: (url) => url.pathname === '/calendar' }
+		{ name: 'Calendar', href: '/calendar', isActive: (url) => url.pathname === '/calendar' },
+		{ name: 'About', href: '/about', isActive: (url) => url.pathname === '/about' }
 	];
 
 	function isActive(item) {
@@ -42,7 +43,7 @@
 		</div>
 
 		<div class="flex flex-wrap items-center gap-x-8 gap-y-3 lg:justify-end">
-			{#each navItems as item}
+			{#each navItems as item (item.href)}
 				<a
 					href={item.href}
 					aria-current={isActive(item) ? 'page' : undefined}

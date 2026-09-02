@@ -40,19 +40,19 @@ Minimal example:
 
 ```json
 {
-  "title": "Working with Data",
-  "subtitle": "From database concepts to a mini-SQL demo",
-  "date": "2026-09-30",
-  "startTime": "12:00",
-  "endTime": "13:30",
-  "location": "Vertigo 9.06",
-  "speaker": "Jane Doe",
-  "speaker_link": "https://example.org/jane-doe",
-  "speakerImage": "https://example.org/jane-doe.jpg",
-  "slug": "2026-09-30-working-with-data",
-  "description": "A short practical introduction to working with research data and simple SQL workflows.",
-  "tags": ["databases", "SQL", "data management"],
-  "calendar": "/calendar/september_coding_cafe.ics"
+	"title": "Working with Data",
+	"subtitle": "From database concepts to a mini-SQL demo",
+	"date": "2026-09-30",
+	"startTime": "12:00",
+	"endTime": "13:30",
+	"location": "Vertigo 9.06",
+	"speaker": "Jane Doe",
+	"speaker_link": "https://example.org/jane-doe",
+	"speakerImage": "https://example.org/jane-doe.jpg",
+	"slug": "2026-09-30-working-with-data",
+	"description": "A short practical introduction to working with research data and simple SQL workflows.",
+	"tags": ["databases", "SQL", "data management"],
+	"calendar": "/calendar/september_coding_cafe.ics"
 }
 ```
 
@@ -116,16 +116,16 @@ Example:
 
 ```json
 {
-  "id": "r7",
-  "title": "Research Software Engineering with Python",
-  "abstract": "A practical guide for writing maintainable research code in Python.",
-  "type": "Guide",
-  "source": "External",
-  "access": "Open Access",
-  "tags": ["Python", "Research Software"],
-  "theme": "Research Software Engineering",
-  "url": "https://example.org/resource",
-  "image": "https://example.org/resource-preview.jpg"
+	"id": "r7",
+	"title": "Research Software Engineering with Python",
+	"abstract": "A practical guide for writing maintainable research code in Python.",
+	"type": "Guide",
+	"source": "External",
+	"access": "Open Access",
+	"tags": ["Python", "Research Software"],
+	"theme": "Research Software Engineering",
+	"url": "https://example.org/resource",
+	"image": "https://example.org/resource-preview.jpg"
 }
 ```
 
@@ -146,27 +146,27 @@ Example:
 
 ```json
 {
-  "id": "t20260915",
-  "title": "Introduction to Research Data Management",
-  "description": "A practical workshop on organising, documenting, and sharing research data.",
-  "organizer": "4TU.ResearchData",
-  "level": "Beginner",
-  "audience": ["PhD", "Postdocs"],
-  "duration": "1 day",
-  "format": "In-person",
-  "tags": ["Data Management", "FAIR"],
-  "registrationLink": "https://example.org/register",
-  "sessions": [
-    {
-      "id": "t20260915-1",
-      "title": "Introduction to Research Data Management",
-      "date": "2026-09-15",
-      "startTime": "09:30",
-      "endTime": "16:30",
-      "location": "TU/e campus",
-      "description": ""
-    }
-  ]
+	"id": "t20260915",
+	"title": "Introduction to Research Data Management",
+	"description": "A practical workshop on organising, documenting, and sharing research data.",
+	"organizer": "4TU.ResearchData",
+	"level": "Beginner",
+	"audience": ["PhD", "Postdocs"],
+	"duration": "1 day",
+	"format": "In-person",
+	"tags": ["Data Management", "FAIR"],
+	"registrationLink": "https://example.org/register",
+	"sessions": [
+		{
+			"id": "t20260915-1",
+			"title": "Introduction to Research Data Management",
+			"date": "2026-09-15",
+			"startTime": "09:30",
+			"endTime": "16:30",
+			"location": "TU/e campus",
+			"description": ""
+		}
+	]
 }
 ```
 

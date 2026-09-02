@@ -1,17 +1,14 @@
 <script>
-	const githubUrl = 'https://github.com/ISBE-TUe/coding-cafe';
-	const zenodoUrl = 'https://zenodo.org/communities/tue_be_isbe_codingcafe';
-	const teamsUrl =
-		'https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64';
-	const email = 'o.balaban@tue.nl';
-	const creatorUrl = 'https://www.ozgunbalaban.com';
+	import { teamsUrl, githubUrl, zenodoUrl, contactEmail as email, creatorUrl } from '$lib/links.js';
 </script>
 
 <footer class="mt-auto w-full border-t border-black/10 bg-[#111111] text-white">
-	<div class="mx-auto max-w-[92rem] px-6 pb-5 pt-4">
-		<div class="flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
+	<div class="mx-auto max-w-[92rem] px-6 pt-4 pb-5">
+		<div
+			class="flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-5"
+		>
 			<div class="space-y-2 text-center lg:text-left">
-				<p class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f87171]">
+				<p class="text-[11px] font-semibold tracking-[0.24em] text-[#f87171] uppercase">
 					BE Coding Cafe
 				</p>
 				<p class="max-w-xs text-sm leading-6 text-zinc-300">
@@ -34,13 +31,15 @@
 				href="https://isbe.bwk.tue.nl"
 				target="_blank"
 				rel="noreferrer"
-				class="inline-block text-center text-[11px] font-semibold uppercase leading-[1.25] tracking-[0.14em] text-zinc-300 transition-colors hover:text-white sm:text-xs lg:text-left"
+				class="inline-block text-center text-[11px] leading-[1.25] font-semibold tracking-[0.14em] text-zinc-300 uppercase transition-colors hover:text-white sm:text-xs lg:text-left"
 			>
 				<span class="block">Information Systems</span>
 				<span class="block">in the Built Environment</span>
 			</a>
 
-			<div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-3 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-300 lg:justify-start">
+			<div
+				class="flex flex-wrap items-center justify-center gap-x-2 gap-y-3 text-xs font-semibold tracking-[0.14em] text-zinc-300 uppercase lg:justify-start"
+			>
 				<a
 					href={teamsUrl}
 					target="_blank"
@@ -77,7 +76,7 @@
 				</a>
 			</div>
 
-			<div class="text-center text-xs leading-5 normal-case tracking-normal lg:text-left">
+			<div class="text-center text-xs leading-5 tracking-normal normal-case lg:text-left">
 				<p class="font-medium text-white">Contact Özgün Balaban</p>
 				<div class="flex flex-col items-center text-zinc-300 lg:items-start">
 					<a href={'mailto:' + email} class="transition-colors hover:text-[#fca5a5]">

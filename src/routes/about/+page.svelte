@@ -1,3 +1,11 @@
+<svelte:head>
+	<title>About | BE Coding Cafe</title>
+	<meta
+		name="description"
+		content="What the TU/e BE Coding Cafe is, who can join, and how to get involved."
+	/>
+</svelte:head>
+
 <section class="mx-auto max-w-screen-xl px-8 py-16">
 	<h1 class="text-tue-red mb-6 text-3xl font-bold">About TU/e BE Coding Café</h1>
 

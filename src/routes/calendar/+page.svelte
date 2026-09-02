@@ -118,7 +118,10 @@
 			const start = event.startTime ? parseHourMinute(event.startTime) : parseStartHour(event.time);
 			const end = event.endTime ? parseHourMinute(event.endTime) : null;
 			const duration = start !== null && end !== null && end > start ? end - start : 0.5;
-			const top = start !== null ? (start - timelineStartHour) * (60 / timelineStepMinutes) * timelineSlotHeight : index * 4.75 + 0.5;
+			const top =
+				start !== null
+					? (start - timelineStartHour) * (60 / timelineStepMinutes) * timelineSlotHeight
+					: index * 4.75 + 0.5;
 			const height = Math.max(duration * (60 / timelineStepMinutes) * timelineSlotHeight - 0.3, 2);
 			return {
 				...event,
@@ -221,10 +224,20 @@
 		viewMode = mode;
 		activeEvent = null;
 	}
+
+	function handleKeydown(event) {
+		if (event.key === 'Escape') closeEvent();
+	}
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
 	<title>Calendar | BE Coding Cafe</title>
+	<meta
+		name="description"
+		content="A shared calendar of BE Coding Cafe sessions and training activities at TU/e."
+	/>
 </svelte:head>
 
 <section class="calendar-page">
@@ -284,13 +297,13 @@
 		<section class="calendar-board">
 			{#if viewMode === 'month'}
 				<div class="calendar-weekdays">
-					{#each DAYS_OF_WEEK as day}
+					{#each DAYS_OF_WEEK as day (day)}
 						<div>{day}</div>
 					{/each}
 				</div>
 
 				<div class="calendar-grid">
-					{#each calendarCells as cell, idx}
+					{#each calendarCells as cell, idx (idx)}
 						<div
 							class={`calendar-cell ${cell.type === 'current' ? 'calendar-cell--current' : 'calendar-cell--muted'}`}
 							data-last-col={idx % 7 === 6}
@@ -328,13 +341,13 @@
 				<div class="calendar-week-timeline">
 					<div class="calendar-week-timeline__hours">
 						<div class="calendar-week-timeline__corner"></div>
-						{#each timelineSlots as hour}
+						{#each timelineSlots as hour (hour)}
 							<div class="calendar-week-timeline__hour">{formatHourLabel(hour)}</div>
 						{/each}
 					</div>
 
 					<div class="calendar-week-timeline__days">
-						{#each weekDays as day}
+						{#each weekDays as day (day.getTime())}
 							<div class="calendar-week-timeline__day">
 								<div class="calendar-week-timeline__dayhead">
 									<p>{day.toLocaleDateString('en-US', { weekday: 'short' })}</p>
@@ -344,7 +357,7 @@
 								</div>
 
 								<div class="calendar-week-timeline__lane">
-									{#each timelineSlots as hour}
+									{#each timelineSlots as hour (hour)}
 										<div class="calendar-week-timeline__slot"></div>
 									{/each}
 
@@ -382,18 +395,24 @@
 				<div class="calendar-day-view">
 					<div class="calendar-day-view__header">
 						<p>{activeDate.toLocaleDateString('en-US', { weekday: 'long' })}</p>
-						<h2>{activeDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</h2>
+						<h2>
+							{activeDate.toLocaleDateString('en-US', {
+								month: 'long',
+								day: 'numeric',
+								year: 'numeric'
+							})}
+						</h2>
 					</div>
 
 					<div class="calendar-day-timeline">
 						<div class="calendar-day-timeline__hours">
-							{#each timelineSlots as hour}
+							{#each timelineSlots as hour (hour)}
 								<div class="calendar-week-timeline__hour">{formatHourLabel(hour)}</div>
 							{/each}
 						</div>
 
 						<div class="calendar-day-timeline__lane">
-							{#each timelineSlots as hour}
+							{#each timelineSlots as hour (hour)}
 								<div class="calendar-week-timeline__slot"></div>
 							{/each}
 
@@ -451,7 +470,12 @@
 					</p>
 					<h2>{activeEvent.title}</h2>
 				</div>
-				<button type="button" class="calendar-modal__close" aria-label="Close" on:click={closeEvent}>
+				<button
+					type="button"
+					class="calendar-modal__close"
+					aria-label="Close"
+					on:click={closeEvent}
+				>
 					×
 				</button>
 			</div>

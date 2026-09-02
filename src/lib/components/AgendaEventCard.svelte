@@ -24,19 +24,21 @@
 	<article
 		class="agenda-card agenda-card-grid group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 shadow-sm"
 		style={`--card-delay: ${index * 80}ms;`}
-		>
-			<div class="mb-6 flex items-start justify-between gap-4">
-				<div class="rounded-xl bg-[#f7d7d7] px-3 py-1 text-sm font-semibold text-[#C81919]">
-					{formatDate(event.date)}
-				</div>
-				{#if eventTime && !isPast}
-					<p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{eventTime}</p>
-				{/if}
+	>
+		<div class="mb-6 flex items-start justify-between gap-4">
+			<div class="rounded-xl bg-[#f7d7d7] px-3 py-1 text-sm font-semibold text-[#C81919]">
+				{formatDate(event.date)}
 			</div>
+			{#if eventTime && !isPast}
+				<p class="text-xs font-semibold tracking-[0.18em] text-zinc-500 uppercase">{eventTime}</p>
+			{/if}
+		</div>
 
 		<div class="flex-1 space-y-4">
 			<div class="space-y-2">
-				<h3 class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]">
+				<h3
+					class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]"
+				>
 					{event.title}
 				</h3>
 				{#if event.subtitle}
@@ -46,8 +48,10 @@
 
 			{#if event.tags}
 				<div class="flex flex-wrap gap-2">
-					{#each event.tags as tag}
-						<span class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-600">
+					{#each event.tags as tag (tag)}
+						<span
+							class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-zinc-600 uppercase"
+						>
 							{tag}
 						</span>
 					{/each}
@@ -55,16 +59,16 @@
 			{/if}
 
 			{#if event.description}
-				<p class="text-sm leading-6 text-zinc-600">{event.description}</p>
+				<p class="text-sm leading-6 whitespace-pre-line text-zinc-600">{event.description}</p>
 			{/if}
 		</div>
 
-			<div class="mt-8 space-y-4 border-t border-zinc-100 pt-5">
-				<div class="flex items-center gap-3">
-					{#if event.speaker_link}
-						<a
-							href={event.speaker_link}
-							target="_blank"
+		<div class="mt-8 space-y-4 border-t border-zinc-100 pt-5">
+			<div class="flex items-center gap-3">
+				{#if event.speaker_link}
+					<a
+						href={event.speaker_link}
+						target="_blank"
 						rel="noreferrer"
 						class="speaker-chip flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
 						aria-label={`More about ${event.speaker}`}
@@ -73,31 +77,37 @@
 							<img
 								src={event.speakerImage}
 								alt={event.speaker}
-								class="h-11 w-11 rounded-full object-cover ring-2 ring-white shadow-sm"
+								class="h-11 w-11 rounded-full object-cover shadow-sm ring-2 ring-white"
 							/>
 						{:else}
-							<div class="flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+							<div
+								class="flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+							>
 								CC
 							</div>
 						{/if}
 
 						<div class="min-w-0 flex-1">
 							<p class="truncate text-sm font-semibold text-zinc-900">{event.speaker}</p>
-							<p class="truncate text-[11px] uppercase tracking-[0.14em] text-zinc-500">
+							<p class="truncate text-[11px] tracking-[0.14em] text-zinc-500 uppercase">
 								More info
 							</p>
 						</div>
 					</a>
 				{:else}
-					<div class="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2">
+					<div
+						class="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
+					>
 						{#if event.speakerImage}
 							<img
 								src={event.speakerImage}
 								alt={event.speaker}
-								class="h-11 w-11 rounded-full object-cover ring-2 ring-white shadow-sm"
+								class="h-11 w-11 rounded-full object-cover shadow-sm ring-2 ring-white"
 							/>
 						{:else}
-							<div class="flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+							<div
+								class="flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+							>
 								CC
 							</div>
 						{/if}
@@ -107,55 +117,65 @@
 							{#if event.location}
 								<p class="truncate text-xs text-zinc-500">{event.location}</p>
 							{/if}
-							</div>
 						</div>
-					{/if}
-					{#if !isPast && event.calendar}
-						<a
-							href={event.calendar}
-							target="_blank"
-							rel="noreferrer"
-						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
-						>
-							Calendar
-						</a>
-					{/if}
-				</div>
-
-				{#if isPast}
+					</div>
+				{/if}
+				{#if !isPast && event.calendar}
 					<a
-						href={detailHref}
-						class="materials-panel flex w-full items-center justify-between gap-4 rounded-2xl border border-[#eab4b4] bg-[#fff5f5] px-4 py-3"
-						aria-label={`Open the session page for ${event.title}`}
+						href={event.calendar}
+						target="_blank"
+						rel="noreferrer"
+						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold tracking-[0.16em] text-white uppercase transition-transform hover:-translate-y-0.5"
 					>
-						<div class="min-w-0">
-							<p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C81919]">
-								Session page
-							</p>
-							<p class="text-sm font-semibold text-zinc-800">
-								Click to open the session page and access materials
-							</p>
-						</div>
-						<span class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500">
-							<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
-								<path d="M7 17L17 7M17 7H8M17 7V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</span>
+						Calendar
 					</a>
 				{/if}
 			</div>
-		</article>
+
+			{#if isPast}
+				<a
+					href={detailHref}
+					class="materials-panel flex w-full items-center justify-between gap-4 rounded-2xl border border-[#eab4b4] bg-[#fff5f5] px-4 py-3"
+					aria-label={`Open the session page for ${event.title}`}
+				>
+					<div class="min-w-0">
+						<p class="text-[11px] font-semibold tracking-[0.16em] text-[#C81919] uppercase">
+							Session page
+						</p>
+						<p class="text-sm font-semibold text-zinc-800">
+							Click to open the session page and access materials
+						</p>
+					</div>
+					<span
+						class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+							<path
+								d="M7 17L17 7M17 7H8M17 7V16"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</span>
+				</a>
+			{/if}
+		</div>
+	</article>
 {:else if isPast}
 	<article
 		class="agenda-card agenda-card-list group grid min-h-[180px] overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_2.6fr_1fr]"
 		style={`--card-delay: ${index * 80}ms;`}
 	>
-		<div class="space-y-4 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
+		<div class="space-y-4 border-b border-zinc-100 pb-5 md:border-r md:border-b-0 md:pr-6 md:pb-0">
 			<p class="text-xl font-bold tracking-tight text-zinc-900">{formatDate(event.date)}</p>
 			{#if event.poster}
 				<img
 					src={event.poster}
 					alt={`Poster for ${event.title}`}
+					loading="lazy"
 					class="h-36 w-full rounded-2xl border border-zinc-200 object-cover object-center shadow-sm"
 				/>
 			{/if}
@@ -163,7 +183,9 @@
 
 		<div class="space-y-4 py-5 md:px-6 md:py-0">
 			<div class="space-y-2">
-				<h3 class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]">
+				<h3
+					class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]"
+				>
 					{event.title}
 				</h3>
 				{#if event.subtitle}
@@ -173,8 +195,10 @@
 
 			{#if event.tags}
 				<div class="flex flex-wrap gap-2">
-					{#each event.tags as tag}
-						<span class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-600">
+					{#each event.tags as tag (tag)}
+						<span
+							class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-zinc-600 uppercase"
+						>
 							{tag}
 						</span>
 					{/each}
@@ -182,11 +206,13 @@
 			{/if}
 
 			{#if event.description}
-				<p class="text-sm leading-6 text-zinc-600">{event.description}</p>
+				<p class="text-sm leading-6 whitespace-pre-line text-zinc-600">{event.description}</p>
 			{/if}
 		</div>
 
-		<div class="flex flex-col justify-between gap-5 border-t border-zinc-100 pt-5 md:border-t-0 md:border-l md:pl-6 md:pt-0">
+		<div
+			class="flex flex-col justify-between gap-5 border-t border-zinc-100 pt-5 md:border-t-0 md:border-l md:pt-0 md:pl-6"
+		>
 			{#if event.speaker_link}
 				<a
 					href={event.speaker_link}
@@ -199,29 +225,35 @@
 						<img
 							src={event.speakerImage}
 							alt={event.speaker}
-							class="h-12 w-12 rounded-full object-cover ring-2 ring-white shadow-sm"
+							class="h-12 w-12 rounded-full object-cover shadow-sm ring-2 ring-white"
 						/>
 					{:else}
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+						>
 							CC
 						</div>
 					{/if}
 
 					<div class="min-w-0">
 						<p class="truncate text-sm font-semibold text-zinc-900">{event.speaker}</p>
-						<p class="text-[11px] uppercase tracking-[0.14em] text-zinc-500">More info</p>
+						<p class="text-[11px] tracking-[0.14em] text-zinc-500 uppercase">More info</p>
 					</div>
 				</a>
 			{:else}
-				<div class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2">
+				<div
+					class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
+				>
 					{#if event.speakerImage}
 						<img
 							src={event.speakerImage}
 							alt={event.speaker}
-							class="h-12 w-12 rounded-full object-cover ring-2 ring-white shadow-sm"
+							class="h-12 w-12 rounded-full object-cover shadow-sm ring-2 ring-white"
 						/>
 					{:else}
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+						>
 							CC
 						</div>
 					{/if}
@@ -238,14 +270,23 @@
 				aria-label={`Open materials for ${event.title}`}
 			>
 				<div class="min-w-0">
-					<p class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#C81919]">
+					<p class="text-[11px] font-semibold tracking-[0.16em] text-[#C81919] uppercase">
 						Materials
 					</p>
 					<p class="truncate text-sm font-semibold text-zinc-800">Open session page</p>
 				</div>
-				<span class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500">
+				<span
+					class="materials-panel__icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-zinc-500"
+				>
 					<svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
-						<path d="M7 17L17 7M17 7H8M17 7V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						<path
+							d="M7 17L17 7M17 7H8M17 7V16"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
 					</svg>
 				</span>
 			</a>
@@ -256,7 +297,7 @@
 		class="agenda-card agenda-card-list group grid min-h-[180px] overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_2.6fr_1fr]"
 		style={`--card-delay: ${index * 80}ms;`}
 	>
-		<div class="space-y-3 border-b border-zinc-100 pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-6">
+		<div class="space-y-3 border-b border-zinc-100 pb-5 md:border-r md:border-b-0 md:pr-6 md:pb-0">
 			<p class="text-xl font-bold tracking-tight text-zinc-900">{formatDate(event.date)}</p>
 			{#if eventTime}
 				<p class="text-sm font-medium text-zinc-500">{eventTime}</p>
@@ -268,7 +309,9 @@
 
 		<div class="space-y-4 py-5 md:px-6 md:py-0">
 			<div class="space-y-2">
-				<h3 class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]">
+				<h3
+					class="text-2xl font-bold tracking-tight text-zinc-900 transition-colors group-hover:text-[#C81919]"
+				>
 					{event.title}
 				</h3>
 				{#if event.subtitle}
@@ -278,8 +321,10 @@
 
 			{#if event.tags}
 				<div class="flex flex-wrap gap-2">
-					{#each event.tags as tag}
-						<span class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-600">
+					{#each event.tags as tag (tag)}
+						<span
+							class="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-zinc-600 uppercase"
+						>
 							{tag}
 						</span>
 					{/each}
@@ -287,11 +332,13 @@
 			{/if}
 
 			{#if event.description}
-				<p class="text-sm leading-6 text-zinc-600">{event.description}</p>
+				<p class="text-sm leading-6 whitespace-pre-line text-zinc-600">{event.description}</p>
 			{/if}
 		</div>
 
-		<div class="flex flex-col justify-between gap-5 border-t border-zinc-100 pt-5 md:border-t-0 md:border-l md:pl-6 md:pt-0">
+		<div
+			class="flex flex-col justify-between gap-5 border-t border-zinc-100 pt-5 md:border-t-0 md:border-l md:pt-0 md:pl-6"
+		>
 			{#if event.speaker_link}
 				<a
 					href={event.speaker_link}
@@ -304,29 +351,35 @@
 						<img
 							src={event.speakerImage}
 							alt={event.speaker}
-							class="h-12 w-12 rounded-full object-cover ring-2 ring-white shadow-sm"
+							class="h-12 w-12 rounded-full object-cover shadow-sm ring-2 ring-white"
 						/>
 					{:else}
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+						>
 							CC
 						</div>
 					{/if}
 
 					<div class="min-w-0">
 						<p class="truncate text-sm font-semibold text-zinc-900">{event.speaker}</p>
-						<p class="text-[11px] uppercase tracking-[0.14em] text-zinc-500">More info</p>
+						<p class="text-[11px] tracking-[0.14em] text-zinc-500 uppercase">More info</p>
 					</div>
 				</a>
 			{:else}
-				<div class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2">
+				<div
+					class="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-2"
+				>
 					{#if event.speakerImage}
 						<img
 							src={event.speakerImage}
 							alt={event.speaker}
-							class="h-12 w-12 rounded-full object-cover ring-2 ring-white shadow-sm"
+							class="h-12 w-12 rounded-full object-cover shadow-sm ring-2 ring-white"
 						/>
 					{:else}
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-400"
+						>
 							CC
 						</div>
 					{/if}
@@ -343,7 +396,7 @@
 						href={event.calendar}
 						target="_blank"
 						rel="noreferrer"
-						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
+						class="rounded-full bg-[#C81919] px-4 py-2 text-xs font-semibold tracking-[0.16em] text-white uppercase transition-transform hover:-translate-y-0.5"
 					>
 						Add to calendar
 					</a>

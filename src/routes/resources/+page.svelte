@@ -11,7 +11,9 @@
 	};
 
 	function normalize(value) {
-		return String(value ?? '').trim().toLowerCase();
+		return String(value ?? '')
+			.trim()
+			.toLowerCase();
 	}
 
 	function getVisual(resource) {
@@ -107,10 +109,20 @@
 	}
 
 	applyFilters();
+
+	function handleKeydown(event) {
+		if (event.key === 'Escape') closeResource();
+	}
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
 	<title>Resources | BE Coding Cafe</title>
+	<meta
+		name="description"
+		content="A curated library of research software resources shared through BE Coding Cafe sessions at TU/e."
+	/>
 </svelte:head>
 
 <section class="resources-page">
@@ -168,7 +180,7 @@
 									>
 										All
 									</button>
-									{#each typeFilters as filter}
+									{#each typeFilters as filter (filter)}
 										<button
 											type="button"
 											class:resources-chip--active={activeType === filter}
@@ -192,7 +204,7 @@
 									>
 										All
 									</button>
-									{#each sourceFilters as filter}
+									{#each sourceFilters as filter (filter)}
 										<button
 											type="button"
 											class:resources-chip--active={activeSource === filter}
@@ -213,7 +225,7 @@
 		<section class="resources-library">
 			<p class="resources-library__hint">Click any card to open more details.</p>
 			{#if filteredRows.length}
-				{#each filteredRows as row}
+				{#each filteredRows as row (row.title)}
 					<section class="resource-row" aria-labelledby={row.id}>
 						<div class="resource-row__header">
 							<h2 id={row.id}>{row.title}</h2>
@@ -221,7 +233,7 @@
 
 						<div class="resource-row__scroller" aria-label={row.title}>
 							<div class="resource-row__track">
-								{#each row.items as resource}
+								{#each row.items as resource (resource.id)}
 									<article class="resource-card resource-card--{resource.visual}">
 										<button
 											type="button"
@@ -262,8 +274,18 @@
 	</div>
 	{#if activeResource}
 		<div class="resource-dialog-backdrop" on:click={closeResource}></div>
-		<div class="resource-dialog" role="dialog" aria-modal="true" aria-labelledby="resource-dialog-title">
-			<button type="button" class="resource-dialog__close" on:click={closeResource} aria-label="Close resource details">
+		<div
+			class="resource-dialog"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="resource-dialog-title"
+		>
+			<button
+				type="button"
+				class="resource-dialog__close"
+				on:click={closeResource}
+				aria-label="Close resource details"
+			>
 				x
 			</button>
 			<div class="resource-dialog__media resource-card--{activeResource.visual}">
@@ -281,17 +303,24 @@
 			<div class="resource-dialog__body">
 				<h3 id="resource-dialog-title">{activeResource.title}</h3>
 				<div class="resource-card__chips">
-					<span class="resource-card__chip resource-card__chip--level">{activeResource.access}</span>
+					<span class="resource-card__chip resource-card__chip--level">{activeResource.access}</span
+					>
 					<span class="resource-card__chip">{activeResource.type}</span>
 					<span class="resource-card__chip">{activeResource.source}</span>
 				</div>
 				<p>{activeResource.abstract}</p>
 				<div class="resource-dialog__tags">
-					{#each activeResource.tags as tag}
+					{#each activeResource.tags as tag (tag)}
 						<span>{tag}</span>
 					{/each}
 				</div>
-				<a href={activeResource.url} class="resource-card__button" target="_blank" rel="noreferrer" on:click={closeResource}>Open Resource</a>
+				<a
+					href={activeResource.url}
+					class="resource-card__button"
+					target="_blank"
+					rel="noreferrer"
+					on:click={closeResource}>Open Resource</a
+				>
 			</div>
 		</div>
 	{/if}
@@ -621,7 +650,13 @@
 		inset: 1rem 1rem auto;
 		height: 0.55rem;
 		border-radius: 999px;
-		background: linear-gradient(90deg, #ef4444 0 0.55rem, #f59e0b 0.55rem 1.1rem, #10b981 1.1rem 1.65rem, transparent 1.65rem);
+		background: linear-gradient(
+			90deg,
+			#ef4444 0 0.55rem,
+			#f59e0b 0.55rem 1.1rem,
+			#10b981 1.1rem 1.65rem,
+			transparent 1.65rem
+		);
 	}
 
 	.resource-card--terminal .resource-card__media::after,
@@ -629,7 +664,11 @@
 		inset: 2.1rem 1rem 1rem;
 		opacity: 0.84;
 		background:
-			repeating-linear-gradient(180deg, rgba(16, 185, 129, 0.95) 0 0.16rem, transparent 0.16rem 0.92rem),
+			repeating-linear-gradient(
+				180deg,
+				rgba(16, 185, 129, 0.95) 0 0.16rem,
+				transparent 0.16rem 0.92rem
+			),
 			repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.26) 0 1rem, transparent 1rem 1.45rem);
 		mix-blend-mode: screen;
 	}
@@ -643,7 +682,11 @@
 
 	.resource-card--mesh .resource-card__media::before,
 	.resource-card--mesh .resource-card__preview-media::before {
-		background: repeating-radial-gradient(circle at center, rgba(34, 211, 238, 0.34) 0 1px, transparent 1px 0.95rem);
+		background: repeating-radial-gradient(
+			circle at center,
+			rgba(34, 211, 238, 0.34) 0 1px,
+			transparent 1px 0.95rem
+		);
 		opacity: 0.45;
 		transform: scaleY(0.8);
 	}
@@ -742,7 +785,12 @@
 		position: absolute;
 		inset: 0;
 		z-index: 1;
-		background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.16) 50%, transparent 100%);
+		background: linear-gradient(
+			120deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.16) 50%,
+			transparent 100%
+		);
 		transform: translateX(-100%);
 		transition: transform 420ms ease;
 	}
@@ -775,7 +823,12 @@
 		z-index: 2;
 		inset: auto 0 0;
 		padding: 3.3rem 0.95rem 0.95rem;
-		background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.86) 58%, rgba(15, 23, 42, 0.98) 100%);
+		background: linear-gradient(
+			180deg,
+			rgba(15, 23, 42, 0) 0%,
+			rgba(15, 23, 42, 0.86) 58%,
+			rgba(15, 23, 42, 0.98) 100%
+		);
 		transition: opacity 160ms ease;
 	}
 

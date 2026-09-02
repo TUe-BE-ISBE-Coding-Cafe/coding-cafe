@@ -26,14 +26,14 @@
 		return latestSessionDate !== undefined && latestSessionDate < todayKey;
 	}
 
-	function matchesFilters(training) {
-		const term = searchTerm.trim().toLowerCase();
+	function matchesFilters(training, term, level) {
+		const query = term.trim().toLowerCase();
 		const matchesSearch =
-			!term ||
-			training.title.toLowerCase().includes(term) ||
-			training.description.toLowerCase().includes(term) ||
-			training.tags.some((tag) => tag.toLowerCase().includes(term));
-		const matchesLevel = selectedLevel === 'All' || training.level === selectedLevel;
+			!query ||
+			training.title.toLowerCase().includes(query) ||
+			training.description.toLowerCase().includes(query) ||
+			training.tags.some((tag) => tag.toLowerCase().includes(query));
+		const matchesLevel = level === 'All' || training.level === level;
 
 		return matchesSearch && matchesLevel;
 	}
@@ -59,15 +59,21 @@
 	}
 
 	$: currentTrainings = trainings.filter(
-		(training) => !isArchivedTraining(training) && matchesFilters(training)
+		(training) =>
+			!isArchivedTraining(training) && matchesFilters(training, searchTerm, selectedLevel)
 	);
 	$: archivedTrainings = trainings.filter(
-		(training) => isArchivedTraining(training) && matchesFilters(training)
+		(training) =>
+			isArchivedTraining(training) && matchesFilters(training, searchTerm, selectedLevel)
 	);
 </script>
 
 <svelte:head>
 	<title>Training | BE Coding Cafe</title>
+	<meta
+		name="description"
+		content="Internal and external training opportunities for researchers, from foundational scripting to reproducible workflows."
+	/>
 </svelte:head>
 
 <section class="training-page">
@@ -87,7 +93,9 @@
 				<div class="training-links__grid">
 					<a href="https://taxila.nl/events?per_page=50#home" target="_blank" rel="noreferrer">
 						<strong>Taxila</strong>
-						<span>Taxila is a repository of training opportunities from across the Netherlands.</span>
+						<span
+							>Taxila is a repository of training opportunities from across the Netherlands.</span
+						>
 						<span>Click to go to Taxila and see what is happening in NL.</span>
 					</a>
 				</div>
@@ -109,7 +117,7 @@
 				<div class="training-filter-card">
 					<p class="training-label">Level</p>
 					<div class="training-levels">
-						{#each levels as level}
+						{#each levels as level (level)}
 							<button
 								type="button"
 								class:training-levels__button--active={selectedLevel === level}
@@ -186,7 +194,7 @@
 								</div>
 								<div class="training-card__footer">
 									<div class="training-tags">
-										{#each training.tags.slice(0, 3) as tag}
+										{#each training.tags.slice(0, 3) as tag (tag)}
 											<span>{tag}</span>
 										{/each}
 									</div>
@@ -204,11 +212,13 @@
 				{#if archivedTrainings.length > 0}
 					<section class="training-archive">
 						<h2>
-							Archive ({archivedTrainings.length} training{archivedTrainings.length === 1 ? '' : 's'})
+							Archive ({archivedTrainings.length} training{archivedTrainings.length === 1
+								? ''
+								: 's'})
 						</h2>
 						<div class="training-archive__grid">
 							{#each archivedTrainings as training (training.id)}
-								<article class="training-archive__card">
+								<article class="training-archive__card" id={training.id}>
 									<h3>{training.title}</h3>
 									<p>
 										<strong>Dates:</strong>
