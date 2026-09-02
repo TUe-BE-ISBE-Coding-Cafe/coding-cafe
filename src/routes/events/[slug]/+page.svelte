@@ -13,7 +13,22 @@
 			year: 'numeric'
 		}).format(date);
 	};
+
+	const pageTitle = event.subtitle ? `${event.title} ${event.subtitle}` : event.title;
+	const pageDescription =
+		event.description ??
+		`Materials and details for the BE Coding Cafe session "${pageTitle}" at TU/e.`;
 </script>
+
+<svelte:head>
+	<title>{pageTitle} | BE Coding Cafe</title>
+	<meta name="description" content={pageDescription} />
+	{#if event.poster}
+		<meta property="og:image" content={event.poster} />
+	{/if}
+	<meta property="og:title" content={`${pageTitle} | BE Coding Cafe`} />
+	<meta property="og:description" content={pageDescription} />
+</svelte:head>
 
 <div class="mx-auto max-w-screen-xl px-6 py-12 md:px-8 md:py-16">
 	<div class="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-start">
@@ -28,7 +43,7 @@
 					</p>
 				{/if}
 				{#if event.description}
-					<p class="max-w-3xl text-base leading-7 text-zinc-600 md:text-lg">
+					<p class="max-w-3xl text-base leading-7 whitespace-pre-line text-zinc-600 md:text-lg">
 						{event.description}
 					</p>
 				{/if}
@@ -46,11 +61,7 @@
 						<div class="event-meta-card event-meta-card--speaker">
 							<div class="event-speaker">
 								{#if event.speakerImage}
-									<img
-										src={event.speakerImage}
-										alt={event.speaker}
-										class="event-speaker__image"
-									/>
+									<img src={event.speakerImage} alt={event.speaker} class="event-speaker__image" />
 								{/if}
 								<div>
 									<p class="event-meta-label">Speaker</p>
@@ -64,6 +75,7 @@
 
 			{#if content}
 				<article class="prose prose-slate max-w-none pt-2">
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- content comes from the repo's own info.md, parsed at build time -->
 					{@html content}
 				</article>
 			{:else}
@@ -106,7 +118,12 @@
 				<div
 					class="overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white shadow-[0_28px_80px_-38px_rgba(24,24,27,0.24)]"
 				>
-					<img src={event.poster} alt="Event poster" class="h-auto w-full object-contain" />
+					<img
+						src={event.poster}
+						alt={`Poster for ${event.title}`}
+						loading="lazy"
+						class="h-auto w-full object-contain"
+					/>
 				</div>
 			{/if}
 		</div>

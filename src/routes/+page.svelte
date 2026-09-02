@@ -3,9 +3,7 @@
 	import events from '$lib/data/events.json';
 	import { formatEventTime, groupEvents } from '$lib/utils/events.js';
 
-	const teamsUrl =
-		'https://teams.microsoft.com/l/team/19%3ATfehyuNclRvZxP_XBBLUaPcVK0L_aHdbfs7NNHqcsqQ1%40thread.tacv2/conversations?groupId=81d0985d-b794-4f0e-8003-f7265709d8ab&tenantId=cc7df247-60ce-4a0f-9d75-704cf60efc64';
-	const githubUrl = 'https://github.com/ISBE-TUe/coding-cafe';
+	import { teamsUrl } from '$lib/links.js';
 
 	const sessionParts = [
 		{
@@ -93,13 +91,17 @@
 
 <svelte:head>
 	<title>BE Coding Cafe</title>
+	<meta
+		name="description"
+		content="BE Coding Cafe is an informal meetup at TU/e where researchers learn together, experiment with tools and workflows, and solve coding problems."
+	/>
 </svelte:head>
 
 <div class="hero-shell">
 	<div class="hero-viewport">
 		<div class="hero-progress">
 			<div class="hero-progress__rail">
-				{#each screens as screen, index}
+				{#each screens as screen, index (screen.id)}
 					<button
 						type="button"
 						class:hero-progress__dot--active={index === activeScreen}
@@ -124,9 +126,9 @@
 						<p class="hero-eyebrow">BE Coding Cafe</p>
 						<h1 class="hero-title">BE Coding Caf&#233;</h1>
 						<p class="hero-body">
-							BE Coding Cafe is an informal meetup where researchers learn together,
-							experiment with tools and workflows, and solve coding problems through short
-							introductions and open coding sessions.
+							BE Coding Cafe is an informal meetup where researchers learn together, experiment with
+							tools and workflows, and solve coding problems through short introductions and open
+							coding sessions.
 						</p>
 						<p class="hero-tagline">SHORT TALKS · HANDS-ON CODING · PEER SUPPORT</p>
 
@@ -181,7 +183,7 @@
 					</div>
 
 					<div class="hero-grid hero-grid--split">
-						{#each sessionParts as part}
+						{#each sessionParts as part (part.label)}
 							<article class="hero-card hero-card--soft">
 								<p class="hero-card__label">{part.label}</p>
 								<h3 class="hero-card__title">{part.title}</h3>
@@ -193,7 +195,6 @@
 					<div class="hero-banner">
 						<p>Bring your laptop. Work on real problems.</p>
 					</div>
-
 				</div>
 
 				<div class="hero-scroll-indicator hero-scroll-indicator--bottom" aria-hidden="true">
@@ -224,7 +225,7 @@
 
 					<div class="hero-card">
 						<div class="hero-grid hero-grid--checks">
-							{#each checkItems as item}
+							{#each checkItems as item (item)}
 								<div class="hero-check">
 									<span class="hero-check__mark">✓</span>
 									<p>{item}</p>
@@ -372,7 +373,7 @@
 
 					<div class="hero-card">
 						<div class="hero-list">
-							{#each communityPoints as point}
+							{#each communityPoints as point (point)}
 								<div class="hero-list__item">
 									<span class="hero-list__dot"></span>
 									<p>{point}</p>
