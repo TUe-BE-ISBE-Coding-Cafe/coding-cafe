@@ -82,8 +82,19 @@
 				<p class="pt-2 text-sm text-zinc-600">Materials for this session will be added soon.</p>
 			{/if}
 
-			{#if event.zenodo || event.repo}
+			{#if event.zenodo || event.repo || event.signup}
 				<div class="resource-cards">
+					{#if event.signup}
+						<a
+							href={event.signup}
+							target="_blank"
+							rel="noreferrer"
+							class="resource-card resource-card--signup"
+						>
+							<h2 class="resource-card__title">Join the challenge</h2>
+							<span class="resource-card__chip">Sign-up form</span>
+						</a>
+					{/if}
 					{#if event.zenodo}
 						<a
 							href={event.zenodo}
@@ -225,6 +236,19 @@
 
 	.resource-card--github {
 		background: #fff1f1;
+	}
+
+	.resource-card--signup {
+		background: #c81919;
+	}
+
+	.resource-card--signup .resource-card__title,
+	.resource-card--signup .resource-card__chip {
+		color: #fff;
+	}
+
+	.resource-card--signup:hover {
+		background: #a81414;
 	}
 
 	.resource-card:hover {

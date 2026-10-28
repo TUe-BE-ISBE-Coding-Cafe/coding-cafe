@@ -106,24 +106,48 @@
 		"tags": ["IoT", "Raspberry Pi"]
 	},
 	{
-		"title": "Topic to be announced",
+		"title": "Town Hall: The Future of AI in Research",
+		"subtitle": "Where should the Coding Café go next?",
 		"date": "2026-09-23",
 		"startTime": "12:00",
 		"endTime": "13:30",
 		"location": "Vertigo 9.06",
-		"slug": "2026-09-23",
-		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
-		"tags": ["AI"]
+		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slug": "2026-09-23-town-hall",
+		"description": "A town-hall edition to open the 2026/27 AI theme. With a live Mentimeter poll we looked at how we use AI in research today, what worries us about it, which topics you would like to see in the coming sessions, and how the Coding Café should continue.",
+		"tags": ["Town Hall", "AI", "community"]
 	},
 	{
-		"title": "Topic to be announced",
+		"title": "#30DayMapChallenge Kick-off",
+		"subtitle": "Special edition: make your first map in code",
 		"date": "2026-10-28",
 		"startTime": "12:00",
 		"endTime": "13:30",
 		"location": "Vertigo 9.06",
-		"slug": "2026-10-28",
-		"description": "Part of the 2026/27 AI theme. The topic and speaker for this session will be announced closer to the date — save the date and join us.",
-		"tags": ["AI"]
+		"speaker": "Özgün Balaban",
+		"speaker_link": "https://research.tue.nl/en/persons/özgün-balaban",
+		"speakerImage": "https://research.tue.nl/files-asset/365781965/ozgun.jpg?w=160&f=webp",
+		"slug": "2026-10-28-30daymapchallenge",
+		"description": "A special edition to get ready for the #30DayMapChallenge (1–30 November). A short talk on how a map gets made in code — data, projection, geometry, styling, export — in R and Python with Dutch open data, a live demo of an AI agent building a map (and what it gets wrong), then everyone makes their first Day 1 “Points” map from our starter repo. Bring your laptop.",
+		"tags": ["Special edition", "maps", "GIS", "R", "Python", "AI"],
+		"repo": "https://github.com/TUe-BE-ISBE-Coding-Cafe/30daymapchallenge-2026",
+		"intro": {
+			"heading": "What is the #30DayMapChallenge?",
+			"summary": "A month-long, community mapping challenge: every day from 1 to 30 November there is a theme, and you make and share a map for it. No sign-up, no rules on tools or data, and no need to do all 30. Pick a day or two that suit you.",
+			"points": [
+				"One theme a day: Points, Lines, Polygons… through to Pen & paper on 30 November",
+				"Share each map with #30DayMapChallenge, and add it to our TU/e repo",
+				"R, Python or any other tool is very welcome, and our starter repo has a ready-made Eindhoven dataset",
+				"Using AI is supported (our 2026/27 theme), but not required: Day 10 is “Prompting only”, Day 27 is “New tool”",
+				"Add one line per map saying how you used AI, e.g. “AI wrote the plotting code, I chose the data and the projection”"
+			],
+			"linkLabel": "Starter repo and full theme list",
+			"link": "https://github.com/TUe-BE-ISBE-Coding-Cafe/30daymapchallenge-2026"
+		},
+		"calendar": "/calendar/30daymapchallenge_kickoff.ics",
+		"signup": "https://forms.cloud.microsoft/e/Qqk5yjSuVT"
 	},
 	{
 		"title": "Topic to be announced",

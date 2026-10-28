@@ -1,5 +1,6 @@
 <script>
 	import { formatEventTime } from '$lib/utils/events.js';
+	import EventIntro from './EventIntro.svelte';
 
 	export let event;
 	export let variant = 'upcoming';
@@ -60,6 +61,10 @@
 
 			{#if event.description}
 				<p class="text-sm leading-6 whitespace-pre-line text-zinc-600">{event.description}</p>
+			{/if}
+
+			{#if event.intro && !isPast}
+				<EventIntro intro={event.intro} {detailHref} signup={event.signup} />
 			{/if}
 		</div>
 
@@ -359,6 +364,10 @@
 
 			{#if event.description}
 				<p class="text-sm leading-6 whitespace-pre-line text-zinc-600">{event.description}</p>
+			{/if}
+
+			{#if event.intro}
+				<EventIntro intro={event.intro} {detailHref} signup={event.signup} />
 			{/if}
 		</div>
 

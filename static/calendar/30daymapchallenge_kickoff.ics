@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BE Coding Cafe//TUe//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-10-28-30dmc@be-coding-cafe.tue.nl
+DTSTAMP:20261021T090000Z
+DTSTART:20261028T110000Z
+DTEND:20261028T123000Z
+SUMMARY:BE Coding Cafe: #30DayMapChallenge Kick-off
+DESCRIPTION:Special edition: make your first map in code. Bring your laptop with R or Python.
+LOCATION:Vertigo 9.06\, TU/e
+ORGANIZER;CN="Balaban, Özgün":mailto:o.balaban@tue.nl
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

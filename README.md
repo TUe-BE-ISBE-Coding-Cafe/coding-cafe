@@ -66,6 +66,8 @@ Useful optional fields:
 - `repo`: GitHub or repository link for exercises and materials
 - `zenodo`: DOI or DOI URL for archived slides/materials
 - `calendar`: `.ics` file path for upcoming sessions
+- `intro`: optional clickable intro panel on upcoming agenda cards, with `heading`, `summary`, `points`, `link` and `linkLabel`
+- `signup`: optional sign-up form URL; shows a "Join the challenge" button in the intro panel and on the session page
 
 Notes:
 
