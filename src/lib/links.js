@@ -5,7 +5,7 @@ export const zenodoUrl = 'https://zenodo.org/communities/tue_be_isbe_codingcafe'
 export const contactEmail = 'o.balaban@tue.nl';
 export const creatorUrl = 'https://www.ozgunbalaban.com';
 
-// TODO: replace with the published MyST knowledge base URL once the separate
-// repo is deployed to GitHub Pages. This is the only place the URL is defined.
-export const knowledgeBaseUrl = 'https://example.github.io/coding-cafe-knowledge-base';
-export const knowledgeBaseReady = false;
+// The MyST knowledge base, published from AlpinistPanda/tue_codingcafe_knowledgebase.
+// This is the only place the URL is defined.
+export const knowledgeBaseUrl = 'https://alpinistpanda.github.io/tue_codingcafe_knowledgebase/';
+export const knowledgeBaseReady = true;

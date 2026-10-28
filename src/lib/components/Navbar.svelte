@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/state';
+	import { knowledgeBaseUrl, knowledgeBaseReady } from '$lib/links.js';
 
 	const navItems = [
 		{ name: 'Home', href: '/', isActive: (url) => url.pathname === '/' && !url.hash },
@@ -7,7 +8,17 @@
 		{ name: 'Resources', href: '/resources', isActive: (url) => url.pathname === '/resources' },
 		{ name: 'Training', href: '/training', isActive: (url) => url.pathname === '/training' },
 		{ name: 'Calendar', href: '/calendar', isActive: (url) => url.pathname === '/calendar' },
-		{ name: 'About', href: '/about', isActive: (url) => url.pathname === '/about' }
+		{ name: 'About', href: '/about', isActive: (url) => url.pathname === '/about' },
+		...(knowledgeBaseReady
+			? [
+					{
+						name: 'Knowledge base ↗',
+						href: knowledgeBaseUrl,
+						external: true,
+						isActive: () => false
+					}
+				]
+			: [])
 	];
 
 	let menuOpen = false;
@@ -84,6 +95,8 @@
 			{#each navItems as item (item.href)}
 				<a
 					href={item.href}
+					target={item.external ? '_blank' : undefined}
+					rel={item.external ? 'noreferrer' : undefined}
 					aria-current={isActive(item) ? 'page' : undefined}
 					class={linkClass(item)}
 					on:click={() => (menuOpen = false)}
