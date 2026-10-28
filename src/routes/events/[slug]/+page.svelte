@@ -142,7 +142,32 @@
 
 	{#if event.slides}
 		<div class="mt-12">
-			<h2 class="mb-4 text-2xl font-bold tracking-tight text-zinc-900">Slides</h2>
+			<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+				<div>
+					<h2 class="text-2xl font-bold tracking-tight text-zinc-900">Slides</h2>
+					<p class="mt-1 text-sm text-zinc-600">
+						The window below is small.
+						<a
+							href={event.slides}
+							target="_blank"
+							rel="noreferrer"
+							class="font-semibold text-[#c81919] underline underline-offset-2 hover:text-[#a81414]"
+						>
+							Click here to open the slides in a new tab</a
+						>{event.slides.endsWith('.pdf')
+							? '.'
+							: ', then press F for full screen and use the arrow keys to move between slides.'}
+					</p>
+				</div>
+				<a
+					href={event.slides}
+					target="_blank"
+					rel="noreferrer"
+					class="inline-flex items-center gap-2 rounded-full bg-[#c81919] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#a81414]"
+				>
+					Open slides full screen ↗
+				</a>
+			</div>
 			<iframe
 				src={event.slides}
 				title="Slides"
