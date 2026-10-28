@@ -132,6 +132,7 @@
 		"slug": "2026-10-28-30daymapchallenge",
 		"description": "A special edition to get ready for the #30DayMapChallenge (1–30 November). A short talk on how a map gets made in code — data, projection, geometry, styling, export — in R and Python with Dutch open data, a live demo of an AI agent building a map (and what it gets wrong), then everyone makes their first Day 1 “Points” map from our starter repo. Bring your laptop.",
 		"tags": ["Special edition", "maps", "GIS", "R", "Python", "AI"],
+		"slides": "https://alpinistpanda.github.io/2026_10_30daymapchallenge/",
 		"repo": "https://github.com/TUe-BE-ISBE-Coding-Cafe/30daymapchallenge-2026",
 		"intro": {
 			"heading": "What is the #30DayMapChallenge?",
